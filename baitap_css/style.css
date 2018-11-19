@@ -1,0 +1,181 @@
+body{
+	margin:0;
+	padding:0;
+}
+.top{
+	width: 100%;
+    height: 60px;
+    background: black;
+}
+.container{
+	width: 1170px;
+    margin: 0 auto;
+}
+.giohang{
+	float:right;
+	padding-top: 13px;
+    text-align: center;
+}
+.giohang p{
+	color:white;
+	margin-top:2px;
+}
+.giohang a:link,.giohang a:visited{
+	color:white;
+	text-decoration: none;
+}
+.logo{
+	text-align:center;
+	border-bottom: solid 1px #e0dbdb99;
+}
+.logo a:link,.logo a:visited{
+	color: black;
+    text-decoration: none;
+}
+
+#divLeft{
+	float: left;
+    width: 70%;
+    
+    height: 50px;
+}
+#divRight{
+	float: right;
+    width: 30%;
+	
+    
+}
+#divLeft ul li{
+	float:left;
+	list-style-type:none;
+	padding-right: 60px;
+	font-size:20px;
+}
+#divLeft ul li a{
+	color:black;
+	text-decoration:none;
+}
+#divLeft ul li a:hover{
+	color:blue;
+}
+#btnSearch{
+	background: url(images/search.png) no-repeat;
+    padding-left: 12px;
+	border:0;
+	position: absolute;
+    top: 0;
+    right: 2%;
+	margin-top:6px;
+	cursor:pointer;
+}
+#txtSearch{
+	padding:6px;
+    border: 0;
+}
+#Search{
+	float: right;
+	position:relative;
+	margin-top: 12px;
+}
+.banner img{
+	width:100%;
+}
+.about{
+	padding-top: 50px;
+	height:300px;
+}
+.spnoibat{
+	float:left;
+	padding-right:30px;
+}
+.oneproduct{
+	text-align:center;
+	border: solid 1px #ece6e6;
+	float:left;
+	padding: 50px;
+    margin-right: 65px;
+    margin-bottom: 30px;
+}
+#face{
+	background:url(images/s-icons.png);
+	display:inline block;
+}
+.social{
+	width:34px;
+	height:34px;
+	display:inline-block;
+}
+.thongtin{
+	width:25%;
+	float:left;
+}
+.thongtin ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.thongtin ul li a:link,.thongtin ul li a:visited{
+	text-decoration:none;
+	color:gray;	
+}
+.thongtin ul li a:hover{	
+	color:blue;	
+}
+#face{
+	background: url(images/s-icons.png);
+    background-position: 0 0;
+}
+.txtthongtin{
+	display: inline-block;
+    padding-left: 2px;
+    vertical-align: middle;
+    margin-top: -24px;
+}
+#tiwter{
+	background: url(images/s-icons.png);
+    background-position: -34 0;
+}
+#google{
+	background: url(images/s-icons.png);
+    background-position: -68 0;
+}
+.txtthongtin2{
+	display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+.phanvung{
+	width:100%;
+}
+.footchild{
+	width:50%;
+	float:left;
+	
+}
+#txtemail{
+	padding: 8px;
+    margin-right: 5px;
+}
+#btnsubmit{
+	    padding: 8px;
+    background: transparent;
+}
+.copy{
+	text-align:right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
