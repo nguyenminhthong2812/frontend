@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>Sign up</title>
+	</head>
+	<body>
+		<div id="containner">
+			<form action="abc.php" method="post" name="frm_signup" style="width: 400px;margin: 10px auto;background: #e5f2fd;padding:5px;border-radius: 10px;padding-left: 20px;padding-right: 20px;padding-bottom:40px">
+				<h1 style="text-align: center;font-weight: bold;">Sign up</h1>
+				<span style="display: inline-block;padding: 10px 10px 10px 10px;background: #70ef70;color: white;border-radius: 100%;">1</span><span style="font-size: 20px;font-weight: bold;"> Your basic info</span>
+				<br>
+				<br>
+				<span style="font-weight: bold;">Name:</span>
+				<br>
+				<input type="text" name="username" placeholder="Input your name" style="width: 100%;padding: 5px;margin-top: 5px;margin-bottom: 5px;"></input>
+				<br>
+				<span style="font-weight: bold;">Email:</span>
+				<br>
+				<input type="text" name="email" placeholder="Input your email" style="width: 100%;padding: 5px;margin-top: 5px;margin-bottom: 5px;"></input>
+				<br>
+				<span style="font-weight: bold;">Password:</span>
+				<br>
+				<input type="password" name="password" placeholder="Input your password" style="width: 100%;padding: 5px;margin-top: 5px;margin-bottom: 5px;"></input>
+				<br>
+				<span style="font-weight: bold;">Age:</span>
+				<br>
+				<input type="radio" value="under13" name="age" style="margin-top: 10px;">Under 13</input>
+				<br>
+				<input type="radio" value="over13" name="age" style="    margin-bottom: 20px;">13 or older</input>
+				<br>
+				<span style="display: inline-block;padding: 10px 10px 10px 10px;background: #70ef70;color: white;border-radius: 100%;">2</span><span style="font-size: 20px;font-weight: bold;"> Your profile</span>
+				<br>
+				<br>
+				<span style="font-weight: bold;">Biography:</span>
+				<br>				
+				<textarea name="bio" placeholder="Input your bio here" cols="53" rows="5" style="margin-top: 10px;margin-bottom: 10px;"></textarea>
+				<br>
+				<span style="font-weight: bold;">Job role:</span>
+				<br>
+				<select name="job" id="job_role" style="width: 100%;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+					<optgroup label="WEB">
+						<option value="frontend_developer">Front-End Developer</option>
+						<option value="php_developor">PHP Developer</option>
+						<option value="python_developer">Python Developer</option>
+						<option value="rails_developer"> Rails Developer</option>
+						<option value="web_designer">Web Designer</option>
+						<option value="WordPress_developer">WordPress Developer</option>
+					</optgroup>
+					<optgroup label="MOBILE">
+						<option value="Android_developer">Androild Developer</option>
+						<option value="iOS_developer">iOS Developer</option>
+						<option value="mobile_designer">Mobile Designer</option>
+					</optgroup>
+				</select>
+				<br>
+				<span style="font-weight: bold;">Interests:</span>
+				<br>
+				<input type="checkbox" value="test1" name="ckname">Developer</input>
+				<br>
+				<input type="checkbox" value="test1" name="ckname">Design</input>
+				<br>
+				<input type="checkbox" value="test1" name="ckname">Business</input>
+				<br>
+				<input type="submit" value="Sign Up Now" name="btnsubmit" style="width: 100%;padding: 10px;background: #70ef70;color: white;border-radius: 24px;font-size: 25px;"></input>
+			</form>
+		</div>
+	</body>
+</html>
