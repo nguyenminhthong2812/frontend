@@ -1,0 +1,146 @@
+<html>
+	<head>
+		<title>
+			FORM VALIDATE
+		</title>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
+		<script src="jquery.js"></script>			
+	</head>
+	<body>		
+		<div class="container">
+			<div class="cform_validate">
+	
+				<!-- các step -->
+			
+				<div class="cstep">
+					<div class="cstep_n" id="step_1">
+						<h3>Step 1</h3>
+						<span>Personal info</span>
+					</div>
+					<div class="cstep_n" id="step_2">
+						<h3>Step 2</h3>
+						<span>Address</span>
+					</div>
+					<div class="cstep_n" id="step_3">
+						<h3>Step 3</h3>
+						<span>Message</span>
+					</div>
+					
+				</div>
+				
+				<!-- form step 1-->
+				
+					<div id="frm_vali1">
+						<div class="cInput">
+							<span>Name</span>
+							<div class="cImg"><img src="question.png" alt="?"></img></div>
+							<br/>
+							<input type="text" class="txt_input" id="name"/>
+						</div>
+						<div class="cInput">
+							<span>Last name</span>
+							<div class="cImg"><img src="question.png" alt="?"></img></div>
+							<br/>
+							<input type="text" class="txt_input" id="last_name"/>
+						</div>
+						<div class="cInput">
+							<span>Your Email</span>
+							<div class="cImg"><img src="question.png" alt="?"></img></div>
+							<br/>
+							<input type="text" class="txt_input" id="email"/>
+						</div>
+						<div class="cInput">
+							<span>Phone number</span>
+							<div class="cImg"><img src="question.png" alt="?"></img></div>
+							<br/>
+							<input type="text" class="txt_input" id="phone"/>
+						</div>
+						<div class="cInput1">
+							<span>Subscribe to Newsletter?</span>
+							<br/>
+							<input type="radio" class="rad_input" name="letter" id="rd_yes" value="yes">Yes</input>
+							<input type="radio" class="rad_input" name="letter" id="rd_no" value="no">No</input>
+							
+						</div>
+						
+									
+					</div>
+				
+				<!-- form step 2 -->
+				<div id="frm_vali2">
+					<div class="cInput_address">
+							<span>Address</span>
+							<div class="cImg"><img src="question.png" alt="?"></img></div>
+							<br/>
+							<input type="text" class="txt_input" id="address"/>
+					</div>
+					<div class="cInput">
+							<span>Zip code</span>
+							<div class="cImg"><img src="question.png" alt="?"></img></div>
+							<br/>
+							<input type="text" class="txt_input" id="zip"/>
+					</div>
+					<div class="cInput">
+							<span>Country</span>							
+							<br/>
+							<select class="txt_input" id="country">
+								<option value="A"></option>
+								<option value="A">Asia</option>
+								<option value="E">Europe</option>
+								<option value="U">United States</option>
+							</select>
+					</div>
+				</div>
+				
+				<!-- form 3 -->
+				
+				<div id="frm_vali3"> 					
+					<div class="cInput_address">
+							<span>Write your message</span>
+							<div class="cImg"><img src="question.png" alt="?"></img></div>
+							<br/>
+							<input type="text" class="txt_input" id="message"/>
+					</div>
+					<div class="ckh">
+						<input type="checkbox" class="accept" id="chk_accept"/><a href="#">I accept terms and condition</a>
+					</div>
+				</div>
+				
+				<!-- nút bấm -->
+				<div class="cbutton">		
+					<div class="btn_left">
+						<input type="button" class="btn_step" value="Previous step" id="prev"/>
+					</div>
+					<div class="btn_rigth">
+						<input type="button" class="btn_step" value="Next step" id="next"/>
+					</div>	
+					<div class="btn_rigth">
+						<input type="button" class="btn_finish" value="Finish" id="finish"/>
+					</div>					
+				</div>	
+
+				<!-- Thông báo -->
+				<div class="cthongbao">
+						<div class="thongbao" id="thongbao1">
+							<img src="question.png" alt="!"></img>
+							<span id="tb1"></span>
+						</div>
+						<div class="thongbao" id="thongbao2">
+							<img src="question.png" alt="!"></img>
+							<span id="tb2"></span>
+						</div>
+						<div class="thongbao" id="thongbao3">
+							<img src="question.png" alt="!"></img>
+							<span id="tb3"></span>
+						</div>
+						<div class="thongbao" id="thongbao4">
+							<img src="question.png" alt="!"></img>
+							<span id="tb4"></span>
+						</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

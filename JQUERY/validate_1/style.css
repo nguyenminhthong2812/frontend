@@ -1,0 +1,169 @@
+.container{
+	width:100%;
+	height:500px;
+	margin: 0 auto;
+	background: #908181;
+}
+.cform_validate{
+	width:60%;
+	height:500px;
+	margin: 0 auto;	
+	padding-top: 20px;
+}
+.cstep{
+	width: 100%;
+    height: 70px;
+}
+.cstep_n{
+    float: left;
+    color: white;
+    margin-right: 2px;
+    padding: 10px;
+	background: #ceb9b9;
+	cursor: pointer;
+}
+.cstep_n h3{
+	margin-bottom: 5px;
+    margin-top: 5px;
+}
+/*
+#step_1{
+	background: #a29696;
+	cursor: default;
+}*/
+
+.step_active{
+	background: #a29696;
+	cursor: default;
+}
+
+#frm_vali1{
+    width: 100%;
+    height: 250px;
+    background: #a29696;
+    
+}
+
+.cfrm_validate{
+	width: 100%;
+    padding: 30px;
+    background: #a29696;
+	height:230px;
+}
+.cInput{
+    width: 40%;
+    float: left;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.cInput1{	 
+    color: white;    
+    margin-left: 5%;    
+}
+.txt_input{
+	width: 100%;
+    border-radius: 5px;
+    background: #828084;    
+    padding: 7px;
+}
+
+#frm_vali2{
+    width: 100%;
+    height: 190px;
+    background: #a29696;
+    display:none;
+}
+.cInput_address{
+	width: 90%;
+    float: left;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#frm_vali3{
+    width: 100%;
+    height: 200px;
+    background: #a29696;
+    display:none;
+}
+
+#message{
+	height:100px;
+}
+
+.ckh{	 
+    color: white;    
+    margin-left: 5%;    
+}
+
+.ckh a{
+	color:black;
+}
+
+.cbutton{
+	width:100%;
+	height: 60px;
+	background-color: #a29696;
+}
+.clear{
+	clear:both;
+}
+.btn_left{
+	float:left;
+	margin-left: 5%;
+    
+}
+.btn_rigth{
+	float:right;
+	margin-right: 5%;
+}
+
+.btn_step{
+	margin-right: 5%;
+    padding: 5px;
+    border-radius: 3px;
+    background: #fbc423;
+	color: white;
+    cursor: pointer;
+}
+.btn_step:hover{
+	color:black;
+}
+
+.btn_finish{
+	margin-right: 5%;
+    padding: 5px;
+    border-radius: 3px;
+    background: #27ca35;
+	color: white;
+    cursor: pointer;
+	display:none;
+}
+
+#prev{
+	display:none;
+}
+
+.cImg{
+	float: right;    
+}
+.cthongbao{    
+    width: 100%;
+	margin-top: 10px;
+
+}
+.thongbao{
+	float: left;    
+    border-radius: 8px;
+    padding: 5px;
+    background: #5f5757;
+    color: white;
+	margin-left: 5px;
+	display:none;
+}
