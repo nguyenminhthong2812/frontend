@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script>
+  	$(function(){
+  		$('[data-toggle="popover"]').popover();
+  	})
+  </script>
+  <style type="text/css">
+  	ul{
+  		margin-top:60px;
+  	}
+  </style>
+</head>
+<body>
+	<div class="container">
+		<ul>
+			<li><span data-toggle="popover" title="thông báo" data-content="demo popover hiển thị thông tin hướng dẫn người dùng" data-placement="top" href="" data-trigger="focus" tabindex="0">demo top</span></li>
+			<li><span data-toggle="popover" title="thông báo" data-content="demo popover hiển thị thông tin hướng dẫn người dùng" data-placement="right" href="" data-trigger="focus" tabindex="0">demo right</span></li>
+			<li><p data-toggle="popover" title="thông báo" data-content="demo popover hiển thị thông tin hướng dẫn người dùng" data-placement="bottom" href="" data-trigger="focus" tabindex="0">demo bottom</p></li>
+			<li><p data-toggle="popover" title="thông báo" data-content="demo popover hiển thị thông tin hướng dẫn người dùng" data-placement="left" href="" data-trigger="focus" tabindex="0">demo left</p></li>			
+		</ul>
+	</div>
+</body>
+</html>

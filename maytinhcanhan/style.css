@@ -1,0 +1,40 @@
+.container{
+	width:100%;
+	margin-top: 60px;
+}
+.maytinh{
+	    width: 25%;
+    margin: 0 auto;
+    background-color: #bfaeae;
+        padding: 10px;
+}
+.input{
+	    margin-bottom: 10px;
+	    padding-left: 1%;
+}
+.input input{
+	    width: 94%;
+    background-color: #333030;
+    padding: 5px;
+    color: yellow;
+    font-size: 20px;
+        text-align: right;
+}
+.item{
+	    margin-bottom: 3px;
+	    padding-left: 2%;
+}
+.so{
+	background-color: #3586e6;
+    padding: 5% 10%;
+    color: yellow;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.so:hover{
+	background-color: #6dabf5;
+}
+.pheptinh{
+	background-color: #f38315;;
+}

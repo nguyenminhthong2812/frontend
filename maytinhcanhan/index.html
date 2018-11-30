@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Máy tính cá nhân</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="style.css">
+	<script src="maytinh.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="maytinh">
+			<div class="input">
+				<input type="text" readonly id="hienthi" >
+			</div>
+			<div class="item">
+				<input type="button" value="9" id="9" class="so" onclick="nhapso('9');">
+				<input type="button" value="8" id="8" class="so" onclick="nhapso('8');">
+				<input type="button" value="7" id="7" class="so" onclick="nhapso('7');">
+				<input type="button" value="/" id="/" class="so pheptinh" onclick="nhappheptinh('/');">
+			</div>
+			<div class="item">
+				<input type="button" value="6" id="6" class="so" onclick="nhapso('6');">
+				<input type="button" value="5" id="5" class="so" onclick="nhapso('5');">
+				<input type="button" value="4" id="4" class="so" onclick="nhapso('4');">
+				<input type="button" value="*" id="*" class="so pheptinh" onclick="nhappheptinh('*');">
+			</div>
+			<div class="item">
+				<input type="button" value="3" id="3" class="so" onclick="nhapso('3');">
+				<input type="button" value="2" id="2" class="so" onclick="nhapso('2');">
+				<input type="button" value="1" id="1" class="so" onclick="nhapso('1');">
+				<input type="button" value="+" id="+" class="so pheptinh" onclick="nhappheptinh('+');">
+			</div>
+			<div class="item">
+				<input type="button" value="0" id="0" class="so" onclick="nhapso('0');">
+				<input type="button" value="C" id="C" class="so" onclick="_clear();">
+				<input type="button" value="=" id="=" class="so" onclick="tinhtoan();">
+				<input type="button" value="-" id="-" class="so pheptinh" onclick="nhappheptinh('-');">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
