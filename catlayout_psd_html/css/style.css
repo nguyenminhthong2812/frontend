@@ -1,0 +1,18 @@
+a{
+	color: white;
+}
+
+/* MENU */
+#navigation{
+	background-color: rgba(112, 114, 115, 0.4);
+}
+#logo{
+	display: block;
+    margin-top: -20px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li a:cusor,.navbar-nav li a.current{
+	background: transparent;
+	color: white;
+	border-top:2px solid #32b0ee;
+}

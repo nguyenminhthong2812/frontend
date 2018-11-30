@@ -10,29 +10,52 @@
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
+  <!-- Place favicon.ico in the root directory --> 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="fontawesome.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Fontawesome Icon font -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!-- Twitter Bootstrap css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-
-
-
-
-
-
   
+  <!-- MENU -->
+  <header id="navigation" class="navbar-fixed-top navbar">
+    <div class="container">
+      <!-- LOGO VÀ RESPONSIVE BUTTON -->
+        <div class="navbar-header">
+          <!-- RESPONSIVE BUTTON -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <i class="fa fa-bars fa-2x"></i>
+            </button>
+            <!-- LOGO-->
+            <a class="navbar-brand" href="#body">
+              <h1 id="logo">MYCLASS.VN</h1>
+            </a>
+        </div>
+        <!-- MENU CHÍNH -->
+        <nav class="collapse navbar-collapse navbar-right" role="navigation">
+            <ul id="nav" class="nav navbar-nav">
+              <li class="current"><a href="#body">TRANG CHỦ</a></li>
+              <li><a href="#">GIỚI THIỆU</a></li>
+              <li><a href="#">DỰ ÁN</a></li>
+              <li><a href="#">ĐỘI NGŨ</a></li>
+              <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>  
+ 
+  <!-- ======================================================================== -->
+
+
+
+
+
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
