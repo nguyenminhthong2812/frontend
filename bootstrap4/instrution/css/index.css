@@ -26,15 +26,113 @@
 	font-weight: bold;
 	margin-left: 20px;
 	font-size: 17px;
+	transition: all 0.5s;
 }
 .navbar-nav--menu li a:hover{
 	color:#ff4f81 !important;
 }
-.nav-item__line{
-	width: 100%;
-	background-color: #ff4f81;
-	height: 2px;	
-}
 .navbar-nav--menu .nav-item{
 	margin-left:20px;
+}
+.nav-item__line{
+	width: 0%;
+	background-color: #ff4f81;
+	height: 2px;
+	margin-left:10px;	
+	transition: all 0.5s;
+}
+.navbar-nav--menu .active a{
+	color: #ff4f81 !important;
+}
+.navbar-nav--menu .active .nav-item__line{
+	width: 100%;
+}
+.navbar-nav--menu .nav-item:hover>.nav-item__line{
+	width: 100%;			
+}
+@media screen and (min-width: 768px) and (max-width: 1200px){
+	.navbar-brand--logo h1{
+		font-size: 20px;
+	}
+	.navbar-nav--menu li a{	
+	font-size: 14px;
+	}
+	.navbar-nav--menu .nav-item{
+	margin-left:8px;
+	}
+}
+
+.carousel-caption--config{
+	bottom: 30%;
+}
+.carousel-caption--config h1{
+	font-weight: normal;
+	font-size: 3.3em;
+}
+.carousel-caption--config p{
+	font-size: 1.1em;
+	letter-spacing: 4px;
+	line-height: 1.8em;
+}
+.carousel-indicators--config{
+	bottom: 20%;
+}
+.btn--readmore{
+	border-radius: 0;
+	margin-top:10px;
+	transition: all 0.5s;
+}
+.btn--readmore:hover{
+	background-color: #ff4f81;
+	color: white;
+}
+.modal-header--carousel h1{
+	
+	color: #ff4f81;
+}
+
+@media screen and (max-width: 576px){
+	.carousel-caption--config{
+	bottom: 17%;
+	}
+	.carousel-indicators--config{
+	bottom: 0%;
+	}
+	.carousel-caption--config h1{
+	font-weight: normal;
+	font-size: 1.5em;
+	}
+.carousel-caption--config p{
+	font-size: 0.8em;
+	letter-spacing: 2px;
+	line-height: 1.3em;
+	margin-bottom: 0;
+	}
+
+}
+@media screen and (max-width: 768px){
+	.carousel-caption--config{
+	bottom: 20%;
+	}
+	.carousel-indicators--config{
+	bottom: 10%;
+	}
+	.carousel-caption--config h1{
+	font-weight: normal;
+	font-size: 2.2em;
+	}
+.carousel-caption--config p{
+	font-size: 1em;
+	letter-spacing: 2px;
+	line-height: 1.3em;
+	margin-bottom: 0;
+	}
+}
+@media screen and (min-width: 769px) and(max-width: 834px){
+	
+	.carousel-caption--config h1{
+	font-weight: normal;
+	font-size: 3em;
+	}
+	
 }
