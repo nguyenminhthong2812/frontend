@@ -1,0 +1,40 @@
+#header{
+	background-color: #ff4f81;
+	color:white;
+}
+.header-left i{
+	margin-right: 4px;
+}
+.header-right i{
+	margin-left: 2px;
+	padding: 8px 10px;
+	background-color: #333333;
+	border: 1px solid transparent;
+	transition: all 0.5s;
+
+}
+.header-right i:hover{
+	background-color: #ff4f81;
+	border: 1px solid white;
+}
+.navbar-brand--logo p{
+	color: #ff4f81;
+	margin-top:-5px;
+}
+.navbar-nav--menu li a{
+	color: #333333 !important;
+	font-weight: bold;
+	margin-left: 20px;
+	font-size: 17px;
+}
+.navbar-nav--menu li a:hover{
+	color:#ff4f81 !important;
+}
+.nav-item__line{
+	width: 100%;
+	background-color: #ff4f81;
+	height: 2px;	
+}
+.navbar-nav--menu .nav-item{
+	margin-left:20px;
+}
