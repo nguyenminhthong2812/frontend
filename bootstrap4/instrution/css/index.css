@@ -50,17 +50,7 @@
 .navbar-nav--menu .nav-item:hover>.nav-item__line{
 	width: 100%;			
 }
-@media screen and (min-width: 768px) and (max-width: 1200px){
-	.navbar-brand--logo h1{
-		font-size: 20px;
-	}
-	.navbar-nav--menu li a{	
-	font-size: 14px;
-	}
-	.navbar-nav--menu .nav-item{
-	margin-left:8px;
-	}
-}
+
 
 .carousel-caption--config{
 	bottom: 30%;
@@ -91,6 +81,179 @@
 	color: #ff4f81;
 }
 
+/*EDUCATION */
+.welcome-title h1{
+	color: #ff4f81;
+	font-size: 40px;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+}
+.welcome-title span{
+	font-size: 17px;
+	letter-spacing: 4px;
+	font-weight: 500;
+	color: black;
+}
+.welcome-title__line{
+	width:150px;
+	height: 2px;
+	background-color: black;	
+}
+.welcome-title p{
+	font-size: 15px;
+	color: #999;
+	line-height: 1.8em;	
+	padding:0 10%;
+}
+.welcome-section{
+	padding: 3rem 15px;
+}
+
+.education-couse i{
+	font-size: 30px;
+}
+.education-couse h2{
+	color: #ff4f81;
+	font-weight: 600;
+	margin:15px 0;
+}
+.education-couse h4{
+	font-size: 1em;
+	font-weight: bold;
+}
+.education-couse p{
+	color: #999;
+	font-size: 15px;
+	line-height: 1.8em;
+}
+/* OUR START*/
+.star-section{
+	min-height: 400px;
+	background-image: url('../images/banner2.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	padding:3rem 15px;
+}
+.start-title h1{
+	color: #ff4f81;
+	font-size: 40px;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+}
+.start-title span{
+	font-size: 17px;
+	letter-spacing: 4px;
+	font-weight: 500;
+	color: white;
+}
+.start-title__line{
+	width:70px;
+	height: 2px;
+	background-color: black;
+}
+.start-detail{
+	color:white;
+	text-align: center;
+}
+.start-detail i{
+	font-size: 40px;
+}
+.start-detail h2{
+	color: #ff4f81;
+	font-size: 25px;
+	margin-top: 20px;
+}
+.start-detail p{	
+	font-size: 45px;
+	
+}
+/* OFFER */
+.offer-section{
+	padding: 3rem 15px;
+}
+.offer-title h1{
+	color: #ff4f81;
+	font-size: 40px;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+}
+.offer-title span{
+	font-size: 17px;
+	letter-spacing: 4px;
+	font-weight: 500;
+	color: black;
+}
+.offer-title__line{
+	width:150px;
+	height: 2px;
+	background-color: black;	
+}
+.offer-item{
+	text-align: center;
+	padding: 2rem 1rem;
+	margin-bottom: 30px;
+	box-shadow: 0px 0px 4px 1px #aaa;
+	-webkit-box-shadow:0px 0px 4px 1px #aaa;
+	-moz-box-shadow:0px 0px 4px 1px #aaa;
+	-o-box-shadow:0px 0px 4px 1px #aaa;
+}
+.offer-item i{
+	font-size: 40px;
+	color:#ff4f81;
+}
+.offer-item h3{
+	font-size: 20px;
+	color:#ff4f81;
+	margin:20px 0px;
+}
+.offer-item p{
+	font-size: 14px;
+	color:#6b6b6b;
+}
+.offer-item:hover{
+	background-color: #12ccc3;
+	transition: all 0.5s;
+}
+/*TEST*/
+.test-section{
+	min-height: 400px;
+	padding: 3rem 15px;
+	background-image: url('../images/banner3.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+}
+.test-title h1{
+	color: #ff4f81;
+	font-size: 40px;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+}
+.test-title span{
+	font-size: 17px;
+	letter-spacing: 4px;
+	font-weight: 500;
+	color: black;
+}
+.test-title__line{
+	width:150px;
+	height: 2px;
+	background-color: black;	
+}
+
+
+/*media query */
+@media screen and (min-width: 768px) and (max-width: 1200px){
+	.navbar-brand--logo h1{
+		font-size: 20px;
+	}
+	.navbar-nav--menu li a{	
+	font-size: 14px;
+	}
+	.navbar-nav--menu .nav-item{
+	margin-left:8px;
+	}
+}
+
 @media screen and (max-width: 576px){
 	.carousel-caption--config{
 	bottom: 17%;
@@ -108,6 +271,20 @@
 	line-height: 1.3em;
 	margin-bottom: 0;
 	}
+	
+	.welcome-title h1{
+	color: #ff4f81;
+	font-size: 25px;	
+	}
+	.welcome-title span{
+		font-size: 12px;
+		letter-spacing: 2px;		
+	}
+	.welcome-title__line{
+		width:50px;
+	}
+	
+
 
 }
 @media screen and (max-width: 768px){
@@ -127,8 +304,16 @@
 	line-height: 1.3em;
 	margin-bottom: 0;
 	}
+
+	.education-course h2{
+		font-size: 25px;
+	}
+
+
+
+
 }
-@media screen and (min-width: 769px) and(max-width: 834px){
+@media screen and (min-width: 769px) and (max-width: 849px){
 	
 	.carousel-caption--config h1{
 	font-weight: normal;
