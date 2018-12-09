@@ -1,0 +1,104 @@
+/*CSS GLOBAL*/
+body{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-size: 16px;
+}
+*{
+	box-sizing: border-box;
+}
+
+/*HEADER*/
+.header{
+	background-color: white;
+	height: 80px;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+.header__logo img{
+	width:60px;	
+}
+.header__nav ul{
+	list-style: none;
+}
+.header__nav ul li{
+	display: inline;
+	margin: 0 15px;
+}
+.header__nav ul li a{
+	text-decoration: none;
+	color: black;
+	font-size: 1rem;
+	transition: all;
+}
+.header__nav ul li a:hover{
+	color: #fa5238;
+}
+.header__nav ul li.active a{
+	color: #fa5238;
+}
+.header__login{
+	color: #999;
+	text-decoration:none;
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+}
+.header__login i{
+	margin-right: 10px;
+	font-size: 2rem;
+}
+/*SLIDER CAROUSEL*/
+#carousel{
+	margin-top: 80px;	
+}
+#carousel img{
+	width: 100%;
+	height: 500px;
+}
+/*MOVIE*/
+.section-title{
+	text-align: center;
+	font-size: 2rem;
+	color: black;
+}
+.section-title span{
+	margin:0 1.5rem;
+	cursor: pointer;
+}
+.section-title span:hover{
+	color:#fa5238;
+}
+.section-title span.active{
+	color:#fa5238;
+}
+.movie-content{
+	padding: 0 10%;
+
+}
+.movie-item img{
+	max-width: 100%;
+	border-radius: 0.5rem;
+}
+.movie-item p{
+	font-size: 1.2rem;
+}
+.movie-item .btn-read-more{
+	background-color: #fa5238;
+	padding: 0.7rem 0;
+	color: white;
+	width: 100%;
+	border-radius: 0.5rem;
+	border: none;
+	font-weight: bold;
+}

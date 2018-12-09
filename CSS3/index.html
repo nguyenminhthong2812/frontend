@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- swiper carousel -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+	<header class="header">
+		<a href="#" class="header__logo">
+			<img src="img/logo.png" alt="">
+		</a>
+		<nav class="header__nav">
+			<ul>
+				<li class="active"><a href="#">HOME</a></li>
+				<li><a href="#">TIN TỨC</a></li>
+				<li><a href="#">SỰ KIỆN</a></li>
+				<li><a href="#">ỨNG DỤNG</a></li>
+			</ul>
+		</nav>
+		<a href="#" class="header__login">
+			<i class="fa fa-user-circle"></i>
+			<span>Đăng nhập</span>
+		</a>
+
+	</header>
+	<!-- SLIDER CAROUSEL	 -->
+	<section id="carousel">
+		
+	  <div class="swiper-container">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">
+	      	<img src="img/slider1.jpeg" alt="">
+	      </div>
+	      <div class="swiper-slide">
+	      	<img src="img/slider2.jpg" alt="">
+	      </div>
+	      <div class="swiper-slide">
+	      	<img src="img/slider3.jpg" alt="">
+	      </div>      
+	    </div>
+	    <!-- Add Pagination -->
+	    <div class="swiper-pagination"></div>
+	    <!-- Add Arrows -->
+	    <div class="swiper-button-next"></div>
+	    <div class="swiper-button-prev"></div>
+	  </div>
+
+	</section>
+	<!-- MOVIE -->
+	<section id="movie">
+		<h1 class="section-title">
+			<span class="active">ĐANG CHIẾU</span>
+			<span>SẮP CHIẾU</span>
+		</h1>
+		<div class="movie-content">
+			<div class="movie-item">
+				<img src="img/tantayduky.jpg" alt="">
+				<p>Tân Tây Du Ký</p>
+				<button class="btn-read-more">Xem thêm</button>
+			</div>
+		</div>
+	</section>
+
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+	      slidesPerView: 1,
+	      spaceBetween: 30,
+	      loop: true,
+	      autoplay:true,
+	      pagination: {
+	        el: '.swiper-pagination',
+	        clickable: true,
+	      },
+	      navigation: {
+	        nextEl: '.swiper-button-next',
+	        prevEl: '.swiper-button-prev',
+	      },
+	    });
+	</script>
+</body>
+</html>
