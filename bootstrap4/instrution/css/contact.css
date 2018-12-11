@@ -1,0 +1,126 @@
+.contact-carousel{
+	height: 300px;
+	background-image: url('../images/banner1.jpg');
+	background-position: center center;
+}
+.contact-section{
+	padding:3rem 15px;
+
+}
+.contact-title h1{
+	color: #ff4f81;
+	font-size: 40px;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+}
+.contact-title span{
+	font-size: 17px;
+	letter-spacing: 4px;
+	font-weight: 500;
+	color: black;
+}
+.contact-title__line{
+	width:150px;
+	height: 2px;
+	background-color: black;	
+}
+.contact-info{
+	background-color: #0e0e0e;
+	padding: 2em 2em;
+
+}
+.contact-info h3{
+	font-size: 1.2em;
+	color:white;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+.contac-info__detail{
+	margin-bottom: 30px;
+}
+.contac-info__detail__item{
+	width:50px;
+	height: 50px;
+	border: 1px solid #ddd;
+	color: white;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 5px;
+	margin-top:10px;
+	margin-right: 15px;
+}
+.contac-info__detail__item i{
+	font-size: 20px;
+}
+.contac-info__detail h4{
+	font-size: 1em;
+	color: #ff4f81;
+}
+.contac-info__detail span{
+	font-size: 0.9em;
+	color: #cecaca;
+	line-height: 1.8em;
+}
+.contact-info__socal i{
+	padding: 8px 10px;
+	background-color: white;
+	transition: all 0.5s;
+}
+.contact-face{
+	color: #3b5998;
+}
+.contact-face:hover{
+	background-color:#3b5998;
+	color: white;
+}
+.contact-tw{
+	color:#1da1f2;
+}
+.contact-tw:hover{
+	background-color:#3b5998;
+	color: white;
+}
+.contact-in{
+	color:#f26522;
+}
+.contact-in:hover{
+	background-color:#f26522;
+	color: white;
+}
+.contact-info__img{
+	background: url('../images/g11.jpg') no-repeat;
+	background-size: cover;
+	    height: 397px;
+
+}
+.contact-form input{
+	padding: 14px;
+	border-radius: 0px;
+	background-color: #f5f5f5;
+
+}
+.contact-form textarea{
+	padding: 14px;
+	border-radius: 0px;
+	background-color: #f5f5f5;
+
+}
+.btn-contact--submit{
+	background-color: #ec1955;
+	color: white;
+	border-radius: 0px;
+	margin-top:3px;
+	font-size: 20px;
+}
+.btn-contact--submit:hover{
+	background-color: #ff4f81;
+	transition: all 0.5s;
+}
+.contact-map{
+	padding:20px;
+	background-color: #f5f5f5;
+}
+.contact-map iframe{
+	width:100%;
+	height: 400px;
+}
