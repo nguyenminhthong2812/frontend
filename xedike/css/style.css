@@ -1,0 +1,9 @@
+/*header*/
+.header{
+	background-color: #263342;
+	color: white;
+	padding-bottom: 10px;
+}
+.logo img{
+	height: 50px;
+}

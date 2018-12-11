@@ -1,0 +1,51 @@
+$mauxanh:#008fe1;
+$maucam:#f96d00;
+$mauvang:#ffdd61;
+$mauvang-dam:#ffbf00;
+
+.header{
+	background-color: #263342;
+	color: white;
+	padding-bottom: 10px;
+}
+.logo img{
+	height: 50px;
+}
+
+.logo{
+	span{
+		font-size: 1.1rem;		
+		font-weight: 600;
+		border-bottom: 4px solid transperent;
+		padding:22px 0;	
+		cursor:pointer;		
+	}
+	span:hover{		
+		border-bottom: 4px solid $mauxanh;
+		transition: all 0.2s;
+	}
+}
+.login{
+	font-size:1.1rem;
+}
+.login{
+	span{
+		margin-right:10px;	
+		cursor: pointer;
+		transition: all 0.2s;	
+	}
+	.login-dangnhap:hover{
+		color:#049df5;
+	}
+	.login-dangky{
+	background-color: $mauxanh;
+    padding: 10px 12px;
+    border-radius: 5px;
+
+	}
+	.login-dangky:hover{
+		background-color: #049df5;
+	}
+
+}
+
