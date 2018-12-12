@@ -79,10 +79,9 @@
   width: 100%;
   position: relative;
   height: 670px;
-  	/*
-  	background-image: url('../images/img_topbg_home.png');
-      background-size: cover;
-      background-position: center top;*/ }
+  background-image: url("../images/img_topbg_home.png");
+  background-size: cover;
+  background-position: center top; }
 
 .banner-top-opacity {
   background: #263342;
@@ -100,13 +99,24 @@
 
 .banner-content {
   height: 650px;
-  background-color: black;
-  opacity: 0.2;
+  /*background-color:black;
+  opacity: 0.2;*/
   width: 100%;
   position: absolute;
-  top: 30%;
+  top: 15%;
   left: 14%;
-  z-index: 9; }
+  z-index: 9;
+  padding: 0 5%;
+  text-align: center; }
+
+.banner-content-header {
+  color: white; }
+
+.banner-content-header h1 {
+  font-size: 2.3rem; }
+.banner-content-header p {
+  font-size: 1.3rem;
+  padding-top: 10px; }
 
 /*END BANNER */
 /* REPONSIVE */
