@@ -1,35 +1,120 @@
+/* HEADER*/
 .header {
   background-color: #263342;
   color: white;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9; }
 
 .logo img {
   height: 50px; }
 
-.logo span {
+.logo a {
   font-size: 1.1rem;
   font-weight: 600;
   border-bottom: 4px solid transperent;
   padding: 22px 0;
-  cursor: pointer; }
-.logo span:hover {
+  cursor: pointer;
+  color: white; }
+.logo a:hover {
   border-bottom: 4px solid #008fe1;
   transition: all 0.2s; }
 
 .login {
   font-size: 1.1rem; }
 
-.login span {
+.login a {
   margin-right: 10px;
   cursor: pointer;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  color: white; }
 .login .login-dangnhap:hover {
-  color: #049df5; }
+  color: #008fe1 !important; }
 .login .login-dangky {
   background-color: #008fe1;
   padding: 10px 12px;
   border-radius: 5px; }
 .login .login-dangky:hover {
   background-color: #049df5; }
+
+/*header bottom */
+.header-bottom {
+  width: 100%;
+  background: rgba(38, 51, 66, 0.9);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  text-align: center;
+  padding: 20px 0;
+  display: none; }
+
+.header-bottom a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.2s; }
+.header-bottom .header-bottom-dangnhap, .header-bottom .header-bottom-dangky {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px; }
+.header-bottom .header-bottom-dangnhap:hover {
+  color: #008fe1; }
+.header-bottom .header-bottom-dangky {
+  background-color: #008fe1;
+  border: none; }
+.header-bottom .header-bottom-dangky:hover {
+  background-color: #049df5; }
+
+/*END HEADER */
+/*BANNER*/
+.banner {
+  position: relative;
+  width: 100%; }
+
+.banner-top {
+  width: 100%;
+  position: relative;
+  height: 670px;
+  	/*
+  	background-image: url('../images/img_topbg_home.png');
+      background-size: cover;
+      background-position: center top;*/ }
+
+.banner-top-opacity {
+  background: #263342;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; }
+
+.banner-bottom {
+  height: 630px;
+  background: url("https://xedike.vn/static/img_background_5trip.6ad1787f.png") no-repeat center bottom; }
+
+.banner-content {
+  height: 650px;
+  background-color: black;
+  opacity: 0.2;
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 14%;
+  z-index: 9; }
+
+/*END BANNER */
+/* REPONSIVE */
+@media screen and (max-width: 720px) {
+  .login {
+    display: none; }
+
+  .header-bottom {
+    display: block; } }
 
 /*# sourceMappingURL=main.css.map */
