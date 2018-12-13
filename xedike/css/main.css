@@ -3,11 +3,13 @@
   background-color: #263342;
   color: white;
   padding-bottom: 10px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9; }
+  /*
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:9;
+  */ }
 
 .logo img {
   height: 50px; }
@@ -97,17 +99,20 @@
   height: 630px;
   background: url("https://xedike.vn/static/img_background_5trip.6ad1787f.png") no-repeat center bottom; }
 
-.banner-content {
+.banner-middle {
   height: 650px;
   /*background-color:black;
   opacity: 0.2;*/
   width: 100%;
   position: absolute;
   top: 15%;
-  left: 14%;
   z-index: 9;
   padding: 0 5%;
   text-align: center; }
+
+.banner-middle-content {
+  width: 80%;
+  margin: auto; }
 
 .banner-content-header {
   color: white; }
@@ -115,16 +120,113 @@
 .banner-content-header h1 {
   font-size: 2.3rem; }
 .banner-content-header p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   padding-top: 10px; }
+
+.form-search {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  opacity: 0.3; }
+
+.banner-content-intro {
+  background: #ffffff;
+  border-radius: 5px;
+  border: #dddddd solid 1px; }
+
+.item1-title span {
+  font-size: 0.9rem;
+  font-weight: 500; }
+
+.item1-content i {
+  font-size: 1.2rem;
+  color: #b9b6b6; }
+.item1-content span {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 5px; }
+
+.item1-content {
+  margin-top: 40px; }
+
+.item2-title i, .item2-content i {
+  font-size: 1.2rem;
+  color: #b9b6b6; }
+.item2-title span, .item2-content span {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 5px;
+  color: #7b7979; }
+
+.item2-content {
+  margin-top: 40px; }
+
+.item3-title img {
+  width: 40 px;
+  height: 40px;
+  border-radius: 50%; }
+.item3-title span {
+  margin-left: 5px;
+  font-size: 1rem;
+  font-weight: 600; }
+
+.item3-content {
+  margin-top: 20px;
+  margin-left: 20px; }
+
+.item3-content-left {
+  width: 35px;
+  height: 35px;
+  background-color: #ffdd61;
+  border-radius: 50%;
+  border: 1px solid #ffbf00; }
+
+.item3-content-left span {
+  line-height: 35px;
+  font-weight: 500; }
+
+.item3-content-right i {
+  font-size: 1rem;
+  color: #ffdd61; }
+.item3-content-right span {
+  font-size: 0.9rem;
+  display: block;
+  margin-top: -6px; }
+
+.item3-content-right {
+  margin-top: -2px; }
+
+.item4-title {
+  padding-top: 10px; }
+
+.item4-title .gia {
+  font-size: 1.5rem;
+  font-weight: 600; }
+.item4-title .vnd {
+  font-size: 0.7rem; }
+
+.item4-content {
+  margin-top: 18px; }
+
+.item4-content a {
+  color: white;
+  background-color: #f96d00;
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 5px; }
 
 /*END BANNER */
 /* REPONSIVE */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .login {
     display: none; }
 
   .header-bottom {
-    display: block; } }
+    display: block; }
+
+  .banner-content-header h1 {
+    font-size: 2rem; }
+  .banner-content-header p {
+    font-size: 1rem; } }
 
 /*# sourceMappingURL=main.css.map */
