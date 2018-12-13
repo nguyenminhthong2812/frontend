@@ -49,7 +49,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 9;
+  z-index: 99;
   text-align: center;
   padding: 20px 0;
   display: none; }
@@ -96,7 +96,7 @@
   z-index: 1; }
 
 .banner-bottom {
-  height: 630px;
+  height: 500px;
   background: url("https://xedike.vn/static/img_background_5trip.6ad1787f.png") no-repeat center bottom; }
 
 .banner-middle {
@@ -106,33 +106,37 @@
   width: 100%;
   position: absolute;
   top: 15%;
-  z-index: 9;
+  z-index: 1;
   padding: 0 5%;
   text-align: center; }
 
 .banner-middle-content {
-  width: 80%;
+  width: 90%;
   margin: auto; }
 
 .banner-content-header {
   color: white; }
 
 .banner-content-header h1 {
-  font-size: 2.3rem; }
+  font-size: 46.3px; }
 .banner-content-header p {
-  font-size: 1.2rem;
-  padding-top: 10px; }
+  font-size: 26.7px;
+  padding-top: 30px; }
 
 .form-search {
   width: 100%;
   height: 50px;
   background-color: black;
-  opacity: 0.3; }
+  opacity: 0.3;
+  margin-top: 80px; }
 
 .banner-content-intro {
   background: #ffffff;
   border-radius: 5px;
-  border: #dddddd solid 1px; }
+  border: #dddddd solid 1px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 90px; }
 
 .item1-title span {
   font-size: 0.9rem;
@@ -171,8 +175,7 @@
   font-weight: 600; }
 
 .item3-content {
-  margin-top: 20px;
-  margin-left: 20px; }
+  margin-top: 20px; }
 
 .item3-content-left {
   width: 35px;
@@ -215,7 +218,46 @@
   padding: 7px 10px;
   border-radius: 5px; }
 
+.item-line {
+  height: 1px;
+  background-color: #efe7e7; }
+
 /*END BANNER */
+/*DRIVER*/
+.driver {
+  margin: 100px 0; }
+
+.driver-intro {
+  position: relative; }
+
+.driver-1 {
+  position: absolute;
+  top: 0;
+  left: 25%; }
+
+.become-driver {
+  margin-left: 20px;
+  margin-top: 40px; }
+
+.become-driver h1 {
+  font-size: 31px; }
+.become-driver p {
+  color: #707070;
+  margin-top: 30px;
+  line-height: 2em;
+  font-size: 16px;
+  white-space: normal;
+  margin-bottom: 40px; }
+.become-driver a {
+  color: white;
+  background-color: #008fe1;
+  padding: 12px 35px;
+  border-radius: 5px;
+  font-size: 1.1rem; }
+.become-driver a:hover {
+  text-decoration: none; }
+
+/*END DRIVER*/
 /* REPONSIVE */
 @media screen and (max-width: 768px) {
   .login {
@@ -228,5 +270,14 @@
     font-size: 2rem; }
   .banner-content-header p {
     font-size: 1rem; } }
+@media screen and (max-width: 1200px) {
+  .banner-middle-content {
+    width: 100%; }
+
+  .banner-content-intro {
+    width: 100%; } }
+@media screen and (max-width: 992px) {
+  .become-driver {
+    text-align: center; } }
 
 /*# sourceMappingURL=main.css.map */
