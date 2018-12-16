@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 	<!-- BOOTSTRAP4 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<!-- fontawesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<!-- NICE SELECT -->
+	<link rel="stylesheet" href="css/nice-select.css">
+	<!-- datepicker -->
+	<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+	<!-- spinedit -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-spinedit.css">
 
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -24,9 +30,10 @@
 			<div class="login mt-3">				
 					<a class="login-dangnhap">Đăng nhập</a>
 					<a class="login-dangky">Đăng ký</a>
-					<a href="#" title="" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="bottom" data-content="Hỗ trợ <strong>tài xế</strong>: 0942321593 <br> Hỗ trợ <strong>khách hàng</strong>: 0942321593">
+					<a href="#" data-toggle="popover" data-trigger="hover" data-html="true"  data-placement="bottom" tabindex="1" data-content="Hỗ trợ <b>Tài xế</b>: 0942321593 <br> Hỗ trợ <b>Hành khách</b>:0942321593">
 						<i class="fa fa-ellipsis-h"></i>
-					</a>			
+					</a>
+						
 			</div>
 		</div>
 		
@@ -49,16 +56,99 @@
 					<h1>Bắt đầu chuyến đi của bạn</h1>
 					<p>Đã có 1135 thành viên sử dụng dịch vụ trên toàn quốc</p>
 				</div>
-				<div class="form-search">				
+				<div class="form-search">
+					<div class="row">
+						<div class="col-lg-3 noidi d-flex px-0">
+							
+								<div class="icon-noidi">
+									<i class="fa fa-map-marker"></i>
+								</div>
+								<div class="box">
+							      <select>
+							        <option value="1"><i class="fa fa-map-marker"></i>Nơi đi</option>
+							        <option value="2">Bình Định</option>
+							        <option value="3">Đà Nẵng</option>
+							        <option value="4">Đông Hà</option>
+							        <option value="2">Đồng Hới</option>
+							        <option value="3">Hội An</option>
+							        <option value="4">Quảng Ngãi</option>
+							        <option value="3">Tam Kỳ</option>
+							        <option value="4">Thừa Thiên Huế</option>
+							      </select>
+							    </div>
+							
+						</div>
+						<div class="col-lg-3 noiden d-flex px-0">						
+								<div class="icon-noiden">
+									<i class="fa fa-map-marker"></i>
+								</div>
+								<div class="box">
+							      <select>
+							        <option value="1"><i class="fa fa-map-marker"></i>Nơi đến</option>
+							        <option value="2">Bình Định</option>
+							        <option value="3">Đà Nẵng</option>
+							        <option value="4">Đông Hà</option>
+							        <option value="2">Đồng Hới</option>
+							        <option value="3">Hội An</option>
+							        <option value="4">Quảng Ngãi</option>
+							        <option value="3">Tam Kỳ</option>
+							        <option value="4">Thừa Thiên Huế</option>
+							      </select>
+							    </div>
+							
+						</div>
+						<div class="col-lg-4">
+							<div class="row ngaythang-songuoi">
+								<div class="col px-0">
+									<div class="ngaythang">
+										<input id="datepicker"/>
+									</div>
+								</div>
+								<div class="col pl-0">
+									<div class="songuoi">
+										<div class="icon-nguoi">
+											<i class="fa fa-users"></i>
+										</div>
+										<div class="cho">
+											<span>Chỗ</span>
+										</div>
+										<div class="input-group spinner">
+									    <input type="text" class="form-control" value="0">
+									    <div class="input-group-btn-vertical">
+									      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+									      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+									    </div>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 px-0">
+							<div class="btn-search">
+								<div class="icon-search">
+									<i class="fa fa-search"></i>
+								</div>
+								<button class="btn">Tìm kiếm</button>
+							</div>
+						</div>
+					</div>
+
+
+					
+					
+					
+					
+					
+				
 				</div>					
 				<div class="banner-content-intro">					
-					<div class="row">
+					<div class="row intro-item">
 						<div class="col-lg-3 col-6 text-left">
 							<div class="item1 my-3 mx-2">
 								<div class="item1-title">			
-									<span>Thừa Thiên Huế</span>
+									<span data-toggle="tooltip" data-placement="bottom" title="Thừa Thiên Huế">Thừa Thiên Huế</span>
 									<span>-></span>
-									<span>Đà Nẵng</span>
+									<span data-toggle="tooltip" data-placement="bottom" title="Đà Nẵng">Đà Nẵng</span>
 								</div>
 								<div class="item1-content">
 									<i class="fa fa-calendar"></i>
@@ -70,7 +160,7 @@
 							<div class="item2 my-3 mx-2">
 								<div class="item2-title d-flex">			
 									<i class="fa fa-car"></i>
-									<span>Toyota Fortuner 2017</span>
+									<span data-toggle="tooltip" data-placement="bottom" title="Toyota Fortuner 2017">Toyota Fortuner 2017</span>
 								</div>
 								<div class="item2-content d-flex justify-content-between">
 									<div class="item2-content-left">
@@ -112,7 +202,7 @@
 									<div class="vnd">đ</div>
 								</div>
 								<div class="item4-content">
-									<a href="#">Xem chuyến xe</a>
+									<a href="#" data-toggle="tooltip" data-placement="bottom" title="Xem chuyến xe">Xem chuyến xe</a>
 								</div>
 							</div>
 						</div>
@@ -120,13 +210,13 @@
 					
 					<div class="item-line"></div>
 
-					<div class="row">
+					<div class="row intro-item">
 						<div class="col-lg-3 col-6 text-left">
 							<div class="item1 my-3 mx-2">
 								<div class="item1-title">			
-									<span>Thừa Thiên Huế</span>
+									<span data-toggle="tooltip" data-placement="bottom" title="Thừa Thiên Huế">Thừa Thiên Huế</span>
 									<span>-></span>
-									<span>Đà Nẵng</span>
+									<span data-toggle="tooltip" data-placement="bottom" title="Đà Nẵng">Đà Nẵng</span>
 								</div>
 								<div class="item1-content">
 									<i class="fa fa-calendar"></i>
@@ -138,7 +228,7 @@
 							<div class="item2 my-3 mx-2">
 								<div class="item2-title d-flex">			
 									<i class="fa fa-car"></i>
-									<span>Toyota Fortuner 2017</span>
+									<span data-toggle="tooltip" data-placement="bottom" title="Toyota Fortuner 2017">Toyota Fortuner 2017</span>
 								</div>
 								<div class="item2-content d-flex justify-content-between">
 									<div class="item2-content-left">
@@ -180,7 +270,7 @@
 									<div class="vnd">đ</div>
 								</div>
 								<div class="item4-content">
-									<a href="#">Xem chuyến xe</a>
+									<a href="#" data-toggle="tooltip" data-placement="bottom" title="Xem chuyến xe">Xem chuyến xe</a>
 								</div>
 							</div>
 						</div>
@@ -214,37 +304,228 @@
 	</section>
 	<!-- ABOUT US -->
 	<section class="about">
-		<div class="about-title">
-			<h1>Tại sao sử dụng XEDIKE.VN?</h1>
-			<p>Dưới đây là những <b>lý do</b> cho việc lựa chọn</p>
+		<div class="container text-center">
+			<div class="about-us">
+				<div class="about-title">
+					<h1>Tại sao sử dụng XEDIKE.VN?</h1>
+					<p>Dưới đây là những <b>lý do</b> cho việc lựa chọn</p>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4 about-item">
+						<h1>
+							<i class="fa fa-handshake-o"></i>
+						</h1>
+						<h2>Tin tưởng</h2>
+						<p>Bạn sẽ biết tài xế và bạn đồng hành của bạn là ai. Điều đó giúp bạn có những trải nghiệm tốt hơn trên hành trình của mình.</p>
+					</div>
+					<div class="col-md-4 about-item">
+						<h1>
+							<i class="fa fa-heart"></i>
+						</h1>
+						<h2>Chủ động</h2>
+						<p>Thời gian chờ, số ghế trống, giá cả, chất lượng tài xế, các đánh giá, … tất cả sẽ được hiển thị rõ ràng để bạn yên tâm đặt chuyến đi.</p>
+					</div>
+					<div class="col-md-4 about-item">
+						<h1>
+							<i class="fa fa-car"></i>
+						</h1>
+						<h2>Môi trường</h2>
+						<p>Mỗi 2 người đi chung một xe tương đương với việc trồng 4 cây xanh cho việc hấp thụ khí C02 trong vòng 1 năm.</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<h1>
-					<i class="fa fa-handshake-o"></i>
-				</h1>
-				<h2>Tin tưởng</h2>
-				<p>Bạn sẽ biết tài xế và bạn đồng hành của bạn là ai. Điều đó giúp bạn có những trải nghiệm tốt hơn trên hành trình của mình.</p>
-			</div>
-			<div class="col-md-4">
-				<h1>
-					<i class="fa fa-heart"></i>
-				</h1>
-				<h2>Chủ động</h2>
-				<p>Thời gian chờ, số ghế trống, giá cả, chất lượng tài xế, các đánh giá, … tất cả sẽ được hiển thị rõ ràng để bạn yên tâm đặt chuyến đi.</p>
-			</div>
-			<div class="col-md-4">
-				<h1>
-					<i class="fa fa-car"></i>
-				</h1>
-				<h2>Môi trường</h2>
-				<p>Mỗi 2 người đi chung một xe tương đương với việc trồng 4 cây xanh cho việc hấp thụ khí C02 trong vòng 1 năm.</p>
+
+
+
+	</section>
+	<!-- REPORT -->
+	<section class="report">
+		<div class="report-mark">
+			<div class="container">
+				<div class="report-content">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="report-img text-center">
+								<img src="images/img_mac.png" alt="mac" class="img-fluid mac">
+								<img src="images/img_iPad.png" alt="ipad" class="img-fluid ipad">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-6">
+									<div class="report-item">
+										<h1>669</h1>
+										<h2>Hành khách</h2>
+										<p>Hàng nghìn lượt khách tin tưởng chúng tôi để tìm những chuyến xe với chất lượng tốt nhất.</p>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="report-item">
+										<h1>466</h1>
+										<h2>Tài xế</h2>
+										<p>Hệ thống của chúng tôi kết nối hàng trăm tài xế sẵn sàng phục vụ nhu cầu đi lại mỗi ngày.</p>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="report-item">
+										<h1>424</h1>
+										<h2>Chuyến xe</h2>
+										<p>Số liệu này cho chúng tôi biết bạn đã về đến nhà an toàn.</p>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="report-item">
+										<h1>4385.32</h1>
+										<h2>Khí CO2 được giảm (kg)</h2>
+										<p>Chúng ta đã góp phần làm giảm lượng khí CO2 trung bình mỗi ngày.</p>
+										<p>Trái Đất sẽ rất biết ơn chúng ta về điều này.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
-
-
-
+	<!-- PROMOTION -->
+	<section class="promotion">
+		<div class="container py-3">
+			<div class="row">
+				<div class="col-lg-2 col-md-3 text-center mt-2">
+					<img src="images/img_gift.png" alt="quà" class="img-fluid gift">
+				</div>
+				<div class="col-lg-7 col-md-9 mt-2">
+					<div class="promo-content">
+						<h4>Hoàn thành Chuyến xe để nhận Ưu đãi cho các Chuyến sau</h4>
+						<p>Huray! Hãy click HOÀN THÀNH, và để lại những đánh giá của bạn về chuyến đi của mình để nhận được điểm tích lũy cho những chuyến đi tiếp theo.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-12 text-center">
+					<div class="promo-btn">
+						<a href="#">Đăng nhập ngay!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="container py-5">
+			<div class="row mb-5">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-item-right">
+						<img src="images/img_logo_footer.png" alt="" height="85px">
+						<div class="item-right">
+							<i class="fa fa-phone"></i>
+							<span class="item-right-hotro">Hỗ trợ hành khách:</span>
+							<span>0905.93.34.53</span>
+						</div>
+						<div class="item-right">
+							<i class="fa fa-phone"></i>
+							<span class="item-right-hotro">Hỗ trợ tài xế:</span>
+							<span>0905.93.34.53</span>
+						</div>
+						<div class="item-right mb-3">
+							<i class="fa fa-envelope"></i>
+							<span class="item-right-hotro">Email:</span>
+							<span>cs@xedike.vn</span>
+						</div>
+						<div class="socal">
+							<i class="fa fa-facebook-square"></i>
+							<i class="fa fa-info-circle"></i>
+							<i class="fa fa-google-plus-official"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-item-left">
+						<ul>
+							<li>
+								<strong>Thông tin</strong>
+							</li>
+							<li>
+								<a href="#">Liên hệ</a>
+							</li>
+							<li>
+								<a href="#">Đội ngũ</a>
+							</li>
+							<li>
+								<a href="#">Tuyển dụng</a>
+							</li>
+							<li>
+								<a href="#">Những câu hỏi thường gặp</a>
+							</li>
+						</ul>						
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-item-left">
+						<ul>
+							<li>
+								<strong>Xe đi ké</strong>
+							</li>
+							<li>
+								<a href="#">Điều khoản sử dụng</a>
+							</li>
+							<li>
+								<a href="#">Chính sách bảo mật thông tin</a>
+							</li>
+							<li>
+								<a href="#">Quy chế sàn giao dịch</a>
+							</li>
+							<li>
+								<a href="#">Cơ chế giải quyết tranh chấp</a>
+							</li>
+						</ul>							
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-item-left">
+						<ul>
+							<li>
+								<strong>Hỗ trợ</strong>
+							</li>
+							<li>
+								<a href="#">Đăng ký làm tài xế</a>
+							</li>
+							<li>
+								<a href="#">Đăng ký làm hành khách</a>
+							</li>
+							<li>
+								<a href="#">Hành lý thất lạc</a>
+							</li>
+							<li>
+								<a href="#">Điều kiện hủy</a>
+							</li>
+						</ul>						
+					</div>
+				</div>
+			</div>
+			<div class="footer-line mb-4"></div>
+			<div class="footer-bot d-flex justify-content-between text-center">
+				
+					<div class="footer-bot-item">
+						<span>Bản quyền © 2018 XeDiKe.vn. Giữ toàn quyền.</span>
+						<a href="#">
+							<img src="images/logo_bo_cong_thuong.png" alt="công thương" height="40px">
+						</a>
+					</div>
+				
+					<div class="footer-bot-item">
+						<span>Empowered by DNES</span>
+						<img src="images/logo_dnes.jpg" alt="" height="35px">
+					</div>
+				
+					<div class="footer-bot-item">
+						<span>Phát triển bởi Sioux High Tech Software Ltd.</span>
+						<img src="images/img_logo_sioux.jpg" alt="" height="45px">
+					</div>
+				
+			</div>
+		</div>
+	</footer>
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -254,8 +535,16 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- nice select -->	
+	<script src="js/jquery.nice-select.js"></script>
+	<!-- datepicker -->
+	<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+	<!-- spinedit -->
+	<script src="js/bootstrap-spinedit.js"></script>
 
 	<script type="text/javascript" src="js/main.js"></script>
+
+	
 	
 </body>
 </html>
