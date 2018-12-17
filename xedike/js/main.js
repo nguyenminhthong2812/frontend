@@ -1,16 +1,21 @@
 $(document).ready(function(){
-    $("[data-toggle=popover]").popover({
-        html : true,
-        content: function() {
-          var content = $(this).attr("data-popover-content");
-          return $(content).children(".popover-body").html();
-        },
-        title: function() {
-          var title = $(this).attr("data-popover-content");
-          return $(title).children(".popover-heading").html();
-        }
-    }); 
-
+    //popover
+    $(".pop").popover({ trigger: "manual" , html: true, animation:false})
+    .on("mouseenter", function () {
+        var _this = this;
+        $(this).popover("show");
+        $(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide");
+            }
+        }, 300);
+    });
+    //tooltip
     $('[data-toggle="tooltip"]').tooltip(); 
 
     // chạy jquery select
@@ -22,7 +27,7 @@ $(document).ready(function(){
         });
      //spinedit
      $('#spinEdit').spinedit({
-		    minimum: -10000,
+		    minimum: 0,
 		    maximum: 10000,
 		    step: 100,
 		    value: 0,

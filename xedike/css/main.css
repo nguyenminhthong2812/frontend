@@ -42,6 +42,11 @@
 .login .login-dangky:hover {
   background-color: #049df5; }
 
+.popover {
+  max-width: 100%;
+  margin-top: 26px;
+  padding: 10px; }
+
 /*header bottom */
 .header-bottom {
   width: 100%;
