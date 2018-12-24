@@ -15,7 +15,7 @@ var mangTB = ["Vui lòng nhập mã nhân viên",
 				"Chỉ nhập ký tự trong khoảng"
 			];
 var danhSachNV = new DanhSachNV();
-var maNVSua;
+
 // hàm lấy element
 function GetMyEle(ele) {
 	// body...
@@ -149,7 +149,7 @@ GetMyEle('btnThem').addEventListener("click",function(){
 		danhSachNV.ThemNV(nhanVien);
 		//console.log(danhSachNV.mangDS.length);
 		//LamMoi();
-		HienThiLenBang();
+		HienThiLenBang(danhSachNV);
 	}
 });
 // tìm vị trí của nhân viên theo manv
@@ -172,29 +172,34 @@ GetMyEle('btnCapNhat').addEventListener("click",function(){
 		var ten = GetMyEle('ten-sua').value;
 		var ngaySinh = GetMyEle('datepicker-sua').value;
 		var cv = GetMyEle('chucVu-sua').value;
-		var index = FindIndex(maNVSua);
+		var index = FindIndex(ma);
 		//var nv = danhSachNV.mangDS[index];
 		//console.log(danhSachNV.mangDS[index].ho);		
 		
 		
-		danhSachNV.mangDS[index].maNV = ma;
+		//danhSachNV.mangDS[index].maNV = ma;
 		danhSachNV.mangDS[index].ho = ho;
 		danhSachNV.mangDS[index].ten = ten;
 		danhSachNV.mangDS[index].ngaySinh = ngaySinh;
 		danhSachNV.mangDS[index].chucVu = cv;
+		// cập nhật lại giá trị trong mảng nhân viên luôn
+		danhSachNV.mangDS[index].mangNV[1] = ho;
+		danhSachNV.mangDS[index].mangNV[2] = ten;
+		danhSachNV.mangDS[index].mangNV[3] = ngaySinh;
+		danhSachNV.mangDS[index].mangNV[4] = cv;
 		console.log(danhSachNV.mangDS[index]);
 		
-		HienThiLenBang();
+		HienThiLenBang(danhSachNV);
 	}
 });
 
 // Hiển thị dữ liệu lên bảng
-function  HienThiLenBang() {
+function  HienThiLenBang(danhsach) {	
 	var nv = new NhanVien();
 	var tbody = GetMyEle('tbody');
 	tbody.innerHTML = "";
-	for (var i = 0; i < danhSachNV.mangDS.length; i++) {
-		nv = danhSachNV.mangDS[i];
+	for (var i = 0; i < danhsach.mangDS.length; i++) {
+		nv = danhsach.mangDS[i];
 		//tạo dòng chứa thông tin
 		var tr = document.createElement('tr');
 		// tạo cột stt
@@ -230,7 +235,7 @@ function DeleteHandler(ele){
 		var mangindex = id.split("_");
 		//danhSachNV.mangDS.splice(mangindex[2],1);	
 		danhSachNV.XoaNV(mangindex[2]);
-		HienThiLenBang();
+		HienThiLenBang(danhSachNV);
 	});
 }
 // tạo sự kiện nút sửa
@@ -239,8 +244,7 @@ function EditHandler(ele){
 		//console.log(this.id);
 		var id = this.id;
 		var mangindex = id.split("_");			
-		var nv = danhSachNV.mangDS[mangindex[2]];
-		maNVSua = nv.mangNV[0];		
+		var nv = danhSachNV.mangDS[mangindex[2]];				
 		GetMyEle('maNV-sua').value = nv.mangNV[0];
 		GetMyEle('ho-sua').value = nv.mangNV[1];
 		GetMyEle('ten-sua').value = nv.mangNV[2];
@@ -248,3 +252,66 @@ function EditHandler(ele){
 		GetMyEle('chucVu-sua').value = nv.mangNV[4];
 	});
 }
+GetMyEle('btnTimKiem').addEventListener("click",function(){
+	var noidung = GetMyEle('ndTk').value;
+	var dsTimKiem = new DanhSachNV();
+	if(GetMyEle('chontk').value == 'Theo tên')
+	{
+		// var i = danhSachNV.mangDS.indexOf(ndTk);
+		// var nv = new NhanVien();
+		// nv = danhSachNV.mangDS[i];
+		// dsTimKiem.ThemNV(nv);
+		for (var i = 0; i < danhSachNV.mangDS.length; i++) {			
+			if(danhSachNV.mangDS[i].ten == noidung)
+			{
+				var nv = new NhanVien();
+				nv = danhSachNV.mangDS[i];
+				dsTimKiem.ThemNV(nv);
+			}
+		}
+	}
+	else if(GetMyEle('chontk').value == 'Theo mã')
+	{
+		for (var i = 0; i < danhSachNV.mangDS.length; i++) {			
+			if(danhSachNV.mangDS[i].ten == noidung)
+			{
+				var nv = new NhanVien();
+				nv = danhSachNV.mangDS[i];
+				dsTimKiem.ThemNV(nv);
+			}
+		}
+	}
+	HienThiLenBang(dsTimKiem);
+	// hiển thị lên bảng
+	// var nhanvien = new NhanVien();
+	// var tbody = GetMyEle('tbody');
+	// tbody.innerHTML = "";
+	// for (var i = 0; i < dsTimKiem.mangDS.length; i++) {
+	// 	nv = dsTimKiem.mangDS[i];
+	// 	//tạo dòng chứa thông tin
+	// 	var tr = document.createElement('tr');
+	// 	// tạo cột stt
+	// 	var tdStt = document.createElement('td');
+	// 	tdStt.innerHTML = i + 1;
+	// 	tr.appendChild(tdStt);
+	// 	// lặp thêm từng cột thông tin nhân viên
+	// 	for (var j = 0; j < nv.mangNV.length; j++) {
+	// 		var td = document.createElement('td');
+	// 		td.innerHTML = nv.mangNV[j];
+	// 		tr.appendChild(td);
+	// 	}
+	// 	// thêm cột chứa các nút thao tác
+	// 	// 
+	// 	var btnSua = "<button class='btn btn-danger mr-1' data-toggle='modal' data-target='#modal-sua' id='sua_" + nv.maNV + "_" + i + "'>Sửa</button>";
+	// 	var btnXoa = "<button class='btn btn-danger' id='xoa_" + nv.maNV + "_" + i + "'>Xóa</button>";
+			
+	// 	var tdThaoTac = document.createElement('td');
+	// 	tdThaoTac.innerHTML = btnSua + btnXoa;
+	// 	tr.appendChild(tdThaoTac);
+	// 	tbody.appendChild(tr);
+
+	// 	// tạo sự kiện click cho nút
+	// 	DeleteHandler("xoa_" + nv.maNV + "_" + i);
+	// 	EditHandler("sua_" + nv.maNV + "_" + i);
+	// }
+});

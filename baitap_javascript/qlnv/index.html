@@ -50,6 +50,20 @@
 			<div class="button">
 					<button class="btn btn-success" id="btnThem">Thêm nhân viên</button>
 			</div>
+			<div class="timkiem">
+				<label for="chontk">Tìm kiếm theo:</label>
+					  <select class="form-control" id="chontk">
+					  	<option>Tìm kiếm</option>
+					    <option>Theo tên</option>
+					    <option>Theo mã</option>					    
+					  </select>
+				<label for="ndTk">Nội dung:</label>
+					<input type="text" id="ndTk" class="form-control" placeholder="Nội dung tìm kiếm">						
+				<div class="button mt-2">
+					<button class="btn btn-primary" id="btnTimKiem">Tìm kiếm</button>		 
+			</div>
+
+
 			<div class="dsnv">
 				<h2>Danh sách nhân viên</h2>
 				<table class="table table-hover">
@@ -85,7 +99,7 @@
 			        <!-- Modal body -->
 			        <div class="modal-body">
 			          <form>
-						<div class="form-group">
+						<div class="form-group ma-nhanvien">
 							<label for="maNV-sua">Mã nhân viên:</label>
 							<input type="text" id="maNV-sua" class="form-control" placeholder="Mã nhân viên">
 							<span class="thongbao" id="tbMaNV-sua"></span>
