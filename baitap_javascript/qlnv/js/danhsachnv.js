@@ -7,3 +7,7 @@ DanhSachNV.prototype.ThemNV = function(nv) {
 	// body...
 	this.mangDS.push(nv);
 };
+DanhSachNV.prototype.XoaNV = function(index) {
+	// body...
+	this.mangDS.splice(index,1);
+};

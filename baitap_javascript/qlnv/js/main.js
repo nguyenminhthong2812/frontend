@@ -2,6 +2,9 @@
 $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
  });
+$('#datepicker-sua').datepicker({
+            uiLibrary: 'bootstrap4'
+ });
 // khai báo biến toàn cục
 var mangTB = ["Vui lòng nhập mã nhân viên",
 				"Vui lòng nhập họ nhân viên",
@@ -12,6 +15,7 @@ var mangTB = ["Vui lòng nhập mã nhân viên",
 				"Chỉ nhập ký tự trong khoảng"
 			];
 var danhSachNV = new DanhSachNV();
+var maNVSua;
 // hàm lấy element
 function GetMyEle(ele) {
 	// body...
@@ -106,6 +110,24 @@ function KiemTraNhap(){
 	else 
 		return false;
 }
+
+function KiemTraNhapSua(){
+	var nhapMa = KiemTraRong('maNV-sua','tbMaNV-sua',0);
+	if(nhapMa)
+		var nhapTrongKhoang = KtNhapTrongKhoang('maNV-sua','tbMaNV-sua',6,4,6);
+	var nhapHo = KiemTraRong('ho-sua','tbHo-sua',1);
+	if(nhapHo)
+		var nhapKyTuHo = KiemTraKyTu('ho-sua','tbHo-sua',5);
+	var nhapTen = KiemTraRong('ten-sua','tbTen-sua',2);
+	if(nhapTen)
+		var nhapKyTuTen = KiemTraKyTu('ten-sua','tbTen-sua',5);
+	var nhapNgaySinh = KiemTraRong('datepicker-sua','tbNgaySinh-sua',3);
+	var nhapChucVu = kiemTraChucVu('chucVu-sua','tbChucVu-sua',4);
+	if(nhapTrongKhoang && nhapKyTuHo && nhapKyTuTen && nhapNgaySinh && nhapChucVu)
+		return true;
+	else 
+		return false;
+}
 // làm mới form
 function LamMoi() {
 	GetMyEle('maNV').value = '';
@@ -127,6 +149,41 @@ GetMyEle('btnThem').addEventListener("click",function(){
 		danhSachNV.ThemNV(nhanVien);
 		//console.log(danhSachNV.mangDS.length);
 		//LamMoi();
+		HienThiLenBang();
+	}
+});
+// tìm vị trí của nhân viên theo manv
+function FindIndex(maNV) {
+	var index = -1;
+	for (var i = 0; i < danhSachNV.mangDS.length; i++) {
+		if(danhSachNV.mangDS[i].maNV == maNV){
+			index = i;
+			break;
+		}
+	}
+	return index;
+}
+// cập nhật lại nhân viên
+GetMyEle('btnCapNhat').addEventListener("click",function(){
+	var ktra = KiemTraNhapSua();
+	if(ktra){
+		var ma = GetMyEle('maNV-sua').value;
+		var ho = GetMyEle('ho-sua').value;
+		var ten = GetMyEle('ten-sua').value;
+		var ngaySinh = GetMyEle('datepicker-sua').value;
+		var cv = GetMyEle('chucVu-sua').value;
+		var index = FindIndex(maNVSua);
+		//var nv = danhSachNV.mangDS[index];
+		//console.log(danhSachNV.mangDS[index].ho);		
+		
+		
+		danhSachNV.mangDS[index].maNV = ma;
+		danhSachNV.mangDS[index].ho = ho;
+		danhSachNV.mangDS[index].ten = ten;
+		danhSachNV.mangDS[index].ngaySinh = ngaySinh;
+		danhSachNV.mangDS[index].chucVu = cv;
+		console.log(danhSachNV.mangDS[index]);
+		
 		HienThiLenBang();
 	}
 });
@@ -152,7 +209,7 @@ function  HienThiLenBang() {
 		}
 		// thêm cột chứa các nút thao tác
 		// 
-		var btnSua = "<button class='btn btn-danger mr-1' id='sua_" + nv.maNV + "_" + i + "'>Sửa</button>";
+		var btnSua = "<button class='btn btn-danger mr-1' data-toggle='modal' data-target='#modal-sua' id='sua_" + nv.maNV + "_" + i + "'>Sửa</button>";
 		var btnXoa = "<button class='btn btn-danger' id='xoa_" + nv.maNV + "_" + i + "'>Xóa</button>";
 			
 		var tdThaoTac = document.createElement('td');
@@ -170,14 +227,24 @@ function DeleteHandler(ele){
 	GetMyEle(ele).addEventListener("click",function(){
 		//console.log(this.id);
 		var id = this.id;
-		var mangindex = id.split("_");		
-		danhSachNV.mangDS.splice(mangindex[2],1);		
+		var mangindex = id.split("_");
+		//danhSachNV.mangDS.splice(mangindex[2],1);	
+		danhSachNV.XoaNV(mangindex[2]);
 		HienThiLenBang();
 	});
 }
 // tạo sự kiện nút sửa
 function EditHandler(ele){
 	GetMyEle(ele).addEventListener("click",function(){
-		console.log(this.id);
+		//console.log(this.id);
+		var id = this.id;
+		var mangindex = id.split("_");			
+		var nv = danhSachNV.mangDS[mangindex[2]];
+		maNVSua = nv.mangNV[0];		
+		GetMyEle('maNV-sua').value = nv.mangNV[0];
+		GetMyEle('ho-sua').value = nv.mangNV[1];
+		GetMyEle('ten-sua').value = nv.mangNV[2];
+		GetMyEle('datepicker-sua').value = nv.mangNV[3];
+		GetMyEle('chucVu-sua').value = nv.mangNV[4];
 	});
 }
