@@ -1,0 +1,9 @@
+.tr-nguoidung{
+	cursor: pointer;
+}
+.tr-nguoidung:hover{
+	background:rgba(0,0,0,0.1);
+}
+.hieuung{
+	color: red;
+}
