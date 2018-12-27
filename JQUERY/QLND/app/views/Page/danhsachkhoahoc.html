@@ -9,7 +9,7 @@
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href="../../../assets/css/danhsachkhoahoc.css">
+	<link href="../../../assets/css/danhsachkhoahoc.css">
 </head>
 <body>
 	<div class="container py-4">
@@ -81,7 +81,8 @@
 	          	<input class="form-control input-nguoidung" id="hinhAnh"><img src="" alt=""/></input>
 	          	<label>Lượt xem</label>
 	          	<input class="form-control input-nguoidung" id="luotXem"/>
-				<select id="nguoiTao">
+	          	<label>Người tạo</label>
+				<select class="form-control input-nguoidung" id="nguoiTao">
 					
 				</select>
 	          </div>
@@ -136,7 +137,13 @@
 	<script type="text/javascript" src="../../models/NguoiDung.js"></script>
 	<script type="text/javascript" src="../../models/DanhSachNguoiDung.js"></script>
 	<!-- sweetalert -->
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<!-- thêm các models	 -->
+	<script type="text/javascript" src="../../models/KhoaHoc.js"></script>
+	<script type="text/javascript" src="../../models/DanhSachKhoaHoc.js"></script>
+	<!-- thêm các services -->
+	<script type="text/javascript" src="../../services/KhoaHocService.js"></script>
+	<script type="text/javascript" src="../../services/NguoiDungService.js"></script>
 	<!-- thêm hàm xử lý trang -->
 	<script type="text/javascript" src="../../controllers/danhsachkhoahoc.js"></script>
 </body>
