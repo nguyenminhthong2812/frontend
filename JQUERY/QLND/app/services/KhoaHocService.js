@@ -18,4 +18,20 @@ function KhoaHocService(){
 			data:khoahoc
 		});
 	}	
+	this.CapNhatKhoaHoc = function(khoahoc){
+		var urlAPI = "http://sv.myclass.vn/api/QuanLyTrungTam/CapNhatKhoaHoc";
+		return $.ajax({
+			type:"PUT",
+			datatype:"json",
+			url:urlAPI,
+			data:khoahoc
+		});
+	}
+	this.XoaKhoaHoc = function(id){
+		var urlAPI = `ttp://sv.myclass.vn/api/QuanLyTrungTam/XoaKhoaHoc/${id}`; 
+		return $.ajax({
+			type:"DELETE",
+			url:urlAPI
+		});
+	}
 }
