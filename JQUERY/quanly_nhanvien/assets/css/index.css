@@ -22,3 +22,7 @@ a{
 .frm-nhanvien{
 	max-width: 800px;
 }
+.tbError{
+	display: block;
+	color: red;
+}
