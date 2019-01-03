@@ -1,7 +1,7 @@
-function NhanVien(TenNhanVien,MaNhanVien,Email,SoDT,NgaySinh,LuongCoBan,SoNgayLamViec,ChucVu,PhuCap)
+function NhanVien(MaNhanVien,TenNhanVien,Email,SoDT,NgaySinh,LuongCoBan,SoNgayLamViec,ChucVu,PhuCap)
 {
-	this.TenNhanVien = TenNhanVien,
 	this.MaNhanVien = MaNhanVien,
+	this.TenNhanVien = TenNhanVien,	
 	this.Email = Email,
 	this.SoDT = SoDT,
 	this.NgaySinh = NgaySinh,
