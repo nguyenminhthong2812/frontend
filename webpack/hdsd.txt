@@ -1,0 +1,47 @@
+sử dụng webpack
+
+cài đặt node.js
+cài đặt webpack: npm install -g webpack hoặc npm install --save -dev webpack
+cài đặt webpack cli: npm install i -g webpack-cli
+
+đóng gói css: 
+	cài đặt: npm install style-loader css-loader -g
+đóng gói sass:
+	npm install sass-loader node-sass -g
+đóng gói hình ảnh:
+	npm install file-loader url-loader -g
+	npm install url-loader file-loader --save-dev
+	
+	
+webpack.config.js
+
+module.exports = {
+  entry: ['./index.js'],
+  output: {
+    filename: 'bundle.js',
+    path: __dirname
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(s*)css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }]
+      }
+
+    ]
+  }
+};
