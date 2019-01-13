@@ -5,3 +5,5 @@ window.jQuery.prototype.NhapNhay = function(solan){
 		id.fadeIn(500);
 	}
 }
+
+export default NhapNhay;

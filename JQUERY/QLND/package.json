@@ -7,5 +7,12 @@
     "start": "lite-server"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^2.1.0",
+    "expose-loader": "^0.7.5",
+    "jquery": "^3.3.1",
+    "style-loader": "^0.23.1",
+    "webpack-jquery-ui": "^2.0.1"
+  }
 }

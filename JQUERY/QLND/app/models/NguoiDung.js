@@ -1,4 +1,4 @@
-function NguoiDung(taiKhoan,matKhau,hoTen,email,sodt) {
+export function NguoiDung(taiKhoan,matKhau,hoTen,email,sodt) {
 	this.taiKhoan = taiKhoan;
 	this.matKhau = matKhau;
 	this.hoTen = hoTen;

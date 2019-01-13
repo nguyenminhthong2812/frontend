@@ -1,4 +1,4 @@
-function DanhSachNguoiDung() {
+export function DanhSachNguoiDung() {
 	this.DSND = [];
 }
 

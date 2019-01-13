@@ -1,3 +1,11 @@
+require('webpack-jquery-ui');
+require('webpack-jquery-ui/css');
+
+import{NguoiDung} from '../models/NguoiDung.js';
+import{DanhSachNguoiDung} from '../models/DanhSachNguoiDung.js';
+import{NhapNhay} from '../../assets/lib/plugin/nhapnhay.js';
+require('../../assets/css/index.css');
+
 $(document).ready(function function_name() {
 	// Khai báo biến toàn cục
 	var danhSachNguoiDung = new DanhSachNguoiDung();

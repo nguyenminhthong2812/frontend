@@ -1,0 +1,19 @@
+Set up lite-server
+1/ npm init
+2/ npm install lite-server -g
+3/ thêm dòng: "start": "lite-server" 
+	"scripts": {
+    "start": "lite-server"
+  },
+ trong file package.json
+ 4/ tạo file bs-config.json
+	{
+    "port":3000,
+    "files":["./*.{html,htm,css,js}"],
+    "server": {"baseDir":["./app/views","./"]}
+	}
+	
+	"server": chỉ nơi để lấy file chạy
+	"./app/views": thường để lấy file index.html để chạy
+	"./": thường để lấy file bundel.js(sau khi webpack) để chạy
+5/ npm start để chạy

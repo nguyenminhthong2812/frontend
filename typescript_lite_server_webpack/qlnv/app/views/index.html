@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- lấy bootstrap -->
+    <link rel="stylesheet" href="../../asset/lib/bootstrap4/bootstrap.css">
+    <!-- <link rel="stylesheet" href="../../asset/css/style.css"> -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quản lý nhân viên</h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="">Mã nhân viên</label>
+                    <input type="text" class="form-control" id="maNV" placeholder="Nhập mã nhân viên">
+                    <label for="">Tên nhân viên</label>
+                    <input type="text" class="form-control" id="tenNV" placeholder="Nhập tên nhân viên">
+                    <label for="">Lương cơ bản</label>
+                    <input type="text" class="form-control" id="luongCB" placeholder="Lương cơ bản">
+                    <label for="">Tiền hoa hồng</label>
+                    <input type="text" class="form-control" id="tienHoaHong" placeholder="Tiền hoa hồng">
+                </div>
+                <div class="button">
+                    <button class="btn btn-success">Thêm nhân viên</button>
+                </div>
+            </div>
+        </div>
+        <h3>Danh sách nhân viên</h3>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <th>Mã nhân viên</th>
+                        <th>Tên nhân viên</th>
+                        <th>Chức vụ</th>
+                        <th>Lương cơ bản</th>
+                        <th>Tổng lương</th>
+                    </thead>
+                    <tbody id="tbodyNV">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- lấy bootstrap -->
+    <script>src = "../../asset/lib/bootstrap4/jquery.js"</script>
+    <script>src = "../../asset/lib/bootstrap4/poper.js"</script>
+    <script>src = "../../asset/lib/bootstrap4/bootstrap.js"</script>
+    <!-- lấy file bundle.js -->
+    <script type="text/javascript" src="../../bundle.js"></script>
+</body>
+
+</html>
