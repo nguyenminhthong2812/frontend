@@ -3,20 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FirstComponent } from './first/first.component';
-import { HeaderComponent } from './header/header.component';
-import { ContentComponent } from './content/content.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { FooterComponent } from './footer/footer.component';
+import { TrangchuComponent } from './trangchu/trangchu.component';
+import { HeaderComponent } from './trangchu/header/header.component';
+import { IndexComponent } from './trangchu/index/index.component';
+import { FooterComponent } from './trangchu/footer/footer.component';
+import { SliderComponent } from './trangchu/index/slider/slider.component';
+import { ContentComponent } from './trangchu/index/content/content.component';
+import { ItemComponent } from './trangchu/index/content/item/item.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent,
+    TrangchuComponent,
     HeaderComponent,
+    IndexComponent,
+    FooterComponent,
+    SliderComponent,
     ContentComponent,
-    SidebarComponent,
-    FooterComponent
+    ItemComponent,
+    
   ],
   imports: [
     BrowserModule,
