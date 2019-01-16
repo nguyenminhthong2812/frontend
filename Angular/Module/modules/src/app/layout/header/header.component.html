@@ -4,5 +4,5 @@
 <p>
   Tuổi: {{obHocVien.Tuoi}}
 </p>
-<input inputName="Thông" #obInput>
+<input inputName="Thông" #obInput [(ngModel)]="obHocVien.Hoten">
 <button (click)="ChangeName(obInput)">Click</button>
