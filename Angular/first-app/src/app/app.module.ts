@@ -10,7 +10,7 @@ import { FooterComponent } from './trangchu/footer/footer.component';
 import { SliderComponent } from './trangchu/index/slider/slider.component';
 import { ContentComponent } from './trangchu/index/content/content.component';
 import { ItemComponent } from './trangchu/index/content/item/item.component';
-
+import { LayoutModuleModule } from './layout-module/layout-module.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,14 @@ import { ItemComponent } from './trangchu/index/content/item/item.component';
     FooterComponent,
     SliderComponent,
     ContentComponent,
-    ItemComponent,
+    ItemComponent
+    
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
