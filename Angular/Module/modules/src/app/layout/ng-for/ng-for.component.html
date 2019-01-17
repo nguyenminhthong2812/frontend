@@ -5,7 +5,8 @@
       <td>Họ tên</td>
     </thead>
     <tbody>
-      <tr *ngFor = "let sv of SinhVien">
+      <tr *ngFor = "let sv of SinhVien; let stt = index">
+        <td>{{stt + 1}}</td>
         <td>{{sv.maSV}}</td>
         <td>{{sv.hoTen}}</td>
       </tr>
