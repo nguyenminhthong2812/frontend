@@ -1,0 +1,23 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <td>Mã sinh viên</td>
+      <td>Họ tên</td>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let sv of SinhVien">
+        <td>{{sv.maSV}}</td>
+        <td>{{sv.hoTen}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <div class="form-group">
+    <label for="">Mã sinh viên</label>
+    <input type="text" #maSV class="form-control">
+    <label for="">Tên sinh viên</label>
+    <input type="text" #tenSV class="form-control">
+    <button class="btn btn-success mt-2" (click)="ThemSV(maSV.value,tenSV.value)">Thêm sinh viên</button>
+  </div>
+</div>

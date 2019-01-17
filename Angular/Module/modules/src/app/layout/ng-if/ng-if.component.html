@@ -1,0 +1,14 @@
+<ng-template #template>
+    <div class="form-group">
+        <label for="">Email:</label>
+        <input type="text" #txtEmail class="form-control">
+        <label for="">Pass:</label>
+        <input type="password" #txtPass class="form-control">
+        <button class="btn btn-success" (click)="DangNhap(txtEmail.value,txtPass.value)">Đăng nhập</button>
+        <p>{{thongbao}}</p>
+    </div>
+</ng-template>
+<div *ngIf="status else template">
+    <p>{{thongbao}}</p>
+    <button class="btn btn-danger" (click)="DangXuat()">Đăng xuất</button>
+</div>

@@ -1,3 +1,7 @@
-<p>
-  footer works!
-</p>
+<label for="">Email </label>
+<input type="text" #obEmail [(ngModel)]="obHocSinh.Email">
+<label for="">Họ tên </label>
+<input type="text" #obHoTen [(ngModel)]="obHocSinh.Hoten">
+<button (click)="SubMit(obEmail,obHoTen)">Submit</button>
+<p>Họ tên: {{obHocSinh.Hoten}}</p>
+<p>Email: {{obHocSinh.Email}}</p>
