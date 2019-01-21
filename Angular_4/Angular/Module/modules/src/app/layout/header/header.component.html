@@ -5,4 +5,5 @@
   Tuổi: {{obHocVien.Tuoi}}
 </p>
 <input inputName="Thông" #obInput [(ngModel)]="obHocVien.Hoten">
-<button (click)="ChangeName(obInput)">Click</button>
+<button appHover (click)="ChangeName(obInput)">Click</button>
+
