@@ -15,12 +15,16 @@ import { ThongtinlienheComponent } from './trangchu/thongtinlienhe/thongtinlienh
 import { TintucComponent } from './trangchu/tintuc/tintuc.component';
 import { ItemtintucComponent } from './trangchu/itemtintuc/itemtintuc.component';
 import { ItemphimComponent } from './trangchu/itemphim/itemphim.component';
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   exports: [TrangchuComponent, DienanhComponent, FormlienheComponent, LienheComponent, HeaderComponent, KhuyenmaiComponent, LoaiphimComponent, PhimdangchieuComponent, PhimsapchieuComponent, ReviewComponent, SliderComponent, ThongtinlienheComponent, TintucComponent, ItemtintucComponent,ItemphimComponent],
-  declarations: [TrangchuComponent, DienanhComponent, FormlienheComponent, LienheComponent, HeaderComponent, KhuyenmaiComponent, LoaiphimComponent, PhimdangchieuComponent, PhimsapchieuComponent, ReviewComponent, SliderComponent, ThongtinlienheComponent, TintucComponent, ItemtintucComponent, ItemphimComponent],
+  declarations: [TrangchuComponent, DienanhComponent, FormlienheComponent, LienheComponent, 
+    HeaderComponent, KhuyenmaiComponent, LoaiphimComponent, PhimdangchieuComponent,
+    PhimsapchieuComponent, ReviewComponent, SliderComponent, ThongtinlienheComponent, 
+    TintucComponent, ItemtintucComponent, ItemphimComponent],
   imports: [
-    CommonModule
+    CommonModule,OwlModule
   ]
 })
 export class TrangchuModule { }

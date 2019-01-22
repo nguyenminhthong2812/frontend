@@ -1,13 +1,12 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import $ from 'jquery';
-declare var $: any;
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
     selector: 'app-phimdangchieu',
     templateUrl: './phimdangchieu.component.html',
     styleUrls: ['./phimdangchieu.component.css']
 })
-export class PhimdangchieuComponent implements OnInit, AfterViewInit {
+export class PhimdangchieuComponent implements OnInit {
     DanhSachPhimDangChieu = [
         { TenPhim: "The Walking Dead", HinhAnh: '../../../assets/img/sinh-nhat-chet-choc-happy-death-day-c16-15089876590397.jpg' },
         { TenPhim: "Ferdinand", HinhAnh: '../../../assets/img/ferdinand.jpg' },
@@ -15,27 +14,10 @@ export class PhimdangchieuComponent implements OnInit, AfterViewInit {
         { TenPhim: "Nhóc Ma Siêu Quậy", HinhAnh: '../../../assets/img/nhoc-ma-sieu-quay-the-little-vampire-3d-15090331183157.jpg' },
         { TenPhim: "Trải nghiệm điểm chết", HinhAnh: '../../../assets/img/trai-nghiem-diem-chet-flatliners-15093522963475.jpg' },
     ]
+    mySlideOptions={items: 4, dots: false, nav: true, loop:true,margin:10};
     constructor() { }
-    ngOnInit() {        
-    }    
-    ngAfterViewInit() {
-        $('.owl-carousel').owlCarousel({
-            loop: false,
-            rewind: true,
-            margin: 10,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        })
+    ngOnInit() {
     }
+    
 
 }

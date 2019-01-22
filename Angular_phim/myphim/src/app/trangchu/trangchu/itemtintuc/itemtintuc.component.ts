@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-itemtintuc',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./itemtintuc.component.css']
 })
 export class ItemtintucComponent implements OnInit {
-
+  @Input() Tin;
   constructor() { }
 
   ngOnInit() {
