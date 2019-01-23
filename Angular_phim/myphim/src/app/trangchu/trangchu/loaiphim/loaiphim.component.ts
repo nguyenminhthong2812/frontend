@@ -8,11 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoaiphimComponent implements OnInit {
   dangChieuStatus:boolean = true;
   constructor() { }
-  HienPhimDangChieu(){
-    this.dangChieuStatus = true;
-  }
-  HienPhimSapChieu(){
-    this.dangChieuStatus = false;
+  HienPhim(status:boolean){
+    this.dangChieuStatus = status;
   }
   ngOnInit() {
   }

@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tintuc.component.css']
 })
 export class TintucComponent implements OnInit {
-  loaiTinTuc:string = 'DienAnh';
+  loaiTin:string = 'DienAnh';
   constructor() { }
-  ChonLoaiTin(loaitin:string){
-    this.loaiTinTuc = loaitin;
+  ChonLoaiTin(val:string){
+    this.loaiTin = val;
   }
   ngOnInit() {
   }

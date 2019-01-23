@@ -1,18 +1,18 @@
 <div class="row my-4">
   <div class="col-12 text-center">
-    <button class="btn btn-success mr-2" (click)="ChonLoaiTin('DienAnh')">Điện ảnh</button>
-    <button class="btn mr-2" (click)="ChonLoaiTin('Review')">Review</button>
-    <button class="btn mr-2" (click)="ChonLoaiTin('KhuyenMai')">Khuyến mãi</button>
+    <button class="btn mr-2" [ngClass]="{'btn-success':loaiTin == 'DienAnh'}" (click)="ChonLoaiTin('DienAnh')">Điện ảnh</button>
+    <button class="btn mr-2" [ngClass]="{'btn-success':loaiTin == 'Review'}" (click)="ChonLoaiTin('Review')">Review</button>
+    <button class="btn" [ngClass]="{'btn-success':loaiTin == 'KhuyenMai'}" (click)="ChonLoaiTin('KhuyenMai')">Khuyến mãi</button>
   </div>
 </div>
-<div class="row" [ngSwitch]="loaiTinTuc">
-  <div class="col-12" *ngSwitchCase = "'DienAnh'">
+<div class="row" [ngSwitch]="loaiTin">
+  <div class="col-12" *ngSwitchCase="'DienAnh'">
     <app-dienanh></app-dienanh>
   </div>
-  <div class="col-12" *ngSwitchCase = "'Review'">
+  <div class="col-12" *ngSwitchCase="'Review'">
     <app-review></app-review>
   </div>
-  <div class="col-12" *ngSwitchCase = "'KhuyenMai'">
+  <div class="col-12" *ngSwitchCase="'KhuyenMai'">
     <app-khuyenmai></app-khuyenmai>
   </div>
 </div>

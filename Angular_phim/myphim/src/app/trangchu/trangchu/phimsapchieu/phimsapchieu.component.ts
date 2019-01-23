@@ -15,10 +15,11 @@ export class PhimsapchieuComponent implements OnInit {
         { TenPhim: "Ferdinand", HinhAnh: '../../../assets/img/ferdinand.jpg' },
         { TenPhim: "Trải nghiệm điểm chết", HinhAnh: '../../../assets/img/trai-nghiem-diem-chet-flatliners-15093522963475.jpg' },
     ];
-    mySlideOptions={items: 4, dots: false, nav: true, loop:true,margin:10};
+    Options={items: 4, dots: false, nav: true, loop:true};
     constructor() { }
 
     ngOnInit() {
         
-    }    
+    }
+    
 }

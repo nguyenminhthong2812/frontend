@@ -1,6 +1,6 @@
-<owl-carousel [options]="mySlideOptions" [carouselClasses]="['owl-theme', 'sliding']" >
+<owl-carousel [options]="Options"  [carouselClasses]="['owl-theme', 'sliding']" >
   <div class="item" *ngFor="let phim of DanhSachPhimSapChieu">
-    <app-itemphim [phim] = phim></app-itemphim>
+    <app-itemphim [phim] = "phim"></app-itemphim>
   </div>
  </owl-carousel>
 

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrangchuModule } from './trangchu/trangchu.module';
+import { DatgheModule } from './datghe/datghe.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { TrangchuModule } from './trangchu/trangchu.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TrangchuModule
+    TrangchuModule,
+    DatgheModule
   ],
   providers: [],
   bootstrap: [AppComponent]
