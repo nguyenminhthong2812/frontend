@@ -7,12 +7,21 @@ import { TrangdatgheComponent } from './trangdatghe/trangdatghe.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PhimComponent } from './phim/phim.component';
+import { DangkyComponent } from './dangky/dangky.component';
+import { DangnhapComponent } from './dangnhap/dangnhap.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [HomelayoutComponent, TrangchuComponent, TrangchitietComponent, TrangdatgheComponent, HeaderComponent, FooterComponent, PhimComponent],
-  exports: [HomelayoutComponent, TrangchuComponent, TrangchitietComponent, TrangdatgheComponent, HeaderComponent, FooterComponent, PhimComponent],
+  declarations: [HomelayoutComponent, TrangchuComponent, 
+    TrangchitietComponent, TrangdatgheComponent,
+     HeaderComponent, FooterComponent, PhimComponent, 
+     DangkyComponent, DangnhapComponent],
+  exports: [HomelayoutComponent, TrangchuComponent, 
+    TrangchitietComponent, TrangdatgheComponent, 
+    HeaderComponent, FooterComponent, PhimComponent,
+    DangkyComponent, DangnhapComponent],
   imports: [
-    CommonModule
+    CommonModule,FormsModule
   ]
 })
 export class HomeModule { }
