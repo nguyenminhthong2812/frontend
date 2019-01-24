@@ -5,7 +5,7 @@
         <h4 class="display-4">ĐĂNG KÝ</h4>
         <div class="form-group">
           <label>Tài khoản</label>
-          <input type="text" class="form-control" ngModel name="TaiKhoan" #taikhoan="ngModel" required>
+          <input type="text" class="form-control" ngModel name="TaiKhoan" #inputTK #taikhoan="ngModel" required>
           <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
             <div class="alert alert-danger" *ngIf = "taikhoan.errors.required">
               Vui lòng nhập tài khoản.
@@ -14,13 +14,13 @@
         </div>
         <div class="form-group">
           <label>Mật khẩu</label>
-          <input type="password" class="form-control" ngModel name="MatKhau" #matkhau = "ngModel" required minlength="8" maxlength="20">
+          <input type="password" class="form-control" ngModel name="MatKhau" #matkhau = "ngModel" required minlength="4" maxlength="20">
           <div *ngIf = "matkhau.errors && (matkhau.touched || matkhau.dirty)">
             <div class="alert alert-danger" *ngIf = "matkhau.errors.required">
               Vui lòng nhập mật khẩu.
             </div>
             <div class="alert alert-danger" *ngIf = "matkhau.errors.minlength || matkhau.errors.maxlength">
-              Độ dài mật khẩu từ 8 đến 20 ký tự.
+              Độ dài mật khẩu từ 4 đến 20 ký tự.
             </div>
           </div>          
         </div>
@@ -56,7 +56,7 @@
           <input type="text" class="form-control" ngModel name="SoDT">
         </div>
         <div class="form-group">
-          <label>Loại người dùng:  </label>
+          <label class="mr-3">Loại người dùng:  </label>
           <div class="form-check-inline">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" ngModel name="LoaiNguoiDung" value="KhachHang">Khách hàng
@@ -69,9 +69,56 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-success" type="submit">Đăng ký</button>
+          <button class="btn btn-success" type="submit" #btnLuu>Đăng ký</button>
         </div>
       </form>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12 mx-auto">
+      <h4 class="display-4">Danh sách tài khoản</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Stt</td>
+            <td>Tài khoản</td>            
+            <td>Mật khẩu</td>
+            <td>Họ tên</td>
+            <td>Email</td>
+            <td>Số điện thoại</td>
+            <td>Loại người dùng</td>
+            <td>Thao tác</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let taikhoan of DanhSachTaiKhoan; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{taikhoan.TaiKhoan}}</td>
+            <td>{{taikhoan.MatKhau}}</td>
+            <td>{{taikhoan.HoTen}}</td>
+            <td>{{taikhoan.Email}}</td>
+            <td>{{taikhoan.SoDT}}</td>
+            <td>{{taikhoan.LoaiNguoiDung}}</td>
+            <td>
+              <button #btnSua 
+                [attr.data-taikhoan] = "taikhoan.TaiKhoan"
+                [attr.data-matkhau] = "taikhoan.MatKhau"
+                [attr.data-hoten] = "taikhoan.HoTen"
+                [attr.data-email] = "taikhoan.Email"
+                [attr.data-sodt] = "taikhoan.SoDT"
+                [attr.data-loainguoidung] = "taikhoan.LoaiNguoiDung"
+                class="btn btn-success mr-2" (click)="Sua(btnSua)">Sửa</button>
+                <button #btnXoa
+                [attr.data-taikhoan] = "taikhoan.TaiKhoan"                
+                class="btn btn-danger" (click)="Xoa(btnXoa)">Xoa</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
 </div>
