@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransformService } from 'src/app/service/transform.service';
 
 @Component({
   selector: 'app-quanlynguoidung',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quanlynguoidung.component.css']
 })
 export class QuanlynguoidungComponent implements OnInit {
-
-  constructor() { }
+  statusSideBar:boolean = false;
+  constructor(private transform:TransformService) { }
 
   ngOnInit() {
   }
-
+  Toggle(){
+    this.statusSideBar == false ? this.statusSideBar = true : this.statusSideBar = false;
+    this.transform.transformData(this.statusSideBar);    
+  }
 }

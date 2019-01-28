@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { NguoiDung } from '../models/NguoiDung';
 @Injectable({
   providedIn: 'root'
@@ -20,6 +19,13 @@ export class NguoidungService {
     let header = new HttpHeaders();
     header.append('Content-Type','application/json;charset=UTF-8');
     let Observe = this._http.post(url,nguoiDung,{headers:header});
+    return Observe;
+  }
+  DangNhap(taiKhoan,matKhau){
+    let url = `http://sv2.myclass.vn/api/QuanLyNguoiDung/DangNhap?taikhoan=${taiKhoan}&matkhau=${matKhau}`;
+    let header = new Headers();
+    header.append('Content-Type','application/json;charset=UTF-8');
+    let Observe = this._http.post(url,{headers:header});
     return Observe;
   }
 }

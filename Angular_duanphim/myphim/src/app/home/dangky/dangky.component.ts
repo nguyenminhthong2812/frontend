@@ -14,6 +14,7 @@ export class DangkyComponent implements OnInit {
   @ViewChild('inputTK') inputTaiKhoan:ElementRef;
   DanhSachTaiKhoan = [];
   MaNhom = ["GP01","GP02","GP03","GP04","GP05","GP06"];
+  
   constructor(private nguoiDungService:NguoidungService) { }
 
   ngOnInit() {

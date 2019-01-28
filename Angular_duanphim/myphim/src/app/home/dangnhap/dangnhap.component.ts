@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NguoidungService } from 'src/app/service/nguoidung.service';
 
 @Component({
   selector: 'app-dangnhap',
@@ -9,16 +10,28 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class DangnhapComponent implements OnInit {
   formDangNhap:FormGroup;
   TaiKhoanKhongHopLe = ['user001','user002'];
-  constructor() { }
+  constructor(private nguoiDungSV:NguoidungService) { }
   DangNhap(){
-    console.log(this.formDangNhap.value);
+    let nguoiDungDN = this.formDangNhap.value;
+    this.nguoiDungSV.DangNhap(nguoiDungDN.TaiKhoan,nguoiDungDN.MatKhau).subscribe(
+      data => {
+        if(typeof(data) == 'object')
+          localStorage.setItem('NguoiDung',JSON.stringify(data));
+        else
+          alert(data);
+      },
+      error => {
+        alert(error);
+      }
+    );
+    
   }
   regex_username:string = '^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$';
   ngOnInit() {
     this.formDangNhap = new FormGroup(
       {
         'TaiKhoan':new FormControl(null,[Validators.required,Validators.pattern(this.regex_username),this.CheckHopLe.bind(this)]),
-        'MatKhau':new FormControl(null,[Validators.required,Validators.minLength(5)])
+        'MatKhau':new FormControl(null,[Validators.required])
       }
     )
   }
