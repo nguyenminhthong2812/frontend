@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { NguoidungService } from 'src/app/service/nguoidung.service';
+import { NguoiDung } from 'src/app/models/NguoiDung';
 
 @Component({
   selector: 'app-dangky',
@@ -11,25 +13,39 @@ export class DangkyComponent implements OnInit {
   @ViewChild('btnLuu') btnLuu:ElementRef;
   @ViewChild('inputTK') inputTaiKhoan:ElementRef;
   DanhSachTaiKhoan = [];
-
-  constructor() { }
+  MaNhom = ["GP01","GP02","GP03","GP04","GP05","GP06"];
+  constructor(private nguoiDungService:NguoidungService) { }
 
   ngOnInit() {
-  }
-  DangKy(value){
-    let ktr = 0;
-    for(let index in this.DanhSachTaiKhoan){
-      if(this.DanhSachTaiKhoan[index].TaiKhoan === value.TaiKhoan){
-        this.DanhSachTaiKhoan[index] = value;
-        this.btnLuu.nativeElement.innerHTML = 'Đăng ký';
-        this.inputTaiKhoan.nativeElement.readOnly = false;
-        this.formDK.reset();
-        ktr = 1;
+    this.nguoiDungService.LayDanhSach().subscribe(
+      (kq:any) => { 
+        //console.log(kq);
+        this.DanhSachTaiKhoan = kq;
       }
-    }
-    if(ktr == 0)
-      this.DanhSachTaiKhoan.push(value);
+    );
+  }
+  DangKy(nguoiDung:NguoiDung){
+    // let ktr = 0;
+    // for(let index in this.DanhSachTaiKhoan){
+    //   if(this.DanhSachTaiKhoan[index].TaiKhoan === value.TaiKhoan){
+    //     this.DanhSachTaiKhoan[index] = value;
+    //     this.btnLuu.nativeElement.innerHTML = 'Đăng ký';
+    //     this.inputTaiKhoan.nativeElement.readOnly = false;
+    //     this.formDK.reset();
+    //     ktr = 1;
+    //   }
+    // }
+    // if(ktr == 0)
+    //   this.DanhSachTaiKhoan.push(value);
     // this.formDK.reset();
+    this.nguoiDungService.ThemNguoiDung(nguoiDung).subscribe(
+      data => {
+        console.log("POST Request is successful ", data)
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
   // load dữ liệu từ bảng lên để sửa
   Sua(btnSua){
