@@ -10,6 +10,7 @@ import { PhimComponent } from './phim/phim.component';
 import { DangkyComponent } from './dangky/dangky.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HomelayoutComponent, TrangchuComponent, 
@@ -21,7 +22,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HeaderComponent, FooterComponent, PhimComponent,
     DangkyComponent, DangnhapComponent],
   imports: [
-    CommonModule,FormsModule,ReactiveFormsModule
+    CommonModule,FormsModule,ReactiveFormsModule,RouterModule
   ]
 })
 export class HomeModule { }

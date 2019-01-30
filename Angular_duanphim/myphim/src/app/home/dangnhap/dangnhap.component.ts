@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NguoidungService } from 'src/app/service/nguoidung.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-dangnhap',
@@ -10,15 +11,17 @@ import { NguoidungService } from 'src/app/service/nguoidung.service';
 export class DangnhapComponent implements OnInit {
   formDangNhap:FormGroup;
   TaiKhoanKhongHopLe = ['user001','user002'];
-  constructor(private nguoiDungSV:NguoidungService) { }
+  constructor(private nguoiDungSV:NguoidungService, private router:Router) { }
   DangNhap(){
     let nguoiDungDN = this.formDangNhap.value;
     this.nguoiDungSV.DangNhap(nguoiDungDN.TaiKhoan,nguoiDungDN.MatKhau).subscribe(
-      data => {
-        if(typeof(data) == 'object')
+      data => {        
+        if(typeof(data) == 'object'){
           localStorage.setItem('NguoiDung',JSON.stringify(data));
+          this.router.navigate(['/']);
+        }
         else
-          alert(data);
+          alert('Vui long nhap lai');
       },
       error => {
         alert(error);

@@ -1,3 +1,11 @@
-<app-header></app-header>
-<app-phim></app-phim>
-<app-footer></app-footer>
+<div class="container">
+    <div class="row">
+        <div class="col-3" *ngFor = "let phim of DanhSachPhim">
+            <div class="card mb-3">
+                <img [src]="phim.HinhAnh" alt="" height="350px">
+                <p>{{phim.TenPhim}}</p>
+                <button class="btn btn-block btn-success">Xem chi tiết</button>
+            </div>
+        </div>
+    </div>
+</div>
