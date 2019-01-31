@@ -14,4 +14,9 @@ export class PhimService {
     let Observe = this._http.get(url);
     return Observe;
   }
+  LayChiTietPhim(maPhim):Observable<any>{
+    let url = `http://sv2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${maPhim}`;
+    let Observe = this._http.get(url);
+    return Observe;
+  }
 }

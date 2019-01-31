@@ -11,6 +11,7 @@ import { DangkyComponent } from './dangky/dangky.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { PipeModule } from '../pipe/pipe.module';
 
 @NgModule({
   declarations: [HomelayoutComponent, TrangchuComponent, 
@@ -22,7 +23,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent, FooterComponent, PhimComponent,
     DangkyComponent, DangnhapComponent],
   imports: [
-    CommonModule,FormsModule,ReactiveFormsModule,RouterModule
+    CommonModule,FormsModule,ReactiveFormsModule,RouterModule,PipeModule
   ]
 })
 export class HomeModule { }

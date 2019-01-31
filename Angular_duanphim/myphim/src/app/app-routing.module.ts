@@ -11,7 +11,7 @@ import { DangnhapComponent } from './home/dangnhap/dangnhap.component';
 const routes: Routes = [
   {path:'', component:HomelayoutComponent, children:[
     {path:'',component:TrangchuComponent},
-    {path:'trangchitiet',component:TrangchitietComponent},
+    {path:'chitiet/:maphim',component:TrangchitietComponent},
     {path:'dangnhap',component:DangnhapComponent}
   ]},
   {path:'admin',component:AdminlayoutComponent, children:[
