@@ -7,11 +7,13 @@ import { AdminlayoutComponent } from './admin/adminlayout/adminlayout.component'
 import { QuanlynguoidungComponent } from './admin/quanlynguoidung/quanlynguoidung.component';
 import { QuanlysidebarComponent } from './admin/quanlysidebar/quanlysidebar.component';
 import { DangnhapComponent } from './home/dangnhap/dangnhap.component';
+import { DatveComponent } from './home/datve/datve.component';
 
 const routes: Routes = [
   {path:'', component:HomelayoutComponent, children:[
     {path:'',component:TrangchuComponent},
     {path:'chitiet/:maphim',component:TrangchitietComponent},
+    {path:'datve/:malichchieu',component:DatveComponent},
     {path:'dangnhap',component:DangnhapComponent}
   ]},
   {path:'admin',component:AdminlayoutComponent, children:[

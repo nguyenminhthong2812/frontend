@@ -2,3 +2,7 @@
 <p>{{chiTietPhim.TenPhim}}</p>
 <iframe width="1019" height="573" [src]="trailer | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
+<br>
+<button class="btn btn-outline-success mr-2" [routerLink] = "['/datve',lichchieu.MaLichChieu]" *ngFor = "let lichchieu of chiTietPhim.LichChieu">
+    {{lichchieu.NgayChieuGioChieu | date:'dd/MM, hh:mm'}}
+</button>

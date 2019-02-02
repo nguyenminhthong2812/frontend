@@ -12,12 +12,13 @@ import { DangnhapComponent } from './dangnhap/dangnhap.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PipeModule } from '../pipe/pipe.module';
+import { DatveComponent } from './datve/datve.component';
 
 @NgModule({
   declarations: [HomelayoutComponent, TrangchuComponent, 
     TrangchitietComponent, TrangdatgheComponent,
      HeaderComponent, FooterComponent, PhimComponent, 
-     DangkyComponent, DangnhapComponent],
+     DangkyComponent, DangnhapComponent, DatveComponent],
   exports: [HomelayoutComponent, TrangchuComponent, 
     TrangchitietComponent, TrangdatgheComponent, 
     HeaderComponent, FooterComponent, PhimComponent,

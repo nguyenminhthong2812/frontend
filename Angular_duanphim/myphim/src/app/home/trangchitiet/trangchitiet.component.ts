@@ -21,7 +21,7 @@ export class TrangchitietComponent implements OnInit {
           chiTiet =>{ 
             this.chiTietPhim = chiTiet;
             this.trailer = this.chiTietPhim.Trailer.replace('watch?v=','embed/');
-            console.log(this.trailer);           
+            console.log(this.chiTietPhim);           
           }
         )
       }
