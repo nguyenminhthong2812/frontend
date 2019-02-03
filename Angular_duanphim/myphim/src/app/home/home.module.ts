@@ -13,16 +13,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PipeModule } from '../pipe/pipe.module';
 import { DatveComponent } from './datve/datve.component';
+import { DanhsachgheComponent } from './danhsachghe/danhsachghe.component';
+import { GheComponent } from './ghe/ghe.component';
+import { EditgheComponent } from './editghe/editghe.component';
 
 @NgModule({
   declarations: [HomelayoutComponent, TrangchuComponent, 
     TrangchitietComponent, TrangdatgheComponent,
      HeaderComponent, FooterComponent, PhimComponent, 
-     DangkyComponent, DangnhapComponent, DatveComponent],
+     DangkyComponent, DangnhapComponent, DatveComponent, DanhsachgheComponent, GheComponent, EditgheComponent],
   exports: [HomelayoutComponent, TrangchuComponent, 
     TrangchitietComponent, TrangdatgheComponent, 
     HeaderComponent, FooterComponent, PhimComponent,
-    DangkyComponent, DangnhapComponent],
+    DangkyComponent, DangnhapComponent, DanhsachgheComponent, GheComponent, EditgheComponent],
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,RouterModule,PipeModule
   ]

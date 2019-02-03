@@ -1,3 +1,8 @@
-<p>
-  datve works!
-</p>
+<app-danhsachghe [DanhSachGhe] = "danhSachGhe" (emitStatus)="LayDanhSachGhe($event)"></app-danhsachghe>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <button class="btn btn-success" (click) = "DatVe()">Đặt Vé</button>
+        </div>
+    </div>
+</div>
