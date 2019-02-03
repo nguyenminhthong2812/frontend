@@ -44,14 +44,14 @@ export class DatveComponent implements OnInit {
   }
   LayDanhSachGhe(danhSachGhe){ 
     this.danhSachGheDaDat = danhSachGhe;   
-    console.log(this.danhSachGheDaDat);
+    //console.log(this.danhSachGheDaDat);
   }
   DatVe(){
     let taiKhoan:string;
     taiKhoan = this.LayTaiKhoanNguoiDung();
     let ve:{MaLichChieu:number,TaiKhoanNguoiDung:string,DanhSachVe:any[]} = 
       {MaLichChieu:this.maLichChieu,TaiKhoanNguoiDung:taiKhoan,DanhSachVe:this.danhSachGheDaDat};
-      console.log(ve);
+      //console.log(ve);
     this.phongve.DatVe(ve).subscribe(
       kq => {
         console.log(kq);
