@@ -9,6 +9,7 @@ import { QuanlysidebarComponent } from './admin/quanlysidebar/quanlysidebar.comp
 import { DangnhapComponent } from './home/dangnhap/dangnhap.component';
 import { DatveComponent } from './home/datve/datve.component';
 import { DangkyComponent } from './home/dangky/dangky.component';
+import { IsSaveRegisterForm } from './is-save-register-form.guard';
 
 const routes: Routes = [
   {path:'', component:HomelayoutComponent, children:[
@@ -16,7 +17,7 @@ const routes: Routes = [
     {path:'chitiet/:maphim',component:TrangchitietComponent},
     {path:'datve/:malichchieu',component:DatveComponent},
     {path:'dangnhap',component:DangnhapComponent},
-    {path:'dangky',component:DangkyComponent}
+    {path:'dangky',component:DangkyComponent,canDeactivate:[IsSaveRegisterForm]}
   ]},
   {path:'admin',component:AdminlayoutComponent, children:[
     {path:'quanlynguoidung',component:QuanlynguoidungComponent},

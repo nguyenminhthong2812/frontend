@@ -12,6 +12,7 @@ export class DangkyComponent implements OnInit {
   @ViewChild('formDangKy') formDK:NgForm;
   @ViewChild('btnLuu') btnLuu:ElementRef;
   @ViewChild('inputTK') inputTaiKhoan:ElementRef;
+  public CheckInputForm:boolean = false;
   DanhSachTaiKhoan = [];
   MaNhom = ["GP01","GP02","GP03","GP04","GP05","GP06"];
   
@@ -41,10 +42,12 @@ export class DangkyComponent implements OnInit {
     // this.formDK.reset();
     this.nguoiDungService.ThemNguoiDung(nguoiDung).subscribe(
       data => {
-        console.log("POST Request is successful ", data)
+        //console.log("POST Request is successful ", data);
+        this.CheckInputForm = true;
       },
       error => {
-        console.log(error);
+        alert(error);
+        // console.log(error);
       }
     );
   }

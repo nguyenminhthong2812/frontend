@@ -11,6 +11,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,6 +24,7 @@ import { environment } from '../environments/environment';
     AdminModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    
     
   ],
   providers: [],
