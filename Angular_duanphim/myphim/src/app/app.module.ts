@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { IsregisterformGuard } from './isregisterform.guard';
 
 
 
@@ -27,7 +28,7 @@ import { environment } from '../environments/environment';
     
     
   ],
-  providers: [],
+  // providers: [IsregisterformGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { NguoidungService } from 'src/app/service/nguoidung.service';
 import { NguoiDung } from 'src/app/models/NguoiDung';
 
+
+
 @Component({
   selector: 'app-dangky',
   templateUrl: './dangky.component.html',
@@ -12,7 +14,9 @@ export class DangkyComponent implements OnInit {
   @ViewChild('formDangKy') formDK:NgForm;
   @ViewChild('btnLuu') btnLuu:ElementRef;
   @ViewChild('inputTK') inputTaiKhoan:ElementRef;
-  public CheckInputForm:boolean = false;
+  
+  changesSaved = false;
+
   DanhSachTaiKhoan = [];
   MaNhom = ["GP01","GP02","GP03","GP04","GP05","GP06"];
   
@@ -42,8 +46,8 @@ export class DangkyComponent implements OnInit {
     // this.formDK.reset();
     this.nguoiDungService.ThemNguoiDung(nguoiDung).subscribe(
       data => {
-        //console.log("POST Request is successful ", data);
-        this.CheckInputForm = true;
+        console.log("POST Request is successful ", data);
+        this.changesSaved = true;
       },
       error => {
         alert(error);
@@ -78,7 +82,11 @@ export class DangkyComponent implements OnInit {
         this.DanhSachTaiKhoan.splice(parseInt(index),1);
     }
   }
-
-
+  
+  hasChanges(){
+    //return true;
+    return this.changesSaved;
+  
+  }  
 
 }
