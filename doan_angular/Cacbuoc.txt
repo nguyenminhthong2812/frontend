@@ -1,0 +1,15 @@
+CÁC BƯỚC KHỞI TẠO 1 DỰ ÁN ANGULAR
+1/	ng new ten_du_an
+2/ 	npm install bootstrap popper.js jquery --save
+3/ 	npm install font-awesome angular-font-awesome
+4/ 	add đoạn code sau vào file angular.json
+	"styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
+            ],
+    "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
