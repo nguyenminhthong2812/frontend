@@ -7,9 +7,16 @@ import { PhimdangchieuComponent } from './phimdangchieu/phimdangchieu.component'
 import { PhimsapchieuComponent } from './phimsapchieu/phimsapchieu.component';
 import { ItemphimComponent } from './itemphim/itemphim.component';
 import { LoaiphimComponent } from './loaiphim/loaiphim.component';
+import { LoaitintucComponent } from './loaitintuc/loaitintuc.component';
+import { DienanhComponent } from './dienanh/dienanh.component';
+import { ReviewComponent } from './review/review.component';
+import { KhuyenmaiComponent } from './khuyenmai/khuyenmai.component';
+import { Itemtintuc1Component } from './itemtintuc1/itemtintuc1.component';
+import { Itemtintuc2Component } from './itemtintuc2/itemtintuc2.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent],
+  declarations: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent],
   imports: [
     CommonModule
   ]
