@@ -10,7 +10,8 @@ import {  Router } from '@angular/router';
 })
 export class DangnhapComponent implements OnInit {
   formDangNhap:FormGroup;
-  TaiKhoanKhongHopLe = ['user001','user002'];
+  TaiKhoanKhongHopLe = ['user001','user002']; 
+
   constructor(private nguoiDungSV:NguoidungService, private router:Router) { }
   DangNhap(){
     let nguoiDungDN = this.formDangNhap.value;
@@ -46,4 +47,7 @@ export class DangnhapComponent implements OnInit {
     }
     return null;
   }
+  
+
+  
 }

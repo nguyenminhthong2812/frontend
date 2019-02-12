@@ -9,23 +9,38 @@ import { QuanlysidebarComponent } from './admin/quanlysidebar/quanlysidebar.comp
 import { DangnhapComponent } from './home/dangnhap/dangnhap.component';
 import { DatveComponent } from './home/datve/datve.component';
 import { DangkyComponent } from './home/dangky/dangky.component';
-import { IsSaveRegisterForm } from './is-save-register-form.guard';
+import { IsregisterformGuard } from './isregisterform.guard';
+import { IsloginGuard } from './islogin.guard';
+
 
 const routes: Routes = [
   {path:'', component:HomelayoutComponent, children:[
-    {path:'',component:TrangchuComponent},
+    {path:'',component:TrangchuComponent,canActivate:[IsloginGuard]},
     {path:'chitiet/:maphim',component:TrangchitietComponent},
     {path:'datve/:malichchieu',component:DatveComponent},
     {path:'dangnhap',component:DangnhapComponent},
-    {path:'dangky',component:DangkyComponent,canDeactivate:[IsSaveRegisterForm]}
+    {path:'dangky',component:DangkyComponent, canDeactivate:[IsregisterformGuard]}
   ]},
-  {path:'admin',component:AdminlayoutComponent, children:[
-    {path:'quanlynguoidung',component:QuanlynguoidungComponent},
-    {path:'quanlysidebar',component:QuanlysidebarComponent}
-  ]}
+  {
+    path:'admin',
+    component:AdminlayoutComponent,  
+    canActivate:[IsloginGuard],   
+    children:[
+      {
+        path:'',
+        canActivateChild:[IsloginGuard],
+        children:[
+          {path:'quanlynguoidung',component:QuanlynguoidungComponent},
+          {path:'quanlysidebar',component:QuanlysidebarComponent}
+        ]
+      }
+    ]
+    
+  }
 ];
 
 @NgModule({
+  providers: [IsregisterformGuard,IsloginGuard],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [IsSaveRegisterForm]

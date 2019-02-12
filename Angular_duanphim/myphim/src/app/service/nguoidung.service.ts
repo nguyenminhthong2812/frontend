@@ -7,7 +7,7 @@ import { NguoiDung } from '../models/NguoiDung';
   providedIn: 'root'
 })
 export class NguoidungService {
-
+  
   constructor(private _http:HttpClient) { }
 
   LayDanhSach():Observable<any>{
@@ -28,5 +28,19 @@ export class NguoidungService {
     header.append('Content-Type','application/json;charset=UTF-8');
     let Observe = this._http.post(url,{headers:header});
     return Observe;
+  }
+
+  // kiểm tra localstorage đã có nguoidung chưa
+  IsLogged():boolean{
+    let nguoiDung = JSON.parse(localStorage.getItem('NguoiDung'));
+    if(nguoiDung)
+      return true;
+    else
+      return false;
+  }
+  GetUser():any{
+    let nguoiDung = JSON.parse(localStorage.getItem('NguoiDung'));
+    if(nguoiDung)
+      return nguoiDung; 
   }
 }
