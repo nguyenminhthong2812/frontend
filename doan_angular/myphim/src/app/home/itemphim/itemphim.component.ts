@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-itemphim',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./itemphim.component.css']
 })
 export class ItemphimComponent implements OnInit {
-
+  @Input() phim;
   constructor() { }
 
   ngOnInit() {

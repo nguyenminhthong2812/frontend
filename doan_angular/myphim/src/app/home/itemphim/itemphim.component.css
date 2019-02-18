@@ -1,0 +1,29 @@
+.movie_item{
+    width:250px;
+    text-align: center;
+}
+.movie_item img{
+    width:100%;
+    border-radius: 5px;
+}
+.movie_item p{
+    font-size: 18px;
+    margin: 15px;
+}
+.movie_item button{
+    width: 100%;
+    border-radius: 5px;
+    border:none;
+    background-color: #c9021a;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    margin-top: 10px;
+    display: none;
+}
+.movie_item:hover button{
+    display: block;
+}
+.movie_item:hover p{
+    display: none;
+}

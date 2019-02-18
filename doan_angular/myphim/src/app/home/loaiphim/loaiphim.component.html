@@ -1,3 +1,18 @@
-<p>
-  loaiphim works!
-</p>
+<div class="row my-4">
+  <div class="col-12 text-center">
+    <button class="btn mr-3" [ngClass] = "{'btn-success':dangChieu}" (click)="HienPhim(true)">Đang chiếu</button>
+    <button class="btn" [ngClass] = "{'btn-success':!dangChieu}" (click)="HienPhim(false)">Sắp chiếu</button>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 px-2" *ngIf = "dangChieu; else phimsapchieu">
+      <app-phimdangchieu></app-phimdangchieu>
+    </div>
+    <ng-template #phimsapchieu>
+      <div class="col-12">
+        <app-phimsapchieu></app-phimsapchieu>
+      </div>
+    </ng-template>
+  </div>
+</div>

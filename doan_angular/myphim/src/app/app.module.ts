@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AdminModule } from './admin/admin.module';
   imports: [
     BrowserModule,
     HomeModule,
-    AdminModule
+    AdminModule,
+    OwlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

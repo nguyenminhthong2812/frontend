@@ -1,3 +1,7 @@
-<p>
-  phimdangchieu works!
-</p>
+<owl-carousel [options]="Options"  [carouselClasses]="['owl-theme', 'sliding']" >
+  <div class="item" *ngFor="let phim of DanhSachPhimDangChieu">
+    <app-itemphim [phim] = "phim"></app-itemphim>
+  </div>   
+ </owl-carousel>
+ 
+ 

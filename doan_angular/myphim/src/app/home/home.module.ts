@@ -14,12 +14,12 @@ import { KhuyenmaiComponent } from './khuyenmai/khuyenmai.component';
 import { Itemtintuc1Component } from './itemtintuc1/itemtintuc1.component';
 import { Itemtintuc2Component } from './itemtintuc2/itemtintuc2.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { OwlModule } from 'ngx-owl-carousel';
 @NgModule({
   exports: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent],
   declarations: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent],
   imports: [
-    CommonModule
+    CommonModule,OwlModule
   ]
 })
 export class HomeModule { }

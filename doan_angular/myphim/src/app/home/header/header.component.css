@@ -33,10 +33,7 @@
     text-decoration: none;
     color:white;    
 }
-#header_left{
-    margin-right: 20px;
-}
-#header_left .signin{
+.signin{
     text-decoration: none;
     color: white;    
 }
