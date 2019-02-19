@@ -16,7 +16,13 @@ export class PhimdangchieuComponent implements OnInit {
     { TenPhim: "Tình đầu thơ ngây", HinhAnh: '../../../assets/imgs/owl-tinh-dau-tho-ngay-.jpg' },
     { TenPhim: "Trạng quỳnh", HinhAnh: '../../../assets/imgs/owl-trang-quynh-15404406651091_370x490.jpg' },
 ]
-Options={items: 4, dots: false, nav: true, loop:true};
+Options={items: 5, dots: false, 
+    nav: true, loop:true,
+    margin: 15,    
+    navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']
+    
+   
+    };
   constructor() { }
 
   ngOnInit() {
