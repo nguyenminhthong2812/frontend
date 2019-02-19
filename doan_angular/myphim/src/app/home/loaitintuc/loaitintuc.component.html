@@ -1,3 +1,21 @@
-<p>
-  loaitintuc works!
-</p>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-12 text-center">
+      <button class="btn mr-2" [ngClass]="{'btn-success':loaitin=='DienAnh'}" (click)="ChonLoaiTin('DienAnh')">Điện ảnh</button>
+      <button class="btn mr-2" [ngClass]="{'btn-success':loaitin=='Review'}" (click)="ChonLoaiTin('Review')">Review</button>
+      <button class="btn mr-2" [ngClass]="{'btn-success':loaitin=='KhuyenMai'}" (click)="ChonLoaiTin('KhuyenMai')">Khuyến mãi</button>
+    </div>
+  </div>
+  <div class="row" [ngSwitch] = "loaitin">
+    <div class="col-12" *ngSwitchCase="'DienAnh'">
+      <app-dienanh></app-dienanh>
+    </div>
+    <div class="col-12" *ngSwitchCase="'Review'">
+      <app-review></app-review>
+    </div>
+    <div class="col-12" *ngSwitchCase="'KhuyenMai'">
+      <app-khuyenmai></app-khuyenmai>
+    </div>
+  </div>
+</div>
+

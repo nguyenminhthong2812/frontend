@@ -6,6 +6,7 @@ import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { OwlModule } from 'ngx-owl-carousel';
 
+
 @NgModule({
   declarations: [
     AppComponent

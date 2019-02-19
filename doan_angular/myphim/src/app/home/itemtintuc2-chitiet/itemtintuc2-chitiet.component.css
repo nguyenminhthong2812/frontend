@@ -1,0 +1,25 @@
+.tintuc2{
+    width:100%;
+    display: flex;
+    margin-bottom: 15px;
+}
+.tintuc2 .thumnail{    
+    float: left;
+    margin-right: 10px;
+}
+.thumnail img{
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+}
+.tieude{
+    float: left;
+}
+.tieude a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+.tieude a:hover{
+    color: chocolate;
+}

@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loaitintuc.component.css']
 })
 export class LoaitintucComponent implements OnInit {
-
+  loaitin:string='DienAnh';
   constructor() { }
-
+  ChonLoaiTin(tin:string){
+    this.loaitin = tin;
+  }
   ngOnInit() {
   }
 
