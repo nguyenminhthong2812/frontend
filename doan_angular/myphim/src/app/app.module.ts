@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { OwlModule } from 'ngx-owl-carousel';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { OwlModule } from 'ngx-owl-carousel';
     BrowserModule,
     HomeModule,
     AdminModule,
-    OwlModule
+    OwlModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

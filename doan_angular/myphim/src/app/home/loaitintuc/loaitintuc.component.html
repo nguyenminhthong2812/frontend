@@ -6,9 +6,12 @@
       <button class="btn mr-2" [ngClass]="{'btn-success':loaitin=='KhuyenMai'}" (click)="ChonLoaiTin('KhuyenMai')">Khuyến mãi</button>
     </div>
   </div>
-  <div class="row" [ngSwitch] = "loaitin">
-    <div class="col-12" *ngSwitchCase="'DienAnh'">
-      <app-dienanh></app-dienanh>
+  <div class="row text-center" [ngSwitch] = "loaitin">
+    <div class="col-12" *ngSwitchCase="'DienAnh'">      
+      <ng-container *ngFor="let tintuc of DanhSachTinTuc; let i = index">
+        <app-dienanh [tintuc] = "tintuc" *ngIf="dienAnh>i"></app-dienanh>
+      </ng-container>      
+      <button class="btn btn-xemthem mt-2" (click)="XemThem(true)">Xem Thêm</button>
     </div>
     <div class="col-12" *ngSwitchCase="'Review'">
       <app-review></app-review>
@@ -16,6 +19,7 @@
     <div class="col-12" *ngSwitchCase="'KhuyenMai'">
       <app-khuyenmai></app-khuyenmai>
     </div>
+    
   </div>
 </div>
 

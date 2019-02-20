@@ -16,6 +16,9 @@ import { Itemtintuc2Component } from './itemtintuc2/itemtintuc2.component';
 import { FooterComponent } from './footer/footer.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { Itemtintuc2ChitietComponent } from './itemtintuc2-chitiet/itemtintuc2-chitiet.component';
+
+
+
 @NgModule({
   exports: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent,Itemtintuc2ChitietComponent],
   declarations: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent, Itemtintuc2ChitietComponent],
