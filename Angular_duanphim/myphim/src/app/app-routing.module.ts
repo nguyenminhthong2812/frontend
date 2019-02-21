@@ -42,7 +42,7 @@ const routes: Routes = [
 @NgModule({
   providers: [IsregisterformGuard,IsloginGuard],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [IsSaveRegisterForm]
+  exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }
