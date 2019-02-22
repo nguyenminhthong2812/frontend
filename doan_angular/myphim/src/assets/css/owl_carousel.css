@@ -20,5 +20,9 @@
 }
 .owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
 
+/* Trang chi tiết phim */
 
-
+.ct_tieude p i{
+    font-size: 20px;
+    color: #ec5a2c;
+}

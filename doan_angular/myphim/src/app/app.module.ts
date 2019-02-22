@@ -6,10 +6,12 @@ import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { OwlModule } from 'ngx-owl-carousel';
 import { HttpClientModule } from '@angular/common/http';
+import { SafePipe } from './pipe/safe.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
