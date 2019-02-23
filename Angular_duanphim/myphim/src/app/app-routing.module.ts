@@ -14,13 +14,14 @@ import { IsloginGuard } from './islogin.guard';
 
 
 const routes: Routes = [
-  {path:'', component:HomelayoutComponent, children:[
-    {path:'',component:TrangchuComponent,canActivate:[IsloginGuard]},
-    {path:'chitiet/:maphim',component:TrangchitietComponent},
-    {path:'datve/:malichchieu',component:DatveComponent},
-    {path:'dangnhap',component:DangnhapComponent},
-    {path:'dangky',component:DangkyComponent, canDeactivate:[IsregisterformGuard]}
-  ]},
+  {path:'', component:HomelayoutComponent, 
+	children:[
+		{path:'',component:TrangchuComponent,canActivate:[IsloginGuard]},
+		{path:'chitiet/:maphim',component:TrangchitietComponent},
+		{path:'datve/:malichchieu',component:DatveComponent},
+		{path:'dangnhap',component:DangnhapComponent},
+		{path:'dangky',component:DangkyComponent, canDeactivate:[IsregisterformGuard]}
+	  ]},
   {
     path:'admin',
     component:AdminlayoutComponent,  

@@ -1,5 +1,11 @@
 <div class="movie_item">
-  <img [src]="phim.HinhAnh"   alt="">
+  <div class="itemphim_img">
+      <img [src]="phim.HinhAnh" [routerLink]="['/chitiet',phim.MaPhim]"  alt="">
+      <button class="btn btn-play-itemphim" data-toggle="modal" data-target="#myModal" (click)="LayTrailer(phim.Trailer)"><i class="fa fa-play"></i></button>
+  </div>  
   <p>{{phim.TenPhim}}</p>
-  <button>Xem thêm</button>
+  <button class="btn-xemthem" [routerLink]="['/chitiet',phim.MaPhim]">Xem thêm</button>
+
+  
+
 </div>

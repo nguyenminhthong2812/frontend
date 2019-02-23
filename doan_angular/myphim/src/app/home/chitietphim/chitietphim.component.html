@@ -1,16 +1,16 @@
-<div class="container mt-5">
+<div class="container mt-5 chitietphim">
   <div class="row">
     <div class="col-6 d-flex">
       <div class="ct_hinhanh">
         <img [src]="chitietphim.HinhAnh" alt="">
         <button class="btn btn-play" data-toggle="modal" data-target="#myModal"><i class="fa fa-play"></i></button>
       </div>
-      <div class="ct_tieude ml-2 mt-3">
+      <div class="ct_tieude ml-2 mt-4">
         <p>{{chitietphim.NgayKhoiChieu | date:'dd/MM/yyyy'}}</p>
         <h4>{{chitietphim.TenPhim}}</h4>
         <p>100 phút - 0 IMDb - 2D/Digital</p>
         <p #star></p>
-        <button class="btn btn-danger">Xem thêm</button>
+        <button class="btn btn-danger">Mua vé</button>
       </div>
       <!-- The Modal -->
       <div class="modal" id="myModal">
@@ -28,4 +28,26 @@
 
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <button class="btn btn-success mr-2">Lịch chiếu</button>
+        <button class="btn mr-2">Thông tin</button>
+        <button class="btn">Đánh giá</button>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-12">
+        <button class="btn btn-outline-success mr-2" *ngFor = "let lichchieu of chitietphim.LichChieu">
+          {{lichchieu.NgayChieuGioChieu | date:'dd/MM, hh:mm'}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
 </div>

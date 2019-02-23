@@ -1,3 +1,6 @@
+.chitietphim{
+    margin-top: 100px !important;
+}
 .ct_hinhanh{
     width: 100%;
     position: relative;
@@ -29,4 +32,8 @@
 }
 .modal-body{
     padding: 0;
+}
+
+.show{
+    padding-right: 28% !important;
 }

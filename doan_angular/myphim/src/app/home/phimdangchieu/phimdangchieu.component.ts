@@ -25,20 +25,25 @@ Options={items: 5, dots: false,
     
    
     };
+
+  public trailer:string = '';
+  
   constructor(private phim:PhimService) { }
 
   ngOnInit() {
     this.phim.LayDanhSachPhim().subscribe(
       data => {
         this.DanhSachPhimDangChieu = data;
-        console.log(data);
+        //console.log(data);
       },
       loi => {
         console.log(loi);
       }
     );
   }
-
+  LayTrailerParent(val:string){
+    this.trailer = val;
+  }
   
 
   

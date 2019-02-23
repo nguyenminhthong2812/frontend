@@ -18,13 +18,15 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { Itemtintuc2ChitietComponent } from './itemtintuc2-chitiet/itemtintuc2-chitiet.component';
 import { ChitietphimComponent } from './chitietphim/chitietphim.component';
 import { PipeModule } from '../pipe/pipe.module';
-
+import { RouterModule } from '@angular/router';
+import { HomelayoutComponent } from './homelayout/homelayout.component';
+import { DangnhapComponent } from './dangnhap/dangnhap.component';
 
 @NgModule({
-  exports: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent,Itemtintuc2ChitietComponent],
-  declarations: [TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent, Itemtintuc2ChitietComponent, ChitietphimComponent],
+  exports: [HomelayoutComponent,TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent,Itemtintuc2ChitietComponent,ChitietphimComponent, DangnhapComponent],
+  declarations: [HomelayoutComponent,TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent, Itemtintuc2ChitietComponent, ChitietphimComponent,  DangnhapComponent],
   imports: [
-    CommonModule,OwlModule,PipeModule
+    CommonModule,OwlModule,PipeModule,RouterModule
   ]
 })
 export class HomeModule { }

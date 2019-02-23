@@ -23,9 +23,9 @@ export class DienanhComponent implements OnInit {
     for(let tin3 of this.tintuc[2]){
       this.DanhSachTinTuc3.push(tin3);
     }
-    console.log(this.DanhSachTinTuc1);
-    console.log(this.DanhSachTinTuc2);
-    console.log(this.DanhSachTinTuc3);
+    //console.log(this.DanhSachTinTuc1);
+    //console.log(this.DanhSachTinTuc2);
+    //console.log(this.DanhSachTinTuc3);
   }
   
 

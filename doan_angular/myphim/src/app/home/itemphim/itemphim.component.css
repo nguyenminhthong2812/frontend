@@ -2,15 +2,34 @@
     width:100%;
     text-align: center;
 }
+.itemphim_img{
+    width: 100%;
+    position: relative;
+}
 .movie_item img{
     width:100%;
     border-radius: 5px;
 }
+
+.btn-play-itemphim{
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 15px 20px;
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    display:none;
+}
+.btn-play-itemphim i{
+    font-size: 20px;
+    color: white;
+}
+
 .movie_item p{
     font-size: 18px;
     margin: 15px;
 }
-.movie_item button{
+.movie_item .btn-xemthem{
     width: 100%;
     border-radius: 5px;
     border:none;
@@ -27,3 +46,4 @@
 .movie_item:hover p{
     display: none;
 }
+

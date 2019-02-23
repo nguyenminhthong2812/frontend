@@ -1,0 +1,12 @@
+
+
+.modal-content{
+    width: 900px;
+    height: 450px;
+}
+.modal-body{
+    padding: 0;
+}
+.show{
+    padding-right: 28% !important;
+}

@@ -6,19 +6,21 @@ import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { OwlModule } from 'ngx-owl-carousel';
 import { HttpClientModule } from '@angular/common/http';
-import { SafePipe } from './pipe/safe.pipe';
+import { PipeModule } from './pipe/pipe.module';
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SafePipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HomeModule,
     AdminModule,
     OwlModule,
-    HttpClientModule
+    HttpClientModule,
+    PipeModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

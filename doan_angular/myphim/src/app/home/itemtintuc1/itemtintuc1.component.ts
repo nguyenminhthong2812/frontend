@@ -6,11 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./itemtintuc1.component.css']
 })
 export class Itemtintuc1Component implements OnInit {
-  @Input() tintuc;
+  @Input() tintuc;  
   constructor() { }
 
   ngOnInit() {
-    console.log(this.tintuc);
+    //console.log(this.tintuc);
   }
-
+ 
 }
