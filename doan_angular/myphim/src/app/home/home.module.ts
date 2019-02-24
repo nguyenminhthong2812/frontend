@@ -21,12 +21,19 @@ import { PipeModule } from '../pipe/pipe.module';
 import { RouterModule } from '@angular/router';
 import { HomelayoutComponent } from './homelayout/homelayout.component';
 import { DangnhapComponent } from './dangnhap/dangnhap.component';
+import { LichchieuComponent } from './lichchieu/lichchieu.component';
+import { DatveComponent } from './datve/datve.component';
+import { GheComponent } from './ghe/ghe.component';
+import { DangkyComponent } from './dangky/dangky.component';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
-  exports: [HomelayoutComponent,TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent,Itemtintuc2ChitietComponent,ChitietphimComponent, DangnhapComponent],
-  declarations: [HomelayoutComponent,TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent, Itemtintuc2ChitietComponent, ChitietphimComponent,  DangnhapComponent],
+  exports: [HomelayoutComponent,TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent,Itemtintuc2ChitietComponent,ChitietphimComponent, DangnhapComponent,LichchieuComponent, DatveComponent, GheComponent,DangkyComponent],
+  declarations: [HomelayoutComponent,TrangchuComponent, HeaderComponent, SliderComponent, PhimdangchieuComponent, PhimsapchieuComponent, ItemphimComponent, LoaiphimComponent, LoaitintucComponent, DienanhComponent, ReviewComponent, KhuyenmaiComponent, Itemtintuc1Component, Itemtintuc2Component, FooterComponent, Itemtintuc2ChitietComponent, ChitietphimComponent,  DangnhapComponent, LichchieuComponent, DatveComponent, GheComponent, DangkyComponent],
   imports: [
-    CommonModule,OwlModule,PipeModule,RouterModule
+    CommonModule,OwlModule,PipeModule,RouterModule,FormsModule,ReactiveFormsModule
   ]
 })
 export class HomeModule { }

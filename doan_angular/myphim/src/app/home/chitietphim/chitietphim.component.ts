@@ -12,14 +12,15 @@ export class ChitietphimComponent implements OnInit {
   public danhgia:string = '';
   public trailer:string = '';
   public maPhim:number;
+  public statusLichChieu:boolean = true;
+  public malichchieu:number;
   @ViewChild ('star') star:ElementRef; 
   constructor(private phim:PhimService, private act:ActivatedRoute) { }
 
   ngOnInit() {
     this.act.params.subscribe(
       kq => {        
-        this.maPhim = kq.maphim;
-        console.log(this.maPhim);
+        this.maPhim = kq.maphim;        
         this.phim.LayChiTietPhim(this.maPhim).subscribe(
           data => {        
             this.chitietphim = data;        
@@ -43,7 +44,7 @@ export class ChitietphimComponent implements OnInit {
     
             // lấy trailer
             this.trailer = this.chitietphim.Trailer.replace('watch?v=','embed/');
-            
+            //console.log(this.chitietphim);
           },
           loi => {
             alert(loi);
@@ -55,5 +56,11 @@ export class ChitietphimComponent implements OnInit {
       }
     );
   }
-
+  XemLichChieu(){
+    this.statusLichChieu = true;    
+  }
+  DatVeParent(val:boolean,malichchieu:number){
+    this.statusLichChieu = !val;
+    this.malichchieu = malichchieu;
+  }
 }

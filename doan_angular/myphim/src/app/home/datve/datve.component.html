@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-8">
+      <h2 class="mb-4 text-center">Danh sách ghế</h2>
+      <app-ghe *ngFor = "let ghe of DanhSachGhe" [ghe]="ghe" (emitStatus)="ChonGheParent($event,ghe)"></app-ghe>  
+  </div>
+  <div class="col-4">
+      <h2 class="mb-4 text-center">Thông tin đặt ghế</h2>
+      <p>Số ghế đã được đặt: {{soGheDaDat}}</p>
+      <p>Số ghế còn lại: {{soGheConLai}}</p>
+      <hr>
+      <p>Số ghế bạn đặt</p>
+      <div class="thongtindatghe d-flex justify-content-between">
+        <div class="ghedat">
+          <span>Ghế: </span>
+          <span class="ghe mr-2" *ngFor = "let ghe of DanhSachGheDaDat">{{ghe.TenGhe}}</span>
+        </div>
+        <div class="giatien">
+          <span>{{tongTien}}</span>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <button class="btn btn-outline-success" (click)="DatGhe()">Đặt vé</button>
+      </div>
+  </div>
+  
+</div>

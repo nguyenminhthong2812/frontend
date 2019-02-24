@@ -31,16 +31,22 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <button class="btn btn-success mr-2">Lịch chiếu</button>
-        <button class="btn mr-2">Thông tin</button>
+        <button class="btn mr-2" [ngClass]="{'btn-success':statusLichChieu}" (click)="XemLichChieu()">Lịch chiếu</button>
+        <button class="btn mr-2" [ngClass]="{'btn-success':!statusLichChieu}">Đặt vé</button>
         <button class="btn">Đánh giá</button>
       </div>
     </div>
     <div class="row my-5">
       <div class="col-12">
-        <button class="btn btn-outline-success mr-2" *ngFor = "let lichchieu of chitietphim.LichChieu">
+        <!-- <button class="btn btn-outline-success mr-2" *ngFor = "let lichchieu of chitietphim.LichChieu">
           {{lichchieu.NgayChieuGioChieu | date:'dd/MM, hh:mm'}}
-        </button>
+        </button> -->
+        <ng-container *ngIf = "statusLichChieu; else datve">
+          <app-lichchieu [lichchieu] = "lichchieu" *ngFor = "let lichchieu of chitietphim.LichChieu" (emitStatus)="DatVeParent($event,lichchieu.MaLichChieu)"></app-lichchieu>
+        </ng-container>
+        <ng-template #datve>
+          <app-datve [malichchieu]="malichchieu"></app-datve>
+        </ng-template>
       </div>
     </div>
   </div>

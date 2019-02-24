@@ -1,0 +1,7 @@
+<ng-container *ngIf="!ghe.DaDat; else dadat">
+  <button class="btn btn-secondary m-1" [ngClass]="{'btn-success':status}" (click)="ChonGhe()">{{ghe.TenGhe}}</button>
+</ng-container>
+<ng-template #dadat>
+  <button class="btn btn-danger m-1" disabled>{{ghe.TenGhe}}</button>
+</ng-template>
+

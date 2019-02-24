@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PipeModule } from './pipe/pipe.module';
 import { RoutingModule } from './routing/routing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,6 +22,7 @@ import { RoutingModule } from './routing/routing.module';
     HttpClientModule,
     PipeModule,
     RoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
