@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-5 mx-auto">
-      <form #formDangKy = "ngForm">
+      <form #formDangKy = "ngForm" (ngSubmit)="LuuNguoiDung(formDangKy.value)">
         <h4 class="display-4 text-center">ĐĂNG KÝ</h4>
         <div class="form-group">
           <label>Tài khoản</label>
@@ -74,17 +74,18 @@
           <label class="mr-3">Loại người dùng:  </label>
           <div class="form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="LoaiNguoiDung" ngModel value="KhachHang">Khách hàng
+              <input type="radio" class="form-check-input" name="MaLoaiNguoiDung" ngModel value="KhachHang">Khách hàng
             </label>
           </div>
           <div class="form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="LoaiNguoiDung" ngModel value="QuanTri">Admin
+              <input type="radio" class="form-check-input" name="MaLoaiNguoiDung" ngModel value="QuanTri">Admin
             </label>
           </div>
         </div>
         <div class="form-group text-center">
-          <button class="btn btn-success" type="submit" #btnLuu>Đăng ký</button>
+          <button class="btn btn-success mr-2" type="submit" #btnLuu >Đăng ký</button>
+          <button class="btn btn-success" type="reset" *ngIf="!themStatus" ng-click="ThemMoi()">Thêm mới</button>
         </div>
       </form>
     </div>
@@ -127,6 +128,7 @@
               >Sửa</button>
               <button #btnXoa class="btn btn-danger"
                 [attr.data-TaiKhoan] = "nguoidung.TaiKhoan"
+                (click)="XoaNguoiDung(nguoidung.TaiKhoan)"
               >Xóa</button>
             </td>
           </tr>
