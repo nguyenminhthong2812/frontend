@@ -5,7 +5,7 @@
         <h4 class="display-4 text-center">ĐĂNG KÝ</h4>
         <div class="form-group">
           <label>Tài khoản</label>
-          <input type="text" class="form-control" name="TaiKhoan" ngModel #taikhoan="ngModel" required>
+          <input #taikhoan type="text" class="form-control" name="TaiKhoan" ngModel #taikhoan="ngModel" required>
           <div *ngIf="taikhoan.errors && (taikhoan.dirty || taikhoan.touched)">
             <div class="alert alert-danger" *ngIf="taikhoan.errors.required"> 
               Vui lòng nhập tài khoản.
@@ -68,23 +68,23 @@
         </div>
         <div class="form-group">
           <label>Số điện thoại</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="SoDT" ngModel>
         </div>
         <div class="form-group">
           <label class="mr-3">Loại người dùng:  </label>
           <div class="form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="LoaiNguoiDung" value="KhachHang">Khách hàng
+              <input type="radio" class="form-check-input" name="LoaiNguoiDung" ngModel value="KhachHang">Khách hàng
             </label>
           </div>
           <div class="form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="LoaiNguoiDung" value="QuanTri">Admin
+              <input type="radio" class="form-check-input" name="LoaiNguoiDung" ngModel value="QuanTri">Admin
             </label>
           </div>
         </div>
         <div class="form-group text-center">
-          <button class="btn btn-success" type="submit">Đăng ký</button>
+          <button class="btn btn-success" type="submit" #btnLuu>Đăng ký</button>
         </div>
       </form>
     </div>
@@ -106,7 +106,30 @@
           </tr>
         </thead>
         <tbody>
-
+          <tr *ngFor="let nguoidung of DanhSachNguoiDung; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{nguoidung.TaiKhoan}}</td>
+            <td>{{nguoidung.HoTen}}</td>
+            <td>{{nguoidung.MaNhom}}</td>
+            <td>{{nguoidung.Email}}</td>
+            <td>{{nguoidung.SoDT}}</td>
+            <td>{{nguoidung.TenLoaiNguoiDung}}</td>
+            <td>
+              <button #btnSua class="btn btn-success mr-2"
+                [attr.data-TaiKhoan] = "nguoidung.TaiKhoan"
+                [attr.data-MatKhau] = "nguoidung.MatKhau"
+                [attr.data-HoTen] = "nguoidung.HoTen"
+                [attr.data-MaNhom] = "nguoidung.MaNhom"
+                [attr.data-Email] = "nguoidung.Email"
+                [attr.data-SoDT] = "nguoidung.SoDT"
+                [attr.data-LoaiNguoiDung] = "nguoidung.MaLoaiNguoiDung"
+                (click)="Sua(btnSua)"
+              >Sửa</button>
+              <button #btnXoa class="btn btn-danger"
+                [attr.data-TaiKhoan] = "nguoidung.TaiKhoan"
+              >Xóa</button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
