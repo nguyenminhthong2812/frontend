@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NguoidungService } from 'src/app/services/nguoidung.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dangnhap',
@@ -6,10 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dangnhap.component.css']
 })
 export class DangnhapComponent implements OnInit {
-
-  constructor() { }
-
+  formDangNhap:FormGroup;
+  constructor(private nguoidung:NguoidungService, private router: Router) { }
+  regex_username:string = '^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$';
   ngOnInit() {
+    this.formDangNhap = new FormGroup(
+      {
+        'TaiKhoan': new FormControl(null,[Validators.required,Validators.pattern(this.regex_username)]),
+        'MatKhau': new FormControl(null,[Validators.required])
+      }
+    );
   }
-
+  DangNhap(){
+    let nguoiDungDN = this.formDangNhap.value;    
+    this.nguoidung.DangNhap(nguoiDungDN.TaiKhoan,nguoiDungDN.MatKhau).subscribe(
+      kq => {
+        if(typeof(kq) == 'object'){
+          localStorage.setItem('NguoiDung',JSON.stringify(kq));
+          this.router.navigate(['/']);
+        }
+        else{
+          alert('Vui lòng đăng nhập lại');
+        }
+      },
+      loi => {
+        alert(loi);
+      }
+    );
+  }
 }

@@ -13,7 +13,7 @@ export class ItemphimComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.phim);
+    //console.log(this.phim);
   }
   LayTrailer(val:string){
     this.trailer = val.replace('watch?v=','embed/');

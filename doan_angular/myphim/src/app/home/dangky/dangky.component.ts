@@ -94,10 +94,10 @@ export class DangkyComponent implements OnInit {
       );
     }
   }
-  ThemMoi(){
-    this.formDK.reset();
-    this.themStatus = true; // bật cờ lên để thêm dữ liệu
-    this.inputTaiKhoan.nativeElement.readOnly = false;   
-    console.log(this.themStatus); 
-  }
+  // ThemMoi(){
+  //   this.formDK.reset();
+  //   this.themStatus = true; // bật cờ lên để thêm dữ liệu
+  //   this.inputTaiKhoan.nativeElement.readOnly = false;   
+  //   console.log(this.themStatus); 
+  // }
 }
