@@ -18,16 +18,16 @@
       </li>
     </ul>
   </nav>
-    <div *ngIf = "!statusTaiKhoan; else logout">
+    <div *ngIf = "!taikhoan; else logout">
       <a href="#" class="signin mr-3" [routerLink]="['/dangnhap']">
         <i class="fa fa-user-circle"></i>
         <span>Đăng nhập</span>      
       </a>
     </div>    
     <ng-template #logout>
-      <div>
-        <span>Xin chào {{hoten}}</span>|
-        <a href="" [routerLink] = "['/dangnhap']" (click)="Logout()">Logout</a>
+      <div class="logout">
+        <span>Xin chào {{taikhoan.HoTen}} </span>|
+        <a href="" [routerLink] = "['/dangnhap']" (click)="Logout()">Đăng xuất</a>
       </div>
-    </ng-template>     
+    </ng-template>        
 </header>

@@ -1,4 +1,5 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NguoidungService } from 'src/app/services/nguoidung.service';
 
 @Component({
   selector: 'app-header',
@@ -6,22 +7,25 @@ import { Component, OnInit, OnChanges } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public hoten:string;
-  public statusTaiKhoan:boolean = false;
-  constructor() { }
+  
+  get taikhoan():any{
+    return this.nguoidung.GetUser();    
+  }
+  constructor(private nguoidung:NguoidungService) {         
+  }
 
   ngOnInit() {
-    let nguoiDung = JSON.parse(localStorage.getItem('NguoiDung'));
-    if(nguoiDung){
-      this.statusTaiKhoan = true;
-      this.hoten = nguoiDung.HoTen;
-    }
+    //console.log(this.taikhoan);
+    // let nguoiDung = JSON.parse(localStorage.getItem('NguoiDung'));
+    // if(nguoiDung){
+    //   this.statusTaiKhoan = true;
+    //   this.hoten = nguoiDung.HoTen;
+    // }
   }
 
   
 
-  Logout(){    
-    this.statusTaiKhoan = false;
+  Logout(){        
     localStorage.removeItem('NguoiDung');
   }
 }

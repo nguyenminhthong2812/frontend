@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { PhongveService } from 'src/app/services/phongve.service';
 import { Ghe } from '../models/ghe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-datve',
@@ -15,7 +16,7 @@ export class DatveComponent implements OnInit {
   public soGheConLai:number = 0;
   public DanhSachGheDaDat:Ghe[]=[];
   public tongTien:number = 0;
-  constructor(private phongve:PhongveService) { }
+  constructor(private phongve:PhongveService,private router:Router) { }
 
   ngOnInit() {
     this.phongve.LayChiTietVe(this.malichchieu).subscribe(
@@ -63,6 +64,7 @@ export class DatveComponent implements OnInit {
     this.phongve.DatGhe(ve).subscribe(
       data => {
         alert(data);
+        this.router.navigate(['/']);
       },
       loi => {
         alert(loi);

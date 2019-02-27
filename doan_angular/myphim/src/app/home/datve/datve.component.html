@@ -8,14 +8,14 @@
       <p>Số ghế đã được đặt: {{soGheDaDat}}</p>
       <p>Số ghế còn lại: {{soGheConLai}}</p>
       <hr>
-      <p>Số ghế bạn đặt</p>
+      <p>Số ghế bạn đặt:</p>
       <div class="thongtindatghe d-flex justify-content-between">
         <div class="ghedat">
           <span>Ghế: </span>
           <span class="ghe mr-2" *ngFor = "let ghe of DanhSachGheDaDat">{{ghe.TenGhe}}</span>
         </div>
         <div class="giatien">
-          <span>{{tongTien}}</span>
+          <span>Giá: {{tongTien}}</span>
         </div>
       </div>
       <hr>
