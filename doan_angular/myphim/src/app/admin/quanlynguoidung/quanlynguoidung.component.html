@@ -44,7 +44,7 @@
                 [attr.data-Email] = "nguoidung.Email"
                 [attr.data-SoDT] = "nguoidung.SoDT"
                 [attr.data-LoaiNguoiDung] = "nguoidung.MaLoaiNguoiDung"
-                (click)="Sua(btnSua)"
+                (click)="Sua(btnSua)" data-toggle="modal" data-target="#myModal"
               >Sửa</button>              
             </td>
           </tr>
@@ -53,19 +53,19 @@
     </div>
   </div>
   <!-- popup thêm/sửa người dùng -->
-  <div class="modal fade" id="myModal">
-      <div class="modal-dialog frm-nhanvien">
+  <div class="modal fade" [ngStyle]="{'display':display}" id="myModal">
+      <div class="modal-dialog">
           <div class="modal-content">
       
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title tieude">Thêm người dùng</h4>
+              <h4 class="modal-title tieude" #tieude>Thêm người dùng</h4>
               <button type="button" id="btnClose" class="close" data-dismiss="modal">&times;</button>
             </div>
             
             <!-- Modal body -->
             <div class="modal-body">
-                <form #formDangKy = "ngForm">                     
+                <form #formDangKy = "ngForm" (ngSubmit)="LuuNguoiDung(formDangKy.value)">                     
                     <div class="form-group">
                       <label>Tài khoản</label>
                       <input #taikhoan type="text" class="form-control" name="TaiKhoan" ngModel #taikhoan="ngModel" required>
