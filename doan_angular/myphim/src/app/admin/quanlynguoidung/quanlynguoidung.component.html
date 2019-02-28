@@ -1,3 +1,162 @@
-<p>
-  quanlynguoidung works!
-</p>
+<div class="nguoidung">  
+  <!-- chức năng -->
+  <div class="timkiem d-flex mt-3">
+    <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm"/>
+    <button class="btn btn-success ml-2">Tìm</button>
+  </div>
+  <div class="button mt-3">
+    <button class="btn btn-success mr-2" id="themNV" data-toggle="modal" data-target="#myModal">Thêm <i class="fa fa-plus"></i></button>
+    <button class="btn btn-danger" id="xoaNV">Xóa <i class="fa fa-trash-o"></i></button>
+  </div>
+
+  <!-- Danh sách người dùng -->
+  <div class="row">
+    <div class="col-12">
+      <h4 class="display-5 text-center">Danh sách tài khoản</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <td>STT</td>
+            <td>Tài khoản</td>
+            <td>Họ tên</td>
+            <td>Mã nhóm</td>
+            <td>Email</td>
+            <td>Số điện thoại</td>
+            <td>Loại người dùng</td>
+            <td>Thao tác</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nguoidung of DanhSachNguoiDung; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{nguoidung.TaiKhoan}}</td>
+            <td>{{nguoidung.HoTen}}</td>
+            <td>{{nguoidung.MaNhom}}</td>
+            <td>{{nguoidung.Email}}</td>
+            <td>{{nguoidung.SoDT}}</td>
+            <td>{{nguoidung.TenLoaiNguoiDung}}</td>
+            <td>
+              <button #btnSua class="btn btn-success mr-2"
+                [attr.data-TaiKhoan] = "nguoidung.TaiKhoan"
+                [attr.data-MatKhau] = "nguoidung.MatKhau"
+                [attr.data-HoTen] = "nguoidung.HoTen"
+                [attr.data-MaNhom] = "nguoidung.MaNhom"
+                [attr.data-Email] = "nguoidung.Email"
+                [attr.data-SoDT] = "nguoidung.SoDT"
+                [attr.data-LoaiNguoiDung] = "nguoidung.MaLoaiNguoiDung"
+                (click)="Sua(btnSua)"
+              >Sửa</button>              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- popup thêm/sửa người dùng -->
+  <div class="modal fade" id="myModal">
+      <div class="modal-dialog frm-nhanvien">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title tieude">Thêm người dùng</h4>
+              <button type="button" id="btnClose" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form #formDangKy = "ngForm">                     
+                    <div class="form-group">
+                      <label>Tài khoản</label>
+                      <input #taikhoan type="text" class="form-control" name="TaiKhoan" ngModel #taikhoan="ngModel" required>
+                      <div *ngIf="taikhoan.errors && (taikhoan.dirty || taikhoan.touched)">
+                        <div class="alert alert-danger" *ngIf="taikhoan.errors.required"> 
+                          Vui lòng nhập tài khoản.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Mật khẩu</label>
+                      <input type="password" class="form-control" name="MatKhau" ngModel #matkhau="ngModel" required minlength="6" maxlength="20">
+                      <div *ngIf = "matkhau.errors && (matkhau.dirty || matkhau.touched)">
+                        <div class="alert alert-danger" *ngIf = "matkhau.errors.required">
+                          Vui lòng nhập mật khẩu.
+                        </div>
+                        <div class="alert alert-danger" *ngIf = "matkhau.errors.minlength || matkhau.errors.maxlength">
+                          Độ dài mật khẩu từ 6 đến 20 ký tự.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Họ tên</label>
+                      <input type="text" class="form-control" name="HoTen" ngModel #hoten = "ngModel" required [pattern]=
+                        '"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                        "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                        "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'
+                      >
+                      <div *ngIf = "hoten.errors && (hoten.dirty || hoten.touched)">
+                        <div class="alert alert-danger" *ngIf = "hoten.errors.required">
+                          Vui lòng nhập họ tên.
+                        </div>
+                        <div class="alert alert-danger" *ngIf = "hoten.errors.pattern">
+                          Chỉ nhập ký tự.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Mã nhóm</label>
+                      <select class="form-control" name="MaNhom" ngModel #manhom="ngModel">
+                        <option value="GP01">GP01</option>
+                        <option value="GP02">GP02</option>
+                        <option value="GP03">GP03</option>
+                        <option value="GP04">GP04</option>
+                        <option value="GP05">GP05</option>
+                        <option value="GP06">GP06</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" class="form-control" name="Email" ngModel #email="ngModel" required [pattern] = 
+                        '"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"'
+                      >
+                    </div>
+                    <div *ngIf = "email.errors && (email.dirty || email.touched)">
+                      <div class="alert alert-danger" *ngIf = "email.errors.required">
+                        Vui lòng nhập email.
+                      </div>
+                      <div class="alert alert-danger" *ngIf = "email.errors.pattern">
+                        email chưa đúng định dạng.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Số điện thoại</label>
+                      <input type="text" class="form-control" name="SoDT" ngModel>
+                    </div>
+                    <div class="form-group">
+                      <label class="mr-3">Loại người dùng:  </label>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="MaLoaiNguoiDung" ngModel value="KhachHang">Khách hàng
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="MaLoaiNguoiDung" ngModel value="QuanTri">Admin
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group text-center">
+                      <button class="btn btn-success mr-2" type="submit" #btnLuu >Đăng ký</button>          
+                    </div>
+                  </form>
+            </div>
+      </div>
+    </div>
+
+
+
+
+
+
+</div>

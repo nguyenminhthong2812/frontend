@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminindex.component.css']
 })
 export class AdminindexComponent implements OnInit {
-
+  public quanly:string = 'nguoidung';
   constructor() { }
 
   ngOnInit() {
   }
-
+  ChonLoaiQuanLy(val:string){
+    this.quanly = val;
+  }
 }

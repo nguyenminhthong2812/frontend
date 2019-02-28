@@ -7,15 +7,16 @@ import { NguoidungService } from 'src/app/services/nguoidung.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+  get role():string{
+    return this.nguoidung.GetUser().MaLoaiNguoiDung;
+  }
   get taikhoan():any{
     return this.nguoidung.GetUser();    
   }
   constructor(private nguoidung:NguoidungService) {         
   }
 
-  ngOnInit() {
-    //console.log(this.taikhoan);
+  ngOnInit() {    
     // let nguoiDung = JSON.parse(localStorage.getItem('NguoiDung'));
     // if(nguoiDung){
     //   this.statusTaiKhoan = true;

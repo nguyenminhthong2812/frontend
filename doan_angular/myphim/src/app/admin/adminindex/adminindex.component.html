@@ -1,3 +1,25 @@
-<p>
-  adminindex works!
-</p>
+<div class="container mt-5">
+    <ul class="nav nav-tabs">
+    <li class="nav-item">    
+      <button class="nav-link btn" [ngClass]="{'active':quanly=='nguoidung'}" (click)="ChonLoaiQuanLy('nguoidung')">Quản lý người dùng</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link btn" [ngClass]="{'active':quanly=='phim'}" (click)="ChonLoaiQuanLy('phim')">Quản lý phim</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link btn" [ngClass]="{'active':quanly=='thongke'}" (click)="ChonLoaiQuanLy('thongke')">Thống kê</button>
+    </li>  
+  </ul> 
+  <div class="row" [ngSwitch]="quanly">
+    <div class="col-12" *ngSwitchCase="'nguoidung'">
+      <app-quanlynguoidung></app-quanlynguoidung>
+    </div>
+    <div class="col-12" *ngSwitchCase="'phim'">
+      <app-quanlyphim></app-quanlyphim>
+    </div>
+    <div class="col-12" *ngSwitchCase="'thongke'">
+      <app-quanlylichchieu></app-quanlylichchieu>
+    </div>
+  </div>
+
+</div>

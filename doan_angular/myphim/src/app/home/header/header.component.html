@@ -26,7 +26,8 @@
     </div>    
     <ng-template #logout>
       <div class="logout">
-        <span>Xin chào {{taikhoan.HoTen}} </span>|
+        <span>Xin chào {{taikhoan.HoTen}} | </span>
+        <a href="" *ngIf = "role == 'QuanTri'" [routerLink] = "['/admin']">Admin | </a>
         <a href="" [routerLink] = "['/dangnhap']">Đăng xuất</a>
       </div>
     </ng-template>        
