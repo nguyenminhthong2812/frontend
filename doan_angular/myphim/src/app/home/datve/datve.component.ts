@@ -1,7 +1,8 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
 import { PhongveService } from 'src/app/services/phongve.service';
 import { Ghe } from '../models/ghe';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-datve',
@@ -9,13 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./datve.component.css']
 })
 export class DatveComponent implements OnInit {
-  @Input() malichchieu;
+  @Input() malichchieu; 
+  @Output() emitStatus = new EventEmitter();
   public DanhSachGhe:Ghe[] = [];
   public ChiTietVe:any;
   public soGheDaDat:number = 0;
   public soGheConLai:number = 0;
   public DanhSachGheDaDat:Ghe[]=[];
-  public tongTien:number = 0;
+  public tongTien:number = 0;  
   constructor(private phongve:PhongveService,private router:Router) { }
 
   ngOnInit() {
@@ -54,25 +56,25 @@ export class DatveComponent implements OnInit {
         }
       }
     }
-    console.log(this.DanhSachGheDaDat);
+    //console.log(this.DanhSachGheDaDat);
   }
+
   DatGhe(){
-    let taiKhoan:string = 'nguyenvana';
+    let nguoiDung = JSON.parse(localStorage.getItem('NguoiDung'));
+    let taiKhoan = nguoiDung.TaiKhoan;
     let ve:{MaLichChieu:number,TaiKhoanNguoiDung:string,DanhSachVe:any[]}= {
           MaLichChieu:this.malichchieu,TaiKhoanNguoiDung:taiKhoan,DanhSachVe:this.DanhSachGheDaDat
         }
     this.phongve.DatGhe(ve).subscribe(
       data => {
-        alert(data);
-        this.router.navigate(['/']);
+        alert(data); 
+        this.emitStatus.emit(true);       
+        this.router.navigate(['/']);        
       },
       loi => {
         alert(loi);
       }
     );
   }
-
-
-
 
 }

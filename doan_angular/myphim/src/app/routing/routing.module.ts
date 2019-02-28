@@ -7,6 +7,7 @@ import { HomelayoutComponent } from '../home/homelayout/homelayout.component';
 import { DangnhapComponent } from '../home/dangnhap/dangnhap.component';
 import { DangkyComponent } from '../home/dangky/dangky.component';
 import { IsLogginGuard } from '../guards/is-loggin.guard';
+import { DatveGuard } from '../guards/datve.guard';
 
 const routes:Routes = [
   {
@@ -16,7 +17,7 @@ const routes:Routes = [
         path:'',component:TrangchuComponent,canActivate:[IsLogginGuard]
       },
       {
-        path:'chitiet/:maphim',component:ChitietphimComponent
+        path:'chitiet/:maphim',component:ChitietphimComponent,canDeactivate:[DatveGuard]
       },
       {
         path:'dangnhap',component:DangnhapComponent
@@ -29,7 +30,7 @@ const routes:Routes = [
 ]
 
 @NgModule({
-  providers:[IsLogginGuard],
+  providers:[IsLogginGuard,DatveGuard],
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

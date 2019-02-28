@@ -15,6 +15,7 @@ export class ChitietphimComponent implements OnInit {
   public statusLichChieu:boolean = true;
   public malichchieu:number;
   @ViewChild ('star') star:ElementRef; 
+  public statusDatVe:boolean = false;
   constructor(private phim:PhimService, private act:ActivatedRoute) { }
 
   ngOnInit() {
@@ -62,5 +63,13 @@ export class ChitietphimComponent implements OnInit {
   DatVeParent(val:boolean,malichchieu:number){
     this.statusLichChieu = !val;
     this.malichchieu = malichchieu;
+  }
+  DatGheParent(val:boolean){
+    this.statusDatVe = val;
+    console.log(this.statusDatVe);
+  }
+
+  GetStatusDatVe(){
+    return this.statusDatVe;
   }
 }

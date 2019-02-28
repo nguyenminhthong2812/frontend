@@ -19,6 +19,8 @@ export class DangnhapComponent implements OnInit {
         'MatKhau': new FormControl(null,[Validators.required])
       }
     );
+    // xóa người dùng cũ
+    localStorage.removeItem('NguoiDung');
   }
   DangNhap(){
     let nguoiDungDN = this.formDangNhap.value;    

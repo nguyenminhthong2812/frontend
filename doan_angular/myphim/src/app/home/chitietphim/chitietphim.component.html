@@ -45,7 +45,7 @@
           <app-lichchieu [lichchieu] = "lichchieu" *ngFor = "let lichchieu of chitietphim.LichChieu" (emitStatus)="DatVeParent($event,lichchieu.MaLichChieu)"></app-lichchieu>
         </ng-container>
         <ng-template #datve>
-          <app-datve [malichchieu]="malichchieu"></app-datve>
+          <app-datve [malichchieu]="malichchieu" (emitStatus)="DatGheParent($event)"></app-datve>
         </ng-template>
       </div>
     </div>

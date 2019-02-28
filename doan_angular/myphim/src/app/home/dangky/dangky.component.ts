@@ -94,6 +94,10 @@ export class DangkyComponent implements OnInit {
       );
     }
   }
+
+  hasChanges(){
+    return true;
+  }
   // ThemMoi(){
   //   this.formDK.reset();
   //   this.themStatus = true; // bật cờ lên để thêm dữ liệu
