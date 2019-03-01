@@ -6,7 +6,7 @@
   </div>
   <div class="button mt-3">
     <button class="btn btn-success mr-2" id="themNV" data-toggle="modal" data-target="#myModal">Thêm <i class="fa fa-plus"></i></button>
-    <button class="btn btn-danger" id="xoaNV">Xóa <i class="fa fa-trash-o"></i></button>
+    <button class="btn btn-danger" id="xoaNV" (click)="XoaNguoiDung()">Xóa <i class="fa fa-trash-o"></i></button>
   </div>
 
   <!-- Danh sách người dùng -->
@@ -17,6 +17,7 @@
         <thead>
           <tr>
             <td>STT</td>
+            <td>...</td>
             <td>Tài khoản</td>
             <td>Họ tên</td>
             <td>Mã nhóm</td>
@@ -27,8 +28,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let nguoidung of DanhSachNguoiDung; let i = index">
+          <tr *ngFor="let nguoidung of DanhSachNguoiDung; let i = index">          
             <td>{{i + 1}}</td>
+            <td>
+              <input type="checkbox" value="nguoidung.TaiKhoan">
+            </td>
             <td>{{nguoidung.TaiKhoan}}</td>
             <td>{{nguoidung.HoTen}}</td>
             <td>{{nguoidung.MaNhom}}</td>
@@ -53,14 +57,14 @@
     </div>
   </div>
   <!-- popup thêm/sửa người dùng -->
-  <div class="modal fade" [ngStyle]="{'display':display}" id="myModal">
+  <div class="modal fade" id="myModal">
       <div class="modal-dialog">
           <div class="modal-content">
       
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title tieude" #tieude>Thêm người dùng</h4>
-              <button type="button" id="btnClose" class="close" data-dismiss="modal">&times;</button>
+              <button #btnclose type="button" id="btnClose" class="close" data-dismiss="modal">&times;</button>
             </div>
             
             <!-- Modal body -->

@@ -15,12 +15,23 @@ export class QuanlynguoidungComponent implements OnInit {
   @ViewChild('btnLuu') btnLuu:ElementRef;
   @ViewChild('btnSua') btnSua:ElementRef;
   @ViewChild('tieude') tieude:ElementRef;
-  @ViewChild('taikhoan') inputTaiKhoan:ElementRef;  
-  public display:string = 'none';  
+  @ViewChild('taikhoan') inputTaiKhoan:ElementRef; 
+  @ViewChild('btnclose') btnclose:ElementRef; 
+  
   public themStatus:boolean = true;
   constructor(private nguoidung:NguoidungService) { }
 
   ngOnInit() {
+    this.nguoidung.LayDSNguoiDung().subscribe(
+      data => {
+        this.LayDanhSachNguoiDung();
+      },
+      loi =>{
+        alert(loi);
+      }
+    );
+  }
+  LayDanhSachNguoiDung(){
     this.nguoidung.LayDSNguoiDung().subscribe(
       data => {
         this.DanhSachNguoiDung = data;
@@ -31,7 +42,6 @@ export class QuanlynguoidungComponent implements OnInit {
       }
     );
   }
-
   Sua(btnSua){
     let taiKhoan = btnSua.getAttribute('data-TaiKhoan');
     let matKhau = btnSua.getAttribute('data-MatKhau');
@@ -61,7 +71,7 @@ export class QuanlynguoidungComponent implements OnInit {
         kq => {
           alert('Đã thêm người dùng thành công.');
           this.formDK.reset();
-          this.DanhSachNguoiDung.push(nguoidung);
+          this.LayDanhSachNguoiDung();
         },
         loi => {
           alert(loi);
@@ -74,31 +84,25 @@ export class QuanlynguoidungComponent implements OnInit {
           this.inputTaiKhoan.nativeElement.readOnly = false;
           this.formDK.reset();
           this.themStatus = true;
-          for(let index in this.DanhSachNguoiDung){
-            if(nguoidung.TaiKhoan == this.DanhSachNguoiDung[index].TaiKhoan){
-              this.DanhSachNguoiDung.splice(index,1,nguoidung);
-            }
-          }   
-          this.display = 'none';       
+          this.LayDanhSachNguoiDung();
+          this.btnclose.nativeElement.click();      
         },
         loi => { 
           alert(loi);
         }
       );
     }
-    
-
-
-
-
-
-
-
-
-  
   }
 
-
+  XoaNguoiDung(){
+    
+    this.DanhSachNguoiDung.forEach(function(nguoidung){      
+      if(nguoidung.selected){
+        console.log('xóa');
+        console.log(nguoidung.TaiKhoan);
+      }
+    });
+  }
 
 
 
