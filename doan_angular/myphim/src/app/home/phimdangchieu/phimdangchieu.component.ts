@@ -34,7 +34,7 @@ Options={items: 5, dots: false,
     this.phim.LayDanhSachPhim().subscribe(
       data => {
         this.DanhSachPhimDangChieu = data;
-        //console.log(data);
+        console.log(data);
       },
       loi => {
         console.log(loi);

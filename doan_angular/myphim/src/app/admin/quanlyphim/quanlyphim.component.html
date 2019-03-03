@@ -1,3 +1,122 @@
-<p>
-  quanlyphim works!
-</p>
+<div class="phim">
+  <input type="text" class="form-control mt-3" placeholder="nhập tên phim cần tìm">    
+  <div class="button mt-3">
+    <button class="btn btn-success mr-2" >Tìm <i class="fa fa-search"></i></button>
+    <button class="btn btn-success mr-2" data-toggle="modal" data-target="#myModal">Thêm <i class="fa fa-plus"></i></button>  
+  </div>
+  <!-- Danh sách phim -->
+  <div class="row">
+    <div class="col-12">
+      <h4 class="display-5 text-center">Danh sách phim</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <td>STT</td>
+            <td>Mã phim</td>
+            <td>Tên phim</td>
+            <td>Trailer</td>
+            <td>Hình ảnh</td>
+            <td>Mô tả</td>
+            <td>Mã nhóm</td>
+            <td>Ngày khởi chiếu</td>
+            <td>Đánh giá</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let phim of DanhSachPhim; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{phim.MaPhim}}</td>
+            <td>{{phim.TenPhim}}</td>
+            <td>{{phim.Trailer}}</td>
+            <td>
+              <img [src]="phim.HinhAnh" alt="" style="width:150px;height:150px">
+            </td>
+            <td>{{phim.MoTa | shortcut}}</td>
+            <td>{{phim.MaNhom}}</td>
+            <td>{{phim.NgayKhoiChieu | date:'dd/MM/yyyy'}}</td>
+            <td>{{phim.DanhGia}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- modal thêm phim -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title tieude" #tieude>Thêm phim mới</h4>
+            <button #btnclose type="button" id="btnClose" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form #formPhim="ngForm">
+              <div class="form-group">
+                <label for="">Mã phim</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">Tên phim</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">Trailer</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="">Hình ảnh</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                 <label for="">Mô tả</label>
+                 <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                 <label>Mã nhóm</label>
+                 <select class="form-control" name="MaNhom" ngModel #manhom="ngModel">
+                    <option value="GP01">GP01</option>
+                    <option value="GP02">GP02</option>
+                    <option value="GP03">GP03</option>
+                    <option value="GP04">GP04</option>
+                    <option value="GP05">GP05</option>
+                    <option value="GP06">GP06</option>
+                  </select>
+                </div>
+                <div class=".form-group d-flex justify-content-between">
+                  <div class="form-group">
+                    <label for="">Ngày khởi chiếu</label>
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Đánh giá</label>
+                    <input type="number" class="form-control" min="0">
+                  </div>
+                </div>
+                <div class="form-group text-center">
+                  <button class="btn btn-success">Thêm phim</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

@@ -15,8 +15,8 @@ export class DangnhapComponent implements OnInit {
   ngOnInit() {
     this.formDangNhap = new FormGroup(
       {
-        'TaiKhoan': new FormControl(null,[Validators.required,Validators.pattern(this.regex_username)]),
-        'MatKhau': new FormControl(null,[Validators.required])
+        'TaiKhoanDN': new FormControl(null,[Validators.required,Validators.pattern(this.regex_username)]),
+        'MatKhauDN': new FormControl(null,[Validators.required])
       }
     );
     // xóa người dùng cũ
@@ -24,7 +24,7 @@ export class DangnhapComponent implements OnInit {
   }
   DangNhap(){
     let nguoiDungDN = this.formDangNhap.value;    
-    this.nguoidung.DangNhap(nguoiDungDN.TaiKhoan,nguoiDungDN.MatKhau).subscribe(
+    this.nguoidung.DangNhap(nguoiDungDN.TaiKhoanDN,nguoiDungDN.MatKhauDN).subscribe(
       kq => {
         if(typeof(kq) == 'object'){
           localStorage.setItem('NguoiDung',JSON.stringify(kq));

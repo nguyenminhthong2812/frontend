@@ -1,12 +1,12 @@
 <div class="nguoidung">  
   <!-- chức năng -->
-  <div class="timkiem d-flex mt-3">
-    <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm"/>
-    <button class="btn btn-success ml-2">Tìm</button>
+  <div class="d-flex mt-3">
+    <input #tukhoa type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm"/>    
   </div>
   <div class="button mt-3">
-    <button class="btn btn-success mr-2" id="themNV" data-toggle="modal" data-target="#myModal">Thêm <i class="fa fa-plus"></i></button>
-    <button class="btn btn-danger" id="xoaNV" (click)="XoaNguoiDung()">Xóa <i class="fa fa-trash-o"></i></button>
+    <button class="btn btn-success mr-2" (click)="LayDanhSachNguoiDung()">Tìm <i class="fa fa-search"></i></button>
+    <button class="btn btn-success mr-2" data-toggle="modal" data-target="#myModal">Thêm <i class="fa fa-plus"></i></button>    
+    
   </div>
 
   <!-- Danh sách người dùng -->
@@ -16,8 +16,7 @@
       <table class="table">
         <thead>
           <tr>
-            <td>STT</td>
-            <td>...</td>
+            <td>STT</td>            
             <td>Tài khoản</td>
             <td>Họ tên</td>
             <td>Mã nhóm</td>
@@ -29,10 +28,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let nguoidung of DanhSachNguoiDung; let i = index">          
-            <td>{{i + 1}}</td>
-            <td>
-              <input type="checkbox" value="nguoidung.TaiKhoan">
-            </td>
+            <td>{{i + 1}}</td>            
             <td>{{nguoidung.TaiKhoan}}</td>
             <td>{{nguoidung.HoTen}}</td>
             <td>{{nguoidung.MaNhom}}</td>
@@ -49,7 +45,10 @@
                 [attr.data-SoDT] = "nguoidung.SoDT"
                 [attr.data-LoaiNguoiDung] = "nguoidung.MaLoaiNguoiDung"
                 (click)="Sua(btnSua)" data-toggle="modal" data-target="#myModal"
-              >Sửa</button>              
+              >Sửa</button>  
+              <button class="btn btn-danger"                
+                (click)="XoaNguoiDung(nguoidung.TaiKhoan)"
+              >Xóa</button>             
             </td>
           </tr>
         </tbody>
@@ -72,7 +71,7 @@
                 <form #formDangKy = "ngForm" (ngSubmit)="LuuNguoiDung(formDangKy.value)">                     
                     <div class="form-group">
                       <label>Tài khoản</label>
-                      <input #taikhoan type="text" class="form-control" name="TaiKhoan" ngModel #taikhoan="ngModel" required>
+                      <input #inputtaikhoan type="text" class="form-control" name="TaiKhoan" ngModel #taikhoan="ngModel" required>
                       <div *ngIf="taikhoan.errors && (taikhoan.dirty || taikhoan.touched)">
                         <div class="alert alert-danger" *ngIf="taikhoan.errors.required"> 
                           Vui lòng nhập tài khoản.

@@ -11,13 +11,15 @@ import { NguoidungService } from 'src/app/services/nguoidung.service';
 })
 export class QuanlynguoidungComponent implements OnInit {
   public DanhSachNguoiDung : any = [];
+  public DanhSachBanDau:any = [];
+  public DanhSachTimKiem : any = [];
   @ViewChild('formDangKy') formDK:NgForm;
   @ViewChild('btnLuu') btnLuu:ElementRef;
   @ViewChild('btnSua') btnSua:ElementRef;
   @ViewChild('tieude') tieude:ElementRef;
-  @ViewChild('taikhoan') inputTaiKhoan:ElementRef; 
-  @ViewChild('btnclose') btnclose:ElementRef; 
-  
+  @ViewChild('inputtaikhoan') inputTaiKhoan:ElementRef; 
+  @ViewChild('btnclose') btnclose:ElementRef;   
+  @ViewChild ('tukhoa') tukhoa:ElementRef;
   public themStatus:boolean = true;
   constructor(private nguoidung:NguoidungService) { }
 
@@ -34,8 +36,17 @@ export class QuanlynguoidungComponent implements OnInit {
   LayDanhSachNguoiDung(){
     this.nguoidung.LayDSNguoiDung().subscribe(
       data => {
-        this.DanhSachNguoiDung = data;
-        console.log(this.DanhSachNguoiDung);
+        this.DanhSachBanDau = data;
+        this.DanhSachNguoiDung = this.DanhSachBanDau;
+        let key = this.tukhoa.nativeElement.value.toUpperCase();        
+        if(key != ''){
+          this.DanhSachNguoiDung = [];
+          for(let nguoidung of this.DanhSachBanDau){
+            if(nguoidung.HoTen.toUpperCase().includes(key)){
+              this.DanhSachNguoiDung.push(nguoidung);
+            }
+          }          
+        }
       },
       loi =>{
         alert(loi);
@@ -63,14 +74,16 @@ export class QuanlynguoidungComponent implements OnInit {
     this.tieude.nativeElement.innerHTML = 'Cập nhật thông tin người dùng';
     this.inputTaiKhoan.nativeElement.readOnly = true;
     this.themStatus = false; // tắt cờ này để cập nhật nguoidung
+
+    
   }
   LuuNguoiDung(nguoidung){
     if(this.themStatus){      
       // thêm người dùng
       this.nguoidung.ThemNguoiDung(nguoidung).subscribe(
         kq => {
-          alert('Đã thêm người dùng thành công.');
-          this.formDK.reset();
+          alert(kq);
+          //alert('Đã thêm người dùng thành công.');          
           this.LayDanhSachNguoiDung();
         },
         loi => {
@@ -81,37 +94,37 @@ export class QuanlynguoidungComponent implements OnInit {
     else{      
       this.nguoidung.CapNhatNguoiDung(nguoidung).subscribe(
         kq => {          
-          this.inputTaiKhoan.nativeElement.readOnly = false;
-          this.formDK.reset();
+          this.inputTaiKhoan.nativeElement.readOnly = false;          
           this.themStatus = true;
           this.LayDanhSachNguoiDung();
-          this.btnclose.nativeElement.click();      
+          this.btnclose.nativeElement.click();  
+          this.btnLuu.nativeElement.innerHTML = 'Đăng ký';
+          this.tieude.nativeElement.innerHTML = 'Thêm người dùng';    
         },
         loi => { 
           alert(loi);
         }
       );
     }
+    this.formDK.reset();
   }
 
-  XoaNguoiDung(){
-    
-    this.DanhSachNguoiDung.forEach(function(nguoidung){      
-      if(nguoidung.selected){
-        console.log('xóa');
-        console.log(nguoidung.TaiKhoan);
-      }
-    });
+  
+  XoaNguoiDung(taikhoan){
+    if(confirm('Bạn chắc xóa người dùng này?')){
+      this.nguoidung.XoaNguoiDung(taikhoan).subscribe(
+        data => {
+          alert(data);
+          this.LayDanhSachNguoiDung();
+        },
+        loi =>{
+          alert(loi);
+        }
+      );
+    }
   }
 
-
-
-
-
-
-
-
-
+  
 
 
 

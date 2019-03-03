@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PhimService } from 'src/app/services/phim.service';
+
 
 @Component({
   selector: 'app-quanlyphim',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quanlyphim.component.css']
 })
 export class QuanlyphimComponent implements OnInit {
-
-  constructor() { }
+  public DanhSachPhim:any = [];
+  public model:any;
+  constructor(private phim:PhimService) { }
 
   ngOnInit() {
+    this.model = new Date().toISOString().split('T')[0];
+    this.phim.LayDanhSachPhim().subscribe(
+      kq => {
+        this.DanhSachPhim = kq;
+        console.log(kq);
+      },
+      loi =>{
+        alert(loi);
+      }
+
+    );
   }
 
 }
