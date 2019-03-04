@@ -32,4 +32,31 @@ export class QuanlyphimComponent implements OnInit {
     console.log(phim);
   }
 
+  SuaPhim(btnSuaPhim){
+    let maphim = btnSuaPhim.getAttribute('data-MaPhim');
+    let tenphim = btnSuaPhim.getAttribute('data-TenPhim');
+    let trailer = btnSuaPhim.getAttribute('data-Trailer');
+    let hinhanh = btnSuaPhim.getAttribute('data-HinhAnh');
+    let mota = btnSuaPhim.getAttribute('data-MoTa');
+    let manhom = btnSuaPhim.getAttribute('data-MaNhom');
+    let ngaykhoichieu = btnSuaPhim.getAttribute('data-NgayKhoiChieu');
+    let danhgia = btnSuaPhim.getAttribute('data-DanhGia');
+    this.formPhim.setValue({
+      MaPhim:maphim,
+      TenPhim:tenphim,
+      Trailer:trailer,
+      HinhAnh:hinhanh,
+      MoTa:mota,
+      MaNhom:manhom,
+      NgayKhoiChieu:ngaykhoichieu,
+      DanhGia:danhgia
+    });
+  }
+
+
+
+
+
+
+
 }

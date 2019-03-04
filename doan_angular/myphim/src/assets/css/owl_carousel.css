@@ -1,3 +1,6 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
 .owl-carousel .owl-nav button.owl-prev {
     width: 15px;
     height: 100px;
@@ -27,4 +30,7 @@
     color: #ec5a2c;
 }
 
-
+/* Hiện material datepicker trong modal */
+.cdk-overlay-container { 
+    z-index: 1200; 
+}

@@ -1,5 +1,5 @@
 <div class="phim">
-  <input type="text" class="form-control mt-3" placeholder="nhập tên phim cần tìm">    
+  <input type="text" class="form-control mt-3" placeholder="nhập tên phim cần tìm">      
   <div class="button mt-3">
     <button class="btn btn-success mr-2" >Tìm <i class="fa fa-search"></i></button>
     <button class="btn btn-success mr-2" data-toggle="modal" data-target="#myModal">Thêm <i class="fa fa-plus"></i></button>  
@@ -20,6 +20,7 @@
             <td>Mã nhóm</td>
             <td>Ngày khởi chiếu</td>
             <td>Đánh giá</td>
+            <td>Thao tác</td>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +36,21 @@
             <td>{{phim.MaNhom}}</td>
             <td>{{phim.NgayKhoiChieu | date:'dd/MM/yyyy'}}</td>
             <td>{{phim.DanhGia}}</td>
+            <td>
+              <button #btnSuaPhim class="btn btn-success mr-2 mb-2"
+                [attr.data-MaPhim] = "phim.MaPhim"
+                [attr.data-TenPhim] = "phim.TenPhim"
+                [attr.data-Trailer] = "phim.Trailer"
+                [attr.data-HinhAnh] = "phim.HinhAnh"
+                [attr.data-MoTa] = "phim.MoTa"
+                [attr.data-MaNhom] = "phim.MaNhom"
+                [attr.data-NgayKhoiChieu] = "phim.NgayKhoiChieu"
+                [attr.data-DanhGia] = "phim.DanhGia"
+                (click) = "SuaPhim(btnSuaPhim)"
+                data-toggle="modal" data-target="#myModal"
+              >Sửa</button>
+              <button class="btn btn-danger">Xóa</button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -71,7 +87,7 @@
               </div>
               <div class="form-group">
                  <label for="">Mô tả</label>
-                 <textarea rows="5" class="form-control" name="MoTa" ngModel #mota="ngModel"></textarea>
+                 <textarea rows="3" class="form-control" name="MoTa" ngModel #mota="ngModel"></textarea>
               </div>
               <div class="form-group">
                  <label>Mã nhóm</label>
@@ -87,9 +103,14 @@
                 <div class="d-flex justify-content-between">
                   <div class="form-group">
                     <label for="">Ngày khởi chiếu</label>
-                    <mat-form-field>    
+                    <!-- <mat-form-field>    
                         <input type="date" matInput name="NgayKhoiChieu" ngModel #ngaykhoichieu="ngModel">    
-                      </mat-form-field>
+                    </mat-form-field> -->
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="picker" name="NgayKhoiChieu" ngModel #ngaykhoichieu="ngModel">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
                   </div>
                   <div class="form-group">
                     <label for="">Đánh giá</label>
