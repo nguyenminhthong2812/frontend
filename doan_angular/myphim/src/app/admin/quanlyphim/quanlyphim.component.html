@@ -52,26 +52,26 @@
           </div>
           <!-- Modal body -->
           <div class="modal-body">
-            <form #formPhim="ngForm">
+            <form #formPhim="ngForm" (ngSubmit)="ThemPhim(formPhim.value)">
               <div class="form-group">
                 <label for="">Mã phim</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="MaPhim" ngModel #maphim="ngModel">
               </div>
               <div class="form-group">
                 <label for="">Tên phim</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="TenPhim" ngModel #tenphim="ngModel">
               </div>
               <div class="form-group">
                 <label for="">Trailer</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="Trailer" ngModel #trailer="ngModel">
               </div>
               <div class="form-group">
                 <label for="">Hình ảnh</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="HinhAnh" ngModel #hinhanh="ngModel">
               </div>
               <div class="form-group">
                  <label for="">Mô tả</label>
-                 <input type="text" class="form-control">
+                 <textarea rows="5" class="form-control" name="MoTa" ngModel #mota="ngModel"></textarea>
               </div>
               <div class="form-group">
                  <label>Mã nhóm</label>
@@ -84,22 +84,22 @@
                     <option value="GP06">GP06</option>
                   </select>
                 </div>
-                <div class=".form-group d-flex justify-content-between">
+                <div class="d-flex justify-content-between">
                   <div class="form-group">
                     <label for="">Ngày khởi chiếu</label>
-                    <mat-form-field>
-                      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                      <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
+                    <mat-form-field>    
+                        <input type="date" matInput name="NgayKhoiChieu" ngModel #ngaykhoichieu="ngModel">    
+                      </mat-form-field>
                   </div>
                   <div class="form-group">
                     <label for="">Đánh giá</label>
-                    <input type="number" class="form-control" min="0">
-                  </div>
+                    <mat-form-field>    
+                        <input type="number" matInput min="0" name="DanhGia" ngModel #danhgia="ngModel">    
+                    </mat-form-field>
+                  </div>                  
                 </div>
                 <div class="form-group text-center">
-                  <button class="btn btn-success">Thêm phim</button>
+                  <button type="submit" class="btn btn-success">Thêm phim</button>
                 </div>
             </form>
           </div>

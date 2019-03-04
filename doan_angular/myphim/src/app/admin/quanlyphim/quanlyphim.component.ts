@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PhimService } from 'src/app/services/phim.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { PhimService } from 'src/app/services/phim.service';
   styleUrls: ['./quanlyphim.component.css']
 })
 export class QuanlyphimComponent implements OnInit {
+  @ViewChild('formPhim') formPhim:NgForm;
   public DanhSachPhim:any = [];
   public model:any;
   constructor(private phim:PhimService) { }
@@ -24,6 +26,10 @@ export class QuanlyphimComponent implements OnInit {
       }
 
     );
+  }
+
+  ThemPhim(phim){
+    console.log(phim);
   }
 
 }
