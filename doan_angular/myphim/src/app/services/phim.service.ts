@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -20,5 +20,27 @@ export class PhimService {
     let Observe = this._http.get(api);
     return Observe;
   }
+  ThemPhim(phim):Observable<any>{
+    let api = `http://sv2.myclass.vn/api/QuanLyPhim/ThemPhimMoi`;
+    let header = new HttpHeaders();
+    header.append('Content-Type','application/json;charset=UTF-8');
+    let Observe = this._http.post(api,phim,{headers:header});
+    return Observe;
+  }
+  SuaPhim(phim):Observable<any>{
+    let api = `http://sv2.myclass.vn/api/QuanLyPhim/CapNhatPhim`;
+    let header = new HttpHeaders();
+    header.append('Content-Type','application/json;charset=UTF-8');
+    let Observe = this._http.post(api,phim,{headers:header});
+    return Observe;
+  }
+  XoaPhim(maphim):Observable<any>{
+    let api = `http://sv2.myclass.vn/api/QuanLyPhim/XoaPhim?MaPhim=${maphim}`;
+    let Observe = this._http.delete(api);
+    return Observe;
+  }
+
+
+
 
 }
