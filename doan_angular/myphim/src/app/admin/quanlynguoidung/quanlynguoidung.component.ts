@@ -24,14 +24,7 @@ export class QuanlynguoidungComponent implements OnInit {
   constructor(private nguoidung:NguoidungService) { }
 
   ngOnInit() {
-    this.nguoidung.LayDSNguoiDung().subscribe(
-      data => {
-        this.LayDanhSachNguoiDung();
-      },
-      loi =>{
-        alert(loi);
-      }
-    );
+    //this.LayDanhSachNguoiDung();
   }
   LayDanhSachNguoiDung(){
     this.nguoidung.LayDSNguoiDung().subscribe(

@@ -3,6 +3,13 @@ import { PhimService } from 'src/app/services/phim.service';
 import { NgForm } from '@angular/forms';
 
 
+class ImageSnippet {
+  pending: boolean = false;
+  status: string = 'init';
+
+  constructor(public src: string, public file: File) {}
+}
+
 @Component({
   selector: 'app-quanlyphim',
   templateUrl: './quanlyphim.component.html',
@@ -15,14 +22,53 @@ export class QuanlyphimComponent implements OnInit {
   @ViewChild('btnclose') btnclose:ElementRef;
   @ViewChild('maphim') maphim:ElementRef;
   @ViewChild('timkiem') timkiem:ElementRef;
+
+  selectedFile: ImageSnippet;
+
   public DanhSachBanDau:any = [];
   public DanhSachPhim:any = [];  
   public statusThem:boolean = true;
   constructor(private phim:PhimService) { }
 
   ngOnInit() {   
-    this.LayDanhSachPhim();
+    //this.LayDanhSachPhim();
   }
+
+  private onSuccess() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'ok';
+  }
+
+  private onError() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'fail';
+    this.selectedFile.src = '';
+  }
+
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+
+      this.phim.uploadImage(this.selectedFile.file).subscribe(
+        (res) => {
+          this.onSuccess();
+          console.log('thành công');
+          console.log(res);
+        },
+        (err) => {
+          this.onError();
+          console.log('thất bại');
+          console.log(err);
+        })
+    });
+
+    reader.readAsDataURL(file);
+  }
+
 
   LayDanhSachPhim(){
     this.phim.LayDanhSachPhim().subscribe(

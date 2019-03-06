@@ -39,8 +39,12 @@ export class PhimService {
     let Observe = this._http.delete(api);
     return Observe;
   }
-
-
+  public uploadImage(image: File): Observable<any> {
+    let api = `http://deworkarea.com/angapi/api/upload`;
+    const formData = new FormData();
+    formData.append('image', image);
+    return this._http.post(api, formData);
+  }
 
 
 }

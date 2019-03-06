@@ -79,13 +79,21 @@
                 <input type="text" class="form-control" name="TenPhim" ngModel #tenphim="ngModel">
               </div>
               <div class="form-group">
-                <label for="">Trailer</label>
-                <input type="text" class="form-control" name="Trailer" ngModel #trailer="ngModel">
-              </div>
+                  <label for="">Trailer</label>
+                  <input type="text" class="form-control" name="Trailer" ngModel #trailer="ngModel">
+                </div>
               <div class="form-group">
-                <label for="">Hình ảnh</label>
-                <input type="text" class="form-control" name="HinhAnh" ngModel #hinhanh="ngModel">
-              </div>
+                  <label>
+                      <span>Select Image</span>
+                      <input #imageInput
+                             type="file"
+                             accept="image/*"
+                             (change)="processFile(imageInput)">
+                  </label>
+                  <img [src]="selectedFile.src" alt="">
+                <!-- <label for="">Hình ảnh</label>
+                <input type="text" class="form-control" name="HinhAnh" ngModel #hinhanh="ngModel"> -->
+              </div>              
               <div class="form-group">
                  <label for="">Mô tả</label>
                  <textarea rows="3" class="form-control" name="MoTa" ngModel #mota="ngModel"></textarea>
@@ -103,10 +111,7 @@
                 </div>
                 <div class="d-flex justify-content-between">
                   <div class="form-group">
-                    <label for="">Ngày khởi chiếu</label>
-                    <!-- <mat-form-field>    
-                        <input type="date" matInput name="NgayKhoiChieu" ngModel #ngaykhoichieu="ngModel">    
-                    </mat-form-field> -->
+                    <label for="">Ngày khởi chiếu</label>                   
                     <mat-form-field>
                       <input matInput [matDatepicker]="picker" name="NgayKhoiChieu" ngModel #ngaykhoichieu="ngModel">
                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
