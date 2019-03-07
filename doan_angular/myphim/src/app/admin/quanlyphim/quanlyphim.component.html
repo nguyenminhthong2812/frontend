@@ -72,27 +72,47 @@
             <form #formPhim="ngForm" (ngSubmit)="ThemPhim(formPhim.value)">
               <div class="form-group">
                 <label for="">Mã phim</label>
-                <input #maphim type="text" class="form-control" name="MaPhim" ngModel #maphim="ngModel">
+                <input #maphim type="text" class="form-control" name="MaPhim" ngModel #maphim="ngModel" required>
+                <div *ngIf="maphim.errors && (maphim.dirty || maphim.touched)">
+                  <div *ngIf="maphim.errors.required" class="alert alert-danger">
+                    Vui lòng nhập mã phim.
+                  </div>
+                </div>                
               </div>
               <div class="form-group">
                 <label for="">Tên phim</label>
-                <input type="text" class="form-control" name="TenPhim" ngModel #tenphim="ngModel">
+                <input type="text" class="form-control" name="TenPhim" ngModel #tenphim="ngModel" required>
+                <div *ngIf="tenphim.errors && (tenphim.dirty || tenphim.touched)">
+                  <div class="alert alert-danger" *ngIf="tenphim.errors.required">
+                    Vui lòng nhập tên phim.
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                   <label for="">Trailer</label>
-                  <input type="text" class="form-control" name="Trailer" ngModel #trailer="ngModel">
+                  <input type="text" class="form-control" name="Trailer" ngModel #trailer="ngModel" required>
+                  <div *ngIf="trailer.errors && (trailer.dirty || trailer.touched)">
+                    <div class="alert alert-danger" *ngIf="trailer.errors.required">
+                      Vui lòng nhập trailer phim.
+                    </div>
+                  </div>
                 </div>
               <div class="form-group">
-                  <label>
+                  <!-- <label>
                       <span>Select Image</span>
                       <input #imageInput
                              type="file"
                              accept="image/*"
                              (change)="processFile(imageInput)">
                   </label>
-                  <img [src]="selectedFile.src" alt="">
-                <!-- <label for="">Hình ảnh</label>
-                <input type="text" class="form-control" name="HinhAnh" ngModel #hinhanh="ngModel"> -->
+                  <img [src]="selectedFile.src" alt=""> -->
+                <label for="">Hình ảnh</label>
+                <input type="text" class="form-control" name="HinhAnh" ngModel #hinhanh="ngModel" required>
+                <div *ngIf = "hinhanh.errors && (hinhanh.dirty && hinhanh.touched)">
+                  <div *ngIf="hinhanh.errors.required">
+                    Vui lòng nhập hình ảnh.
+                  </div>
+                </div>
               </div>              
               <div class="form-group">
                  <label for="">Mô tả</label>
