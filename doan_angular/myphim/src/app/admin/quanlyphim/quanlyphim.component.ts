@@ -31,7 +31,7 @@ export class QuanlyphimComponent implements OnInit {
   constructor(private phim:PhimService) { }
 
   ngOnInit() {   
-    //this.LayDanhSachPhim();
+    this.LayDanhSachPhim();
   }
 
   private onSuccess() {
