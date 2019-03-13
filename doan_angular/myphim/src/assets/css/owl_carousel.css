@@ -1,5 +1,8 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+body{
+    overflow-x: hidden;
+}
 
 .owl-carousel .owl-nav button.owl-prev {
     width: 15px;
