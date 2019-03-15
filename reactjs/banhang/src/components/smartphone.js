@@ -1,23 +1,44 @@
 import React, { Component } from 'react';
-import Card from '../../node_modules/react-bootstrap/Card';
-import Button from '../../node_modules/react-bootstrap/Button';
+import swal from 'sweetalert';
+
+import Modal from './modal';
 
 class Smartphone extends Component {
+
+    HanderCard = () =>{
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
+    }
+
+
     render() {
+      let {id,name,price,screen,backCamera,frontCamera,img,desc} = this.props.dienthoai;
       return (
-        <div className="Smartphone col-xs-12 col-sm-6 col-md-6 col-lg-3">            
-              <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={require('../imgs/iphone-xs-max-gray-400x400.jpg')} />
-                  <Card.Body>
-                      <Card.Title>Điện thoại iPhone Xs Max 64GB</Card.Title>
-                      <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
-                      </Card.Text>
-                      <Button variant="primary mr-2">Detail</Button>
-                      <Button variant="primary">Cart</Button>
-                  </Card.Body>
-              </Card>              
+        <div className="card" style={{ width: '25%' }}>
+          <img className="card-img-top" src={require('../imgs/oppo-a7-32gb-gold-400x400.jpg')} alt="Card image" />
+          <div className="card-body">
+            <h4 className="card-title">{name}</h4>
+            <p className="card-text">{desc}</p>
+            <a className="btn btn-primary mr-2" data-toggle="modal" data-target={`#${id}`}>Detail</a>
+            <a className="btn btn-danger" onClick={this.HanderCard}>Cart</a>
+          </div>
+
+
+          <Modal dienthoai={this.props.dienthoai}></Modal>  
         </div>
       );
     }
